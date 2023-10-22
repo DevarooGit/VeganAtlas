@@ -13,11 +13,9 @@
 			"description": "Test with one template",
 			"version": "0.1",
 			"pages": {
-				[
 					"name": "PageExchange",
 					"namespace": "NS_TEMPLATE",
 					"url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Template%3APageExchange"
-			]
 			}
 		}
 	}
