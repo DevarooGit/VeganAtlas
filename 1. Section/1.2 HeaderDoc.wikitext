@@ -1,0 +1,21 @@
+<noinclude>__NOTOC__
+{{XYZ/Resources/General/Partial|Section}}
+== Purpose ==
+Documentation for the [[Template:XYZ/Resources/Section/Header|section header template]].
+</noinclude>
+<includeonly>
+{{XYZ/Resources/General/Partial|Section}}
+== Purpose ==
+This template provides the heading/status bar for the [[Template:Section|Section template]].
+
+== Preview ==
+See [[Template:Section]].
+
+== Dependencies ==
+=== Extensions ===
+[https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki Semantic MediaWiki]<br>
+[https://www.mediawiki.org/wiki/Extension:External_Data External Data]
+
+=== Templates ===
+[[Template:XYZ/Resources/GeneralEncoder|XYZ/Resources/General/Encoder]]
+</includeonly>

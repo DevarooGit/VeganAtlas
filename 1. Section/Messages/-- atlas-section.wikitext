@@ -1,0 +1,31 @@
+<noinclude>
+== Description ==
+English messages for the [[Template:Section|Section template]].
+</noinclude><includeonly>{{#switch: {{{1}}}
+|atlas-section-authors=Authors
+|atlas-section-closed=Closed
+|atlas-section-comment=Comment
+|atlas-section-conductreview=Conduct peer-review
+|atlas-section-currenttopics=Current topics
+|atlas-section-discussionboard=Discussion board
+|atlas-section-documentation=Documentation
+|atlas-section-docuntranslated=Documentation untranslated
+|atlas-section-editsection=Edit
+|atlas-section-editsection=Edit section
+|atlas-section-hidedocumentation=Hide documentation
+|atlas-section-lastrevision=Last revision
+|atlas-section-noclosedthreads=No closed threads
+|atlas-section-nodocumentation=Documentation (n/a)
+|atlas-section-noopenthreads=No open threads
+|atlas-section-open=Open
+|atlas-section-peer-reviews=Peer-Reviews
+|atlas-section-resolvedtopics=Resolved topics
+|atlas-section-review=Review
+|atlas-section-sectionhostedatglobal=Section hosted at Atlas Global
+|atlas-section-showauthors=Show authors
+|atlas-section-showdocumentation=Show documentation
+|atlas-section-showreviews=Show peer-reviews
+|atlas-section-showthreads=Show threads
+|atlas-section-startdiscussion=Start discussion
+|atlas-section-togglethreads=Toggle open/closed threads
+}}</includeonly>
