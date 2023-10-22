@@ -1,3 +1,0 @@
-<button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-<!--{$buttonlabel|escape:'html'}-->
-</button>
