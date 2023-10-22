@@ -11,7 +11,6 @@
         "PageAuthors",
         "Page Forms",
         "Semantic MediaWiki",
-        "Semantic Extra Special Properties",
         "Semantic Structured Discussions",
         "Widgets"
     ],
@@ -19,7 +18,7 @@
         "VeganAtlas": {
             "globalID": "org.veganatlas.packages",
             "publisherURL": "https://veganatlas.org",
-            "description": "This package contains the forms, templates and widgets needed for Vegan Atlas. It is documented on https:\/\/veganatlas.org\/global\/Atlas:Development\/Documentation.",
+            "description": "This package contains the forms, templates and widgets needed for Vegan Atlas. It is documented on [https:\/\/veganatlas.org\/global\/Atlas:Development\/Documentation VeganAtlas.org].",
             "version": "0.1",
             "directoryStructure": {
         		"service": "GitHub",
