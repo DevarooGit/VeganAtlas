@@ -1,0 +1,24 @@
+{
+	"publisher": "VeganAtlas",
+	"author": [
+		"Lucas H.",
+	],
+	"language": "en",
+	"url": "https://github.com/DevarooGit/VeganAtlas/tree/main",
+	"licenseName": "CC BY-SA 4.0",
+	"packages": {
+		"Test: {
+			"globalID": "org.veganatlas.test",
+			"publisherURL": "https://veganatlas.org",
+			"description": "Test with one template",
+			"version": "0.1",
+			"pages": [
+				{
+					"name": "PageExchange",
+					"namespace": "NS_TEMPLATE",
+					"url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/PageExchange"
+				}
+			]
+		}
+	}
+}
