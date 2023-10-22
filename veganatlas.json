@@ -218,6 +218,11 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
                 },
                 {
+                    "name": "X%2FSetProperty",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SetProperty.wikitext"
+                },
+                {
                     "name": "X%2FSocialMedia",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
