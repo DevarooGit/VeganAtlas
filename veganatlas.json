@@ -2,6 +2,7 @@
     "publisher": "VeganAtlas",
     "author": "Lucas H.",
     "url": "https://github.com/DevarooGit/VeganAtlas",
+    "language": "en",
     "licenseName": "CC BY-SA 4.0",
     "requiredExtensions": [
         "Bootstrap",
