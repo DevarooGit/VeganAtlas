@@ -19,7 +19,7 @@
         "VeganAtlas": {
             "globalID": "org.veganatlas.packages",
             "publisherURL": "https://veganatlas.org",
-            "description": "Forms, Templates and Widgets for Vegan Atlas",
+            "description": "This package contains the forms, templates and widgets needed for Vegan Atlas. It is documented on https:\/\/veganatlas.org\/global\/Atlas:Development\/Documentation.",
             "version": "0.1",
             "directoryStructure": {
         		"service": "GitHub",
