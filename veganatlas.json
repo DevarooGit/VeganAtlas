@@ -10,6 +10,17 @@
             "publisherURL": "https://veganatlas.org",
             "description": "Templates for Vegan Atlas",
             "version": "0.1",
+            "directoryStructure": {
+        		"service": "GitHub",
+        		"accountName": "DevarooGit",
+        		"repositoryName": "VeganAtlas",
+        		"namespaceSettings": [
+        		    {
+        			"namespace": "NS_TEMPLATE",
+        			"fileNameSuffix": ".wikitext"
+        		    }
+        		]
+        	    },
             "pages":
                 {
                     "name": "PageExchange2",
