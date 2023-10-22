@@ -17,6 +17,7 @@
         		"namespaceSettings": [
         		    {
         			"namespace": "NS_TEMPLATE",
+                    "fileNamePrefix": "Templates/",
         			"fileNameSuffix": ".wikitext"
         		    }
         		]
