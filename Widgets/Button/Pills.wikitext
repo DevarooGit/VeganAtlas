@@ -1,0 +1,1 @@
+<button class="nav-link <!--{$active|escape:'html'}-->" id="<!--{$ID|escape:'html'}-->-pills-tab" data-toggle="pill" data-target="#<!--{$ID|escape:'html'}-->-pills-content" type="button" role="tab" aria-controls="<!--{$ID|escape:'html'}-->-pills-content" aria-selected="<!--{$ariaselected|escape:'html'}-->"><!--{$heading|escape:'html'}--></button>

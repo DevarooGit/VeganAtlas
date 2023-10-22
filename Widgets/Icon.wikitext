@@ -1,0 +1,27 @@
+<noinclude>
+== Description ==
+This widget adds an icon that acts as toggle button for collapsable elements.
+
+=== Variables ===
+
+{| class="wikitable"
+! Variable !! Permitted values
+|-
+| <code>ID</code> || Unique value for page; all lowercase
+|-
+| <code>btn</code> || btn-classes, e.g.<code>active</code>, <code>dropdown-toggle</code>, <code>text-nowrap</code>
+|-
+| <code>datatoggle</code> || data-toggle classes, e.g.<code>tab</code>, <code>dropdown</code>
+|-
+| <code>ariaselected</code> || <code>true</code>, <code>false</code>
+|-
+| <code>icon</code>, <code>icon2</code>,<code>icon3</code> || Fontawesome icon classes
+|-
+| <code>text</code>,<code>text2</code>, <code>text3</code> || Text to appear next to the icon
+|-
+| <code>textclass</code>, <code>text2class</code>, <code>text2class</code> || Classes to apply to the text
+|-
+| <code>title</code> || HTML title
+|}
+</noinclude><includeonly>
+<button class="nav-link <!--{$btn|escape:'html'}--> text-nowrap" type="button" id="<!--{$ID|escape:'html'}-->-<!--{$datatoggle|escape:'html'}-->" data-toggle="<!--{$datatoggle|escape:'html'}-->" data-target="#<!--{$ID|escape:'html'}-->" role="tab" aria-controls="<!--{$ID|escape:'html'}-->" aria-selected="<!--{$ariaselected|escape:'html'}-->" aria-haspopup="<!--{$ariahaspopup|escape:'html'}-->" aria-expanded="<!--{$ariaexpanded|escape:'html'}-->" title="<!--{$title|escape:'html'}-->" ><span class="<!--{$icon|escape:'html'}-->"></span><span class="<!--{$textclass|escape:'html'}-->" style="font-weight:400"><!--{$text|escape:'html'}--></span><span class="<!--{$icon2|escape:'html'}-->"></span><span class="<!--{$text2class|escape:'html'}-->" style="font-weight:400"><!--{$text2|escape:'html'}--></span><span class="<!--{$icon3|escape:'html'}-->"></span><span class="<!--{$text3class|escape:'html'}-->" style="font-weight:400"><!--{$text3|escape:'html'}--></span></button></includeonly>
