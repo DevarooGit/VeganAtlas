@@ -1,9 +1,19 @@
 {
     "publisher": "VeganAtlas",
     "author": "Lucas H.",
-    "language": "en",
     "url": "https://github.com/DevarooGit/VeganAtlas",
     "licenseName": "CC BY-SA 4.0",
+    "requiredExtensions": [
+        "Bootstrap",
+        "Cargo",
+        "Flow",
+        "DisplayTitle",
+        "PageAuthors",
+        "Page Forms",
+        "Semantic MediaWiki",
+        "Semantic Structured Discussions",
+        "Widgets"
+    ],
     "packages": {
         "VeganAtlas": {
             "globalID": "org.veganatlas.packages",
