@@ -17,8 +17,8 @@ Adds a category link.
     }
 }
 </templatedata>
-<noinclude>
+</noinclude>
 <includeonly>{{#if:{{{name}}}
 |[[Category:{{ucfirst:{{{name}}}}}]]
 |
-}}<includeonly>
+}}</includeonly>
