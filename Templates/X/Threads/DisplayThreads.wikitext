@@ -1,0 +1,47 @@
+<noinclude>__NOTOC__
+{{X/General/Partial|Section}}
+== Purpose ==
+This template is called by the [[Template:Section|Section template]] and provides a table with open and/or closed threads, which it gets from a Semantic MediaWiki request, either via the SMW parser function <code>#ask:</code> (local requests) or via the [https://www.mediawiki.org/wiki/Extension:External_Data External data] parser function <code>#display_external_table:</code> (global requests); with the latter then using the Semantic MediaWiki API of Atlas Global.
+
+== Preview ==
+{{X/Threads/TableStart}}
+{{X/Threads/TableRow-Local|Topic=Example-Link-Won't-Work|Title=Permalink to a discussion|Author=John Doe|Date=2023-01-01}}
+{{X/Threads/TableRow-Local|Topic=Example-Link-Won't-Work|Title=Permalink to another discussion|Author=Jane Doe|Date=2023-01-01}}
+{{X/Threads/TableEnd}}
+
+== Dependencies ==
+=== Extensions ===
+[https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki Semantic MediaWiki] {{#set: Uses extension=Semantic MediaWiki}}<br>
+[https://www.mediawiki.org/wiki/Extension:External_Data External Data] {{#set: Uses extension=External Data}}<br>
+
+=== Templates ===
+[[Template:X/Threads/TableStart|XYZ/Resources/Threads/TableStart]] {{#set: Uses template=XYZ/Resources/Threads/TableStart}}<br>
+[[Template:X/Threads/TableRow-Local|XYZ/Resources/Threads/TableRow-Local]] {{#set: Uses template=XYZ/Resources/Threads/TableRow-Local}}<br>
+[[Template:X/Threads/TableRow-Global|XYZ/Resources/Threads/TableRow-Global]] {{#set: Uses template=XYZ/Resources/Threads/TableRow-Global}}<br>
+[[Template:X/Threads/TableEnd|XYZ/Resources/Threads/TableEnd]] {{#set: Uses template=XYZ/Resources/Threads/TableEnd}}
+</noinclude>
+<includeonly>{{#switch: {{{source}}}
+|local =    {{#ask:
+            [[Topic owner::{{{sourcepage}}}||{{{sourcepage}}}/en||{{{sourcepage}}}/de]]
+            [[Topic is locked::{{{Topic is locked}}}]]
+            |?=Topic
+            |?Topic title=Title
+            |?Topic owner=Owner
+            |?Topic modification date#ISO=Date
+            |?Topic creator=Author
+            |mainlabel=-
+            |link=none
+            |format=plainlist
+            |named args=yes
+            |introtemplate=XYZ/Resources/Threads/TableStart
+            |template=XYZ/Resources/Threads/TableRow-Local
+            |outrotemplate=XYZ/Resources/Threads/TableEnd
+            }}
+|global={{#display_external_table: source = https://veganatlas.org/mediawiki/global/index.php?title=Special:Ask&x=-5B-5BTopic-20owner%3A%3A{{{sourcepage}}}-7C-7C{{{sourcepage}}}-2Fen-7C-7C{{{sourcepage}}}-2Fde-5D-5D-20-5B-5BTopic-20is-20locked%3A%3A{{{Topic is locked}}}-5D-5D%2F-3F%3DTopic%2F-3FTopic-20owner%3DOwner%2F-3FTopic-20title%3DTitle%2F-3FTopic-20creator%3DAuthor%2F-3FTopic-20modification-20date%3DDate&format=csv&limit=20&link=none&headers=show&mainlabel=-&searchlabel=CSV&propsep=%2C+&valuesep=%2C+&template=Threads%2FTableRow&named+args=1&class=sortable+wikitable+smwtable&introtemplate=Threads%2FTableStart&outrotemplate=Threads%2FTableEnd&sep=%2C+&sort=&order=asc&offset=0&prettyprint=true&unescape=true
+|format=CSV with header
+|data=Owner=Owner,Topic=Topic,Title=Title,Author=Author,Date=Date
+|delimiter=,
+|intro template=XYZ/Resources/Threads/TableStart
+|template=XYZ/Resources/Threads/TableRow-Global
+|outro template=XYZ/Resources/Threads/TableEnd
+}}}}</includeonly>

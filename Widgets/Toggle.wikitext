@@ -1,0 +1,8 @@
+<button class="collapsible-toggle collapsed" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapsible-toggle">
+<div class="d-flex flex-column align-items-center" style="min-width:7em">
+<span class="hide-expand-button" style="font-size:1.5rem">Show Help</span>
+<span class="hide-collapse-button" style="font-size:1.5rem">Help on</span>
+<span class="hide-expand-button fas fa-toggle-off fa-3x text-primary"></span>
+<span class="hide-collapse-button fas fa-toggle-on fa-3x text-success"></span>
+</div>
+</button>

@@ -1,0 +1,12 @@
+<noinclude>
+== Description ==
+Value mappings for [[Form:Create]].
+</noinclude><includeonly>{{#switch: {{{1}}}
+|true={{X/Pages/Messages|atlas-pages-content}}
+|false={{X/Pages/Messages|atlas-pages-headingonly}}
+|local = {{SITENAME}}	
+|global = Atlas Global
+|en={{#language:en|{{SITELANGUAGE}}}}
+|de={{#language:de|{{SITELANGUAGE}}}}
+|nl={{#language:nl|{{SITELANGUAGE}}}}
+}}</includeonly>

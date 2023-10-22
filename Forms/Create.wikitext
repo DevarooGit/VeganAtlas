@@ -1,0 +1,147 @@
+{{{info|create title=Create article:<br><page name>|edit title=Edit article:<br><page name>}}}
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>__NOTOC__
+
+{{#widget: Toggle}}
+
+{{{for template|X/Header|label=Header Image}}}
+<div class="d-flex flex-column my-3">
+<div>{{{field|image|placeholder=File name and extension (.png, .jpg, .jpeg)|class=w-100}}}</div>
+</div>
+{{{end template}}}
+
+<div class="collapse multi-collapse px-3 mb-5">
+''You can set a custom header image for this article. To set an image, type the file name of the image, including its extension (.png, .jpg, .jpeg, etc.). You can use any image hosted here on {{SITENAME}}, and you can also use any image hosted on [https://commons.wikimedia.org/wiki/Main_Page Wikimedia Commons]! Simply browse their repository and copy & paste the file name. Setting a header image is optional and you can always do this later on, too. ''
+</div>
+
+{{{for template|Section/Define|label=Sections|multiple|minimum instances=1|class=pt-1|displayed fields when minimized=heading,level}}}
+<div class="container">
+<div class="row my-3">
+<div class="col-12 pr-3">
+<div class="d-flex flex-column">
+<div>{{{field|name|placeholder=Section heading|mandatory|class=w-100 page-forms-section}}}</div>
+</div>
+</div>
+</div>
+<div class="row my-3">
+<div class="col-4">
+<div class="d-flex flex-column">
+<div class="mb-1">'''Heading level'''</div>
+<div>{{{field|level|input type=dropdown|values=2,3,4,5|default=2|mandatory|class=w-100 page-forms-dropdown}}}</div>
+</div>
+</div>
+<div class="col-4">
+<div class="d-flex flex-column">
+<div class="mb-1">'''Section contains'''</div>
+<div>{{{field|hascontent|input type=dropdown|values=true,false|default=true|mapping template=Form/Content|mandatory|class=w-100 page-forms-dropdown}}}</div>
+</div>
+</div>
+<div class="col-4 pr-3">
+<div class="d-flex flex-column">
+<div class="mb-1">'''Section hosted at'''</div>
+<div>{{{field|source|input type=dropdown|values=local,global|default=local|mapping template=Form/Source|class=w-100 page-forms-dropdown|mandatory}}}</div>
+</div>
+</div>
+</div>
+</div>{{{end template}}}
+
+<div class="collapse multi-collapse px-3 mb-5">
+''Here you can define article sections. You can add content to sections after saving this page! Please note that sections added on this page become available for individual peer-review. Thus, only major sections should be added. If you want to a subheading to an existing section, you should edit that section directly (i.e., do not add the subsection here) – unless that subsection should be peer-reviewed individually.
+
+'''''Section contains:''' Most sections added here will, obviously, contain content. However, it's possible to set "empty" headings for organizing. E.g., the page on chicken might have an empty, main heading called "Production", followed by sections for breeding, debeaking, etc. In the "Section contains" dropdown, you would then select "Heading only" for the Production section and "Content" for the subsections. Besides, the subsections should of course have a higher heading level.
+
+'''''Section hosted at:''' If the section you're adding is only relevant locally, it should be hosted at this wiki ({{SITENAME}}). If the section is relevant in other countries, too, it should be hosted and translated at Atlas Global. To add such content, select "Atlas Global" from the "Section hosted at" menu '''and''' use the full pagename as section heading (i.e., as it appears on Atlas Global). For instance, <code>Chicken/Debeaking</code> is correct but <code>Debeaking</code> is not sufficient. Do '''not''' include the language part of the pagename (e.g., <code>/de</code>); language codes are set automatically.
+
+</div>
+
+{{{for template|X/Category|multiple|label=Categories}}}
+{{{field|name|input type=combobox|values=Animals,Health,Environment,Psychology,Politics & Law,Veganism|class=w-100}}}
+{{{end template}}}
+<div class="collapse multi-collapse px-3">
+''Please select the category for this article. If none fits, you can enter a new category.''
+</div>
+
+<!-- Hidden until there are more articles in the Atlas network -->
+<!--<div class="d-none">-->
+<div class="collapse multi-collapse">
+== Add Interwiki Links ==
+<div class="my-3 px-3">
+{{Icon|Check}} Enter local pagenames to link to similar page in the Atlas network<br>
+{{Icon|Warning}} Please keep the default "Add page" page if no similar page exists
+</div>
+</div>
+
+<div class="position-relative my-5 d-none" style="border:1px solid #2a4b8d;">
+<div class="position-absolute bg-white" style="top:-1.5rem; left: 0.75rem; display: block; padding: 5px; font-size: 1.5rem;">
+Interwiki links
+</div>
+{{{for template|X/Interwiki}}}
+<div class="d-flex justify-content-center p-4">
+{| class="wikitable"
+! class="pr-3" | Country
+! class="pr-3" | Site Language
+! class="pr-3" | Vegan Atlas Link
+! class="pr-3" | Local Pagename
+|-
+|🇺🇸 '''United States'''
+|English
+|[https://www.veganatlas.org/en-us Atlas US]
+|{{{field|en-us|placeholder=Pagename at Atlas US|default=Atlas:Add_page}}}
+|-
+|🇬🇧 '''United Kingdom'''
+|English
+|[https://www.veganatlas.org/en-gb Atlas UK]
+|{{{field|en-gb|placeholder=Pagename at Atlas UK|default=Atlas:Add_page}}}
+|-
+|🇦🇺 '''Australia'''
+|English
+|[https://www.veganatlas.org/en-au Atlas AU]
+|{{{field|en-au|placeholder=Pagename at Atlas AU|default=Atlas:Add_page}}}
+|-
+|🇳🇿 '''New Zealand'''
+|English
+|[https://www.veganatlas.org/en-nz Atlas NZ]
+|{{{field|en-nz|placeholder=Pagename at Atlas NZ|default=Atlas:Add_page}}}
+|-
+|🇨🇦 '''Canada'''
+|English
+|[https://www.veganatlas.org/en-ca Atlas CA]
+|{{{field|en-ca|placeholder=Pagename at Atlas CA|default=Atlas:Add_page}}}
+|-
+|🇩🇪 '''Germany'''
+|German
+|[https://www.veganatlas.org/de-de Atlas DE]
+|{{{field|de-de|placeholder=Pagename at Atlas DE|default=Atlas:Seite_hinzufügen}}}
+|-
+|🇳🇱 '''Netherlands'''
+|Dutch
+|[https://www.veganatlas.org/nl-nl Atlas NL]
+|{{{field|nl-nl|placeholder=Pagename at Atlas NL|default=Atlas:Pagina_toevoegen}}}
+|-
+|🇫🇷 '''France'''
+|French
+|[https://www.veganatlas.org/fr-fr Atlas FR]
+|{{{field|fr-fr|placeholder=Pagename at Atlas FR|default=Atlas:Ajouter_page}}}
+|-
+|🇳🇱 '''Spain'''
+|Spanish
+|[https://www.veganatlas.org/es-es Atlas ES]
+|{{{field|es-es|placeholder=Pagename at Atlas ES|default=Atlas:Añadir_página}}}
+|-
+|🇨🇳 '''China'''
+|Mandarin
+|[https://www.veganatlas.org/cz-cn Atlas CN]
+|{{{field|zh-cn|placeholder=Pagename at Atlas CN|default=Atlas:添加页面}}}
+|-
+|🇮🇳 '''India'''
+|Hindi
+|[https://www.veganatlas.org/hi-in Atlas IN]
+|{{{field|hi-in|placeholder=Pagename at Atlas IN|default=Atlas:पृष्ठ_जोड़ें}}}
+|-
+|🌐 World
+|English
+|[https://www.veganatlas.org/global Atlas Global]
+|{{{field|global|placeholder=Pagename at Atlas Global|default=Atlas:Add_page}}}
+|}
+{{{end template}}}
+</div>
+</div>

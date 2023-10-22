@@ -1,0 +1,13 @@
+<noinclude>
+== Description ==
+This template contains the header row for the table created by the [[Template:X/Threads/DisplayThreads|DisplayThreads]] template.
+
+== Preview ==
+</noinclude>
+<div class="overflow-auto rounded-table-bottom">
+{| class="wikitable sortable w-100 m-0"
+! class="text-left" style="width:55%" | {{X/Threads/Messages|atlas-threads-table-topic}}
+! class="text-left" style="width:15%" | {{X/Threads/Messages|atlas-threads-table-author}}
+! class="text-left" style="width:15%" | {{X/Threads/Messages|atlas-threads-table-date}}
+! class="text-left" style="width:15%" | {{X/Threads/Messages|atlas-threads-table-language}}
+|-

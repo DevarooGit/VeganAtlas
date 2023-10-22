@@ -1,0 +1,90 @@
+<includeonly>{{SetProperty|Language code}}{{SetProperty|Is translation}}
+= {{#getdisplaytitle:{{FULLPAGENAME}} }} =
+{{#ifexpr:  {{#ask: [[Category:{{PAGENAME}}]]|format=count}} > 0
+|   <div class="d-flex justify-content-between align-items-center border-bottom mb-5">
+        <!-- Tabs to filter the displayed articles -->
+        <ul class="nav nav-pills mx-0 my-3" id="filter-pills" role="tablist">
+            <li class="nav-item" role="presentation">
+                {{#widget: Button/Pills
+                |ID=all
+                |heading=   {{#switch: {{PAGELANGUAGE}}
+                            |en=All
+                            |de=Alle
+                            }}
+                |active=active
+                |ariaselected=true
+                }}
+            </li>
+            <li class="nav-item px-2" role="presentation">
+                {{#widget: Button/Pills
+                |ID=source
+                |heading=   {{#switch: {{PAGELANGUAGE}}
+                            |en=English source
+                            |de=Deutsche Quelle
+                            }}
+                |ariaselected=false
+                }}
+            </li>
+            <li class="nav-item px-2" role="presentation">
+            {{#widget: Button/Pills
+            |ID=translated
+            |heading=   {{#switch: {{PAGELANGUAGE}}
+                        |en=Translated to English
+                        |de=Ins Deutsche übersetzt
+                        }}
+            |ariaselected=false
+            }}
+            </li>
+        </ul>
+        <div class="dropdown">{{#widget:Button/Dropdown|buttonlabel=Languages}}<div class="dropdown-menu">
+            <div class="dropdown-item">[[Atlas:{{ROOTPAGENAME}}|English]]</div>
+            <div class="dropdown-item">[[Atlas:{{ROOTPAGENAME}}/de|German]]</div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="filter-pills-content">
+        <!-- Articles that have the same language as the source page are always hidden-->
+        <!-- Display all articles in this category -->
+        <div class="tab-pane fade show active" id="all-pills-content" role="tabpanel" aria-labelledby="all-pills-tab">
+            {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]]|format=ul}}
+        </div>
+        <!-- Display articles that are originally written in the selected language -->
+        <div class="tab-pane fade" id="source-pills-content" role="tabpanel" aria-labelledby="source-pills-tab">
+            {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]][[Is translation::!true]]|format=ul}}
+        </div>
+        <!-- Display articles that were translated to the selected language -->
+        <div class="tab-pane fade" id="translated-pills-content" role="tabpanel" aria-labelledby="translated-pills-tab">
+            {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]][[Is translation::true]]|format=ul}}
+        </div>
+    </div>
+    <!-- Input box to create another article in this category -->
+    <div class="d-flex justify-content-center border-top mt-5 pt-5">
+        {{#forminput:form=create
+        |button text=   {{#switch: {{PAGELANGUAGE}}
+                        |en=Add a new article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                        |de=Erstelle einen neuen Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                        }}
+        |placeholder=   {{#switch: {{PAGELANGUAGE}}
+                        |en=Article title
+                        |de=Titel des Artikels
+                        }}
+        |query string=Category[0][name]={{PAGENAME}}
+        |no autofocus
+        }}
+    </div>
+|   <!-- Input box to create the first article in this category -->
+    <div class="d-flex flex-column align-items-center p-md-5">
+        {{#forminput:form=create
+        |button text=   {{#switch: {{PAGELANGUAGE}}
+                        |en=Add the first article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                        |de=Erstelle den ersten Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                        }}
+        |placeholder=   {{#switch: {{PAGELANGUAGE}}
+                        |en=Article title
+                        |de=Titel des Artikels
+                        }}
+        |query string=Category[0][name]={{PAGENAME}}
+        |no autofocus
+        }}
+    </div>
+}}</includeonly>

@@ -1,0 +1,20 @@
+<span {{#if:{{{1|}}}
+|class="{{#switch: {{{1}}}
+|Check=fas fa-check-circle text-success
+|Cross=fas fa-times-circle text-danger
+|CrossYellow=fas fa-times-circle text-warning
+|Warning=fas fa-exclamation-triangle text-warning
+|WarningRed=fas fa-exclamation-triangle text-danger
+|Heart=fas fa-heart text-danger
+|Info=fas fa-info-circle text-primary
+|Puzzle=fas fa-puzzle-piece text-primary
+|Setting=fas fa-cog text-secondary
+|Smart=far fa-lightbulb text-warning
+}}"
+|{{#if:{{{fa|}}}
+|{{#if: {{{color|}}}
+|class="{{{fa}}}" style="color:{{{color}}}"
+|class="{{{fa}}}"
+}}
+|}}
+}}></span>

@@ -1,0 +1,9 @@
+<includeonly>{{#tag:inputbox |
+type=create
+hidden=yes
+default={{{fullpagename}}}
+buttonlabel={{X/Pages/Messages|atlas-section-edit}}
+inline=true
+useve=true
+id=edit-subpage
+}}</includeonly>

@@ -1,0 +1,9 @@
+<includeonly>
+| class="text-left" style="width:55%" | [https://www.veganatlas.org/global/{{{Topic}}} {{{Title}}}]
+| class="text-left" style="width:15%" | [https://www.veganatlas.org/global/User:{{{Author}}} {{{Author}}}]
+| class="text-left" style="width:15%" | {{#time:Y-m-d|{{{Date}}}}}
+| class="text-left" style="width:15%" | {{#switch: {{#count:{{{Owner}}}|/}}
+                                        |1={{#language:en}}
+                                        |#default={{#language:{{#titleparts: {{{Owner}}}|1|-1}} }}
+                                        }}
+|-</includeonly>

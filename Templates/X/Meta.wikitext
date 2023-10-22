@@ -1,0 +1,66 @@
+<noinclude>__NOTOC__
+{{X/General/Partial|Section}}
+== Purpose ==
+This template is intended for use on subpages and populates the Meta table (Cargo) with page information. The template is automatically added to pages that are created through the [[Template:X/Pages/AddSubpage|AddSubpage template]] (via the [[Template:X/Pages/SubpageBoilerplate|subpage boilerplate]]).
+
+== Dependencies ==
+=== Extensions ===
+[https://www.mediawiki.org/wiki/Extension:Cargo Cargo] {{#set: Uses extension=Cargo}}<br>
+[https://www.mediawiki.org/wiki/Extension:Display_Title Display Title] {{#set: Uses extension=Display Title}}<br>
+[https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki Semantic MediaWiki] {{#set: Uses extension=Semantic MediaWiki}}<br>
+
+=== Templates ===
+[[Template:X/General/Decoder|XYZ/Resources/General/Decoder]] {{#set: Uses template=XYZ/Resources/General/Decoder}}<br>
+[[Template:X/Meta/DeclareMetaTable|XYZ/Resources/Meta/DeclareMetaTable]] {{#set: Uses template=XYZ/Resources/Meta/DeclareMetaTable}}<br>
+[[Template:X/Meta/AttachMetaTable|XYZ/Resources/Meta/AttachMetaTable]] {{#set: Uses template=XYZ/Resources/Meta/AttachMetaTable}}<br>
+[[Template:Icon/Puzzle|Icon/Puzzle]] {{#set: Uses template=Icon/Puzzle}}
+</noinclude>
+{{#switch: {{SITENAME}}
+|Atlas Global = <languages/>
+|#default=
+}}
+<div class="meta-header d-flex justify-content-between border-bottom pb-1 mb-3">
+<!-- Breadcrumbs -->
+<div>{{#switch: {{SUBPAGENAME}}
+|{{PAGELANGUAGE}} = [[{{#ifexist: {{ROOTPAGENAME}}/{{SUBPAGENAME}}|{{ROOTPAGENAME}}/{{SUBPAGENAME}}|{{ROOTPAGENAME}}}}]] > {{#titleparts: {{#getdisplaytitle:{{FULLPAGENAME}} }}|1|-1}}
+|#default = [[{{ROOTPAGENAME}}]] > {{SUBPAGENAME}} }}</div>
+<!-- Documentation -->
+<div>{{#switch: {{SUBPAGENAME}}
+|{{PAGELANGUAGE}} = [[{{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}|Documentation]]
+|#default = [[{{FULLPAGENAME}}/doc|Documentation]]}}</div>
+</div>
+{{X/Pages/AttachMetaTable
+|size =             {{REVISIONSIZE}}	
+|authors =          {{PAGEAUTHORS}}
+|documentation =    {{#switch: {{SUBPAGENAME}}
+                    <!-- Since SUBPAGENAME = PAGELANGUAGE, we know that this template is located on a page with directory pattern ~/pagename/{language-code} and check if the doc exists at ~/pagename/doc/{language-code}. -->
+                    |{{PAGELANGUAGE}} = {{#ifexist: {{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}
+                                        |yes <!-- HasDocumentation = true -->
+                                        |no <!-- HasDocumentation = false -->
+                                        }}
+                    <!-- Since SUBPAGENAME ≠ PAGELANGUAGE, we know that this template is located on a page with directory pattern ~/pagename and check if the doc exists at ~/pagename/doc. -->
+                    |#default = {{#ifexist: {{FULLPAGENAME}}/doc
+                                |yes <!-- HasDocumentation = true -->
+                                |no <!-- HasDocumentation = false -->
+                                }}
+                    }}
+|editprotection =   {{PROTECTIONLEVEL:edit}}
+|threadsOpen =      {{#ask:
+                    [[Topic owner::{{X/General/Decoder|{{FULLPAGENAMEE}}}}]]
+                    [[Topic is locked::false]]
+                    |format=count
+                    |default=
+                    |no html
+                    }}
+|threadsClosed =    {{#ask:
+                    [[Topic owner::{{X/General/Decoder|{{FULLPAGENAMEE}}}}]]
+                    [[Topic is locked::true]]
+                    |format=count
+                    |default=
+                    |no html
+                    }}
+|reviewsAccepted =      
+|reviewsAcceptedRev =   
+|reviewsRejected =      
+}}<!-- The empty div in the next line prevents Visual Editor from placing the text that follows this template in the <noinclude> tags that surround this template. -->
+<div></div>

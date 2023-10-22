@@ -1,0 +1,30 @@
+{{#switch: {{SITENAME}}
+|Atlas Global = <languages/>
+|#default=
+}}
+{{SetProperty|Language code}}
+{{SetProperty|Is translation}}
+{{SetProperty|Is translation mirror}}
+<div class="container mt-4 p-0">
+<div class="row m-0">
+<!-- Col-1: Table of contents -->
+<div class="col-12 col-md-6 col-lg-5 mb-5 mb-md-0 p-0">
+<div class="card">{{#widget:toc}}
+<div class="collapse" id="collapsible-toc">
+<div class="card-body">
+__TOC__
+</div>
+</div>
+</div>
+</div>
+<!-- Col-2: Image -->
+<div class="col-12 col-md-5 offset-md-1 offset-lg-2 p-0">
+[[File:{{#If: {{{image|}}} | {{{image}}} | Undraw-reading-book.png}}|class=img-width {{#switch: {{{border|}}} | false = | #default = border}}]]
+</div>
+</div>
+</div>
+<noinclude>
+__FORCETOC__
+== Header demo ==
+=== Subheader demo ===
+</noinclude>

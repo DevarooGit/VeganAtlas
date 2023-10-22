@@ -1,0 +1,28 @@
+<noinclude>
+{{#template_params:
+|size
+|authors
+|lastrevision
+|documentation
+|threadsOpen
+|threadsClosed
+|reviewsAccepted
+|reviewsAcceptedRev
+|reviewsRejected
+|editprotection
+}}
+{{#cargo_attach:_table=Meta
+|size=Integer
+|authors=List (,) of String
+|lastrevision=Date
+|documentation=Boolean
+|threadsOpen=Integer
+|threadsClosed=Integer
+|reviewsAccepted=Integer
+|reviewsAcceptedRev=Integer
+|reviewsRejected=Integer
+|editprotection=String
+}}
+</noinclude>
+<includeonly>{{#cargo_store:_table=Meta}}<nowiki /></includeonly>
+

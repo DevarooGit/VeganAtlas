@@ -1,0 +1,19 @@
+<noinclude>
+== Purpose ==
+Adds interwiki links.
+</noinclude>
+<includeonly>
+{{#if: {{{en-us|}}}|[[atlas-en-us:{{ucfirst:{{{en-us}}}}}]]|[[atlas-en-us:Atlas:Add_page]]}}
+{{#if: {{{en-gb|}}}|[[atlas-en-gb:{{ucfirst:{{{en-gb}}}}}]]|[[atlas-en-gb:Atlas:Add_page]]}}
+{{#if: {{{en-au|}}}|[[atlas-en-au:{{ucfirst:{{{en-au}}}}}]]|[[atlas-en-au:Atlas:Add_page]]}}
+{{#if: {{{en-nz|}}}|[[atlas-en-nz:{{ucfirst:{{{en-nz}}}}}]]|[[atlas-en-nz:Atlas:Add_page]]}}
+{{#if: {{{en-ca|}}}|[[atlas-en-ca:{{ucfirst:{{{en-ca}}}}}]]|[[atlas-en-ca:Atlas:Add_page]]}}
+{{#if: {{{de-de|}}}|[[atlas-de-de:{{ucfirst:{{{de-de}}}}}]]|[[atlas-de-de:Atlas:Seite_hinzufügen]]}}
+{{#if: {{{nl-nl|}}}|[[atlas-nl-nl:{{ucfirst:{{{nl-nl}}}}}]]|[[atlas-nl-nl:Atlas:Pagina_toevoegen]]}}
+{{#if: {{{fr-fr|}}}|[[atlas-fr-fr:{{ucfirst:{{{fr-fr}}}}}]]|[[atlas-fr-fr:Atlas:Ajouter_page]]}}
+{{#if: {{{es-es|}}}|[[atlas-es-es:{{ucfirst:{{{es-es}}}}}]]|[[atlas-es-es:Atlas:Añadir_página]]}}
+{{#if: {{{zh-cn|}}}|[[atlas-zh-cn:{{ucfirst:{{{zh-cn}}}}}]]|[[atlas-zh-cn:Atlas:添加页面]]}}
+{{#if: {{{hi-in|}}}|[[atlas-hi-in:{{ucfirst:{{{hi-in}}}}}]]|[[atlas-hi-in:Atlas:पृष्ठ_जोड़ें]]}}
+{{#if: {{{global|}}}|[[atlas-global:{{ucfirst:{{{global}}}}}]]|[[atlas-global:Atlas:Add_page]]}}
+[[atlas-addnew:Atlas:Add_country_or_language]]
+</includeonly>

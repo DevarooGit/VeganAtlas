@@ -1,0 +1,37 @@
+<noinclude>
+== Description ==
+This widget displays a "Join the discussion" button that is intended for anonymous (non-logged in) users. Clicking the button opens a modal that informs the user that only logged-in users can participate in discussions. The modal contains messages and pertinent buttons for (a) creating an account or (b) providing feedback through a feedback form.
+</noinclude><includeonly>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddThreadModal-<!--{$pagename|escape:'html'}-->-<!--{$section|escape:'html'}-->" title="{{X/Threads/Messages|atlas-threads-modal-btn}}">
+{{X/Threads/Messages|atlas-threads-modal-btn}}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="AddThreadModal-<!--{$pagename|escape:'html'}-->-<!--{$section|escape:'html'}-->" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header pb-0 border-bottom-0"">
+<button type="button" class="close" style="min-width: 20px" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" style="font-size:1.5em" title="{{X/Threads/Messages|atlas-threads-modal-close-window}}">&times;</span>
+</button>
+</div>
+<div class="modal-body container pt-0 mb-lg-2">
+<div class="row d-flex align-items-center">
+<div class="col-12 col-lg-8">
+<p class="h3 mt-0 p-0">{{X/Threads/Messages|atlas-threads-modal-title}}</p>
+<p>{{X/Threads/Messages|atlas-threads-modal-signup}}</p>
+<p>{{X/Threads/Messages|atlas-threads-modal-feedback}}</p>
+<div class="d-flex flex-column flex-lg-row mt-4">
+<div class="btn btn-primary btn-lg-responsive mr-lg-3 mb-3 mb-lg-0">{{X/Threads/Messages|atlas-threads-modal-signup-btn}}</div>
+<div class="btn btn-primary btn-lg-responsive">{{X/Threads/Messages|atlas-threads-modal-feedback-btn}}</div>
+</div>
+</div>
+<div class="col-8 offset-2 col-lg-4 offset-lg-0 mt-3 mt-lg-0 p-3">
+<img src="https://veganatlas.org/mediawiki/en-gb/images/8/85/Undraw_Chatting.png" class="w-100" alt="{{X/Threads/Messages|atlas-threads-modal-illustration-alt}}">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></includeonly>

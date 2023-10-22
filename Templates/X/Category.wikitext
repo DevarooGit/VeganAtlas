@@ -1,0 +1,24 @@
+<noinclude>
+== Purpose ==
+Adds a category link.
+
+== Template Data ==
+<templatedata>
+{
+    "description": "Add a category link",
+    "params": {
+        "name": {
+            "label": "Category name",
+            "type": "string",
+            "example": "Animals",
+            "required": true,
+            "description": "Every article should be assigned to one of the major topics (i.e., Animals, Health, ...). Additional categories (e.g., \"Food\" or \"Experiments\" for animals) are also possible."
+        }
+    }
+}
+</templatedata>
+<noinclude>
+<includeonly>{{#if:{{{name}}}
+|[[Category:{{ucfirst:{{{name}}}}}]]
+|
+}}<includeonly>

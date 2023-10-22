@@ -1,0 +1,17 @@
+<noinclude>__NOTOC__
+{{X/General/Partial|Section}}
+== Purpose ==
+This template contains the content that should be preloaded when new subpages are created (for article sections); i.e., the [[Template:Meta|meta template]] wrapped in noinclude tags. The boilerplate template is called by the [[Template:X/Pages/AddSubpage|AddSubpage template]].
+
+== Dependencies ==
+=== Templates ===
+<p class="m-0">[[Template:Meta|Meta]] {{#set: Uses template=Meta}}</p>
+:↳[[Template:X/General/Decoder|Decoder]]
+[[Template:X/Pages/SubpageStatus|SubpageStatus]] {{#set: Uses template=XYZ/Resources/Pages/SubpageStatus}}
+
+== Boilerplate content ==
+</noinclude><no<includeonly></includeonly>include>{{X/Misc/Meta}}</no<includeonly></includeonly>include><!-- Content below this line --><nowiki/>
+
+
+
+<noinclude/>
