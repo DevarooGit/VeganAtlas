@@ -21,7 +21,7 @@
                     "fileNameSuffix": ".wikitext"
         		    },
                     {
-                    "namespace": "NS_FORM",
+                    "namespace": "PF_NS_FORM",
                     "fileNamePrefix": "Forms/",
                     "fileNameSuffix": ".wikitext"
                     },
@@ -175,12 +175,12 @@
                 },
                 {
                     "name": "Forms/Create",
-                    "namespace": "NS_FORM",
+                    "namespace": "PF_NS_FORM",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Create"
                 },
                 {
                     "name": "Forms/Review",
-                    "namespace": "NS_FORM",
+                    "namespace": "PF_NS_FORM",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Review"
                 },
                 {
