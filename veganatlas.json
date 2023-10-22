@@ -27,17 +27,17 @@
         		"namespaceSettings": [
         		    {
         			"namespace": "NS_TEMPLATE",
-                    "fileNamePrefix": "Templates/",
+                    "fileNamePrefix": "Templates%2F",
                     "fileNameSuffix": ".wikitext"
         		    },
                     {
                     "namespace": "PF_NS_FORM",
-                    "fileNamePrefix": "Forms/",
+                    "fileNamePrefix": "Forms%2F",
                     "fileNameSuffix": ".wikitext"
                     },
                     {
                     "namespace": "NS_WIDGET",
-                    "fileNamePrefix": "Widgets/",
+                    "fileNamePrefix": "Widgets%2F",
                     "fileNameSuffix": ".wikitext"
                     }
         		]
@@ -74,12 +74,12 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
                 },
                 {
-                    "name": "Section/Define",
+                    "name": "Section%2FDefine",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Define.wikitext"
                 },
                 {
-                    "name": "Section/Transclude",
+                    "name": "Section%2FTransclude",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Transclude.wikitext"
                 },
