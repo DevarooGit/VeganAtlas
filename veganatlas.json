@@ -24,7 +24,7 @@
         	    },
             "pages":
                 {
-                    "name": "PageExchange2",
+                    "name": "Templates/PageExchange2.wikitext",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/PageExchange2.wikitext"
                 }
