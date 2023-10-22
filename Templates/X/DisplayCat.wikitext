@@ -64,7 +64,7 @@
             </div>
     }}
     <!-- Input box to create another article in this category -->
-    <div class="position-fixed" style="bottom:6rem; right:3rem" type="button" data-toggle="modal" data-target="#add-article"><span class="text-primary far fa-edit fa-3x"></span></div>
+    <div class="position-fixed" style="bottom:6rem; right:3rem" type="button" data-toggle="modal" data-target="#add-article"><span class="text-primary far fa-edit fa-3x" id="add-article-btn"></span></div>
     <div class="modal fade" id="add-article" tabindex="-1" role="dialog" aria-labelledby="AddArticle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
