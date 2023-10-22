@@ -1,4 +1,4 @@
-<includeonly>{{SetProperty|Language code}}{{SetProperty|Is translation}}
+<includeonly>{{X/SetProperty|Language code}}{{X/SetProperty|Is translation}}
 = {{#getdisplaytitle:{{FULLPAGENAME}} }} =
 {{#ifexpr:  {{#ask: [[Category:{{PAGENAME}}]]|format=count}} > 0
 |   <div class="d-flex justify-content-between align-items-center border-bottom mb-5">

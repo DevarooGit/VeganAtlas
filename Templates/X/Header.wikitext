@@ -2,9 +2,9 @@
 |Atlas Global = <languages/>
 |#default=
 }}
-{{SetProperty|Language code}}
-{{SetProperty|Is translation}}
-{{SetProperty|Is translation mirror}}
+{{X/SetProperty|Language code}}
+{{X/SetProperty|Is translation}}
+{{X/SetProperty|Is translation mirror}}
 <div class="container mt-4 p-0">
 <div class="row m-0">
 <!-- Col-1: Table of contents -->
