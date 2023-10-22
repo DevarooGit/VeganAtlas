@@ -1,38 +1,34 @@
 <!-- Header -->
 <div class="d-flex justify-content-between align-items-end my-3">
     <h{{{level}}} class="flex-fill m-0 pt-0 pb-1 border-bottom">{{{heading}}}</h{{{level}}}>
-    <div class="navbar navbar-expand-lg text-center order-1 p-0">
-        {{#Widget: Button/Toggler|ID={{{id}}}-nav-tab}}
-        <div class="collapse navbar-collapse section-navbar nav-tabs text-nowrap" id="{{{id}}}-nav-tab" role="tablist" style="z-index:1">
-            <!-- Article tab -->
-            {{#Widget: Button/Icon
+    <div class="navbar navbar-expand-lg text-center order-1 p-0">{{#Widget: Button/Toggler|ID={{{id}}}-nav-tab}}
+        <div class="collapse navbar-collapse section-navbar nav-tabs text-nowrap" id="{{{id}}}-nav-tab" role="tablist" style="z-index:1"><!-- 
+            Article tab
+            -->{{#Widget: Button/Icon
             |ID={{{id}}}-article
             |btn=active w-100
             |datatoggle=tab
             |ariaselected=true
             |icon=fas fa-book-reader text-primary
             |title=Article
-            }}
-            <!-- Author & Revision date tab - move to article? 
-            {{#Widget: Button/Icon|ID={{{id}}}-authors|icon=fas fa-user-astronaut text-primary|ariaselected=false}} -->
-            <!-- Documentation tab -->
-            {{#Widget: Button/Icon
+            }}<!--
+            Documentation tab
+            -->{{#Widget: Button/Icon
             |ID={{{id}}}-documentation
             |btn=w-100
             |datatoggle=tab
             |ariaselected=false
             |icon=fas fa-file-alt text-primary
             |title=Documentation
-            }}
-            <!-- Review tab -->
-            {{#Widget: Button/Icon
+            }}<!--
+            Review tab
+            -->{{#Widget: Button/Icon
             |ID={{{id}}}-reviews
             |btn=w-100 pl-0
             |datatoggle=tab
             |ariaselected=false
             |title=Peer-Reviews
-            |icon=fa fa-users text-primary pl-3
-            <!--
+            |icon=fa fa-users text-primary pl-3<!--
             |icon= {{#ifexpr:   {{X/Reviews/CountReviews
                                 |source={{{source}}}
                                 |sourcepage={{{sourcepage}}}
@@ -73,10 +69,10 @@
                             }}
                         |
                         }}
-                    }}-->
-            }}
-            <!-- Threads tab -->
-            {{#Widget: Button/Icon
+                    }}
+            -->}}<!-- 
+            Threads tab
+            -->{{#Widget: Button/Icon
             |ID={{{id}}}-threads
             |btn=w-100
             |datatoggle=tab
@@ -111,10 +107,9 @@
                         }}
                     |
                     }}
-            }}
-            <!-- Actions tab -->
-            <div class="dropdown">
-                {{#Widget: Button/Icon
+            }}<!--
+            Actions tab
+            --><div class="dropdown">{{#Widget: Button/Icon
                 |ID={{{id}}}-actions
                 |btn=w-100
                 |datatoggle=dropdown
@@ -127,17 +122,14 @@
                 }}
                 <div class="dropdown-menu rounded" aria-labelledby="{{{id}}}-actions-dropdown">
                     {{#switch: {{{source}}}
-                    |local =    <!-- Edit -->
-                                <div class="dropdown-item position-relative hide-external">
-                                    [https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">Edit</span>]
-                                </div>
-                                <!-- Comment -->
-                                <div class="dropdown-item position-relative">
-                                    [[{{{talkpagename}}}|<span class="stretched-link">{{Section/Transclude/Messages|atlas-section-comment}}</span>]]
-                                </div>
-                                <!-- Review -->
-                                <div class="dropdown-item disabled">
-                                    {{#formlink:form=Review
+                    |local =<!-- Edit 
+                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">Edit</span>]
+                                </div><!--
+                                Comment
+                                --><div class="dropdown-item position-relative">[[{{{talkpagename}}}|<span class="stretched-link">{{Section/Transclude/Messages|atlas-section-comment}}</span>]]
+                                </div><!--
+                                Review
+                                --><div class="dropdown-item disabled">{{#formlink:form=Review
                                     |link text={{Section/Transclude/Messages|atlas-section-review}}
                                     |link=
                                     |new window
@@ -148,13 +140,11 @@
                                     &XYZ/Resources/Reviews/AttachReviewTable[forPageRev]={{#time: H:i, d F Y | {{REVISIONTIMESTAMP:{{{fullpagename}}}}} }}
                                     &XYZ/Resources/Reviews/AttachReviewTable[forPageLang]={{CONTENTLANG}}
                                     }}
+                                </div><!--
+                                View
+                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}} <span class="stretched-link">View</span>]
                                 </div>
-                                <!-- View -->
-                                <div class="dropdown-item position-relative hide-external">
-                                    [https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}} <span class="stretched-link">View</span>]
-                                </div>
-                    |global =   <div class="dropdown-item position-relative fas fa-globe">
-                                    [https://www.veganatlas.org/global/{{#replace:{{#explode:{{#titleparts:{{{sourcepage}}}|-1}}/{{CONTENTLANG}}|:|1|2}}#{{#titleparts:{{{sourcepage}}}||-1}}||_}} Atlas Global]
+                    |global =   <div class="dropdown-item position-relative fas fa-globe">[https://www.veganatlas.org/global/{{#replace:{{#explode:{{#titleparts:{{{sourcepage}}}|-1}}/{{CONTENTLANG}}|:|1|2}}#{{#titleparts:{{{sourcepage}}}||-1}}||_}} Atlas Global]
                                 </div>
                     }}
                 </div>
@@ -164,21 +154,20 @@
 </div>
 <div class="tab-content order-2" id="nav-tabContent">
     <!-- Content-->
-    <div class="tab-pane fade show active" id="{{{id}}}-article" role="tabpanel" aria-labelledby="{{{id}}}-article-tab">
-        <!-- No translation note -->
-        {{#switch: {{{notranslation|}}}
+    <div class="tab-pane fade show active" id="{{{id}}}-article" role="tabpanel" aria-labelledby="{{{id}}}-article-tab"><!--
+        No translation note
+        -->{{#switch: {{{notranslation|}}}
         |true = <div class="d-flex justify-content-between align-items-end alert-light text-dark border border-secondary font-italic p-2 mb-3">
                     <div>This section hasn't been translated yet, so we're showing it in its original language.</div>
                     <div class="btn btn-light border-secondary text-dark px-1 py-0">[[{{{fullpagename}}}|Translate]]</div>
                 </div>
-        }}
-        {{#switch: {{{source}}}
+        }}{{#switch: {{{source}}}
         | local =   {{#switch:  {{{pageform}}}
-                    |normal =   {{#ifexist: {{{fullpagename}}}/en <!-- Use /en version if it exists. -->
+                    |normal={{#ifexist: {{{fullpagename}}}/en <!-- Use /en version if it exists. -->
                                 |{{:{{{fullpagename}}}/en}}
                                 |{{:{{{fullpagename}}}}}
                                 }}
-                    |translated = {{:{{{fullpagename}}}}} <!-- Fullpagename already includes /xx -->
+                    |translated ={{:{{{fullpagename}}}}} <!-- Fullpagename already includes /xx -->
                     }}
         | global =  {{#set: Has content from=Global}}
                     {{raw:atlas-global::{{{fullpagename}}}}}
@@ -186,21 +175,19 @@
     </div>
     <!-- Documentation -->
     <div class="tab-pane fade overflow-hidden pt-5 pr-3 pb-3 pl-5" style="margin-top:-1em; border-left: 10px solid #007bff;" id="{{{id}}}-documentation" role="tabpanel" aria-labelledby="{{{id}}}-documentation-tab">
-        <div class="h3 mt-0 mb-4 border-0">
-            {{Section/Transclude/Messages|atlas-section-documentation}}
-        </div>
-        <!-- Meta data -->
-            <div class="my-3" id="{{{id}}}-documentation-meta">
-            <!-- Authors -->
-            <div class="float-left mr-1">{{Section/Transclude/Messages|atlas-section-authors}}:</div>
-            {{X/Pages/DisplayAuthors|fullpagename={{{fullpagename}}}}}
-            <!-- Last revision -->
-            <div class="mt-1">
-            {{Section/Transclude/Messages|atlas-section-lastrevision}}:  {{REVISIONYEAR: {{{fullpagename}}}}}-{{REVISIONMONTH: {{{fullpagename}}}}}-{{REVISIONDAY: {{{fullpagename}}}}}
+        <div class="h3 mt-0 mb-4 border-0">{{Section/Transclude/Messages|atlas-section-documentation}}</div>
+        <!-- Meta data 
+            --><div class="my-3" id="{{{id}}}-documentation-meta"><!--
+            Authors 
+            --><div class="float-left mr-1">{{Section/Transclude/Messages|atlas-section-authors}}:</div><!--
+            -->{{X/Pages/DisplayAuthors|fullpagename={{{fullpagename}}}}}<!--
+            Last revision
+            --><div class="mt-1"><!--
+            -->{{Section/Transclude/Messages|atlas-section-lastrevision}}:  {{REVISIONYEAR: {{{fullpagename}}}}}-{{REVISIONMONTH: {{{fullpagename}}}}}-{{REVISIONDAY: {{{fullpagename}}}}}
             </div>
-        </div>
-        <!-- Transclude documentation -->
-        <div>
+        </div><!--
+        Transclude documentation
+        --><div>
             {{#switch:  {{{source}}}
             |local =    {{#switch:      {{{doc}}}
                         |true =         {{#ifexist: {{{fullpagename}}}/doc/en <!-- Use /en version if it exists. -->
