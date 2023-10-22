@@ -14,7 +14,6 @@
 			"version": "0.1",
 			"pages": [
 					"name": "PageExchange",
-					"namespace": "NS_TEMPLATE",
 					"url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/PageExchange"
 			]
 		}
