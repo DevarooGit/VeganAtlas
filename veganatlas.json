@@ -74,14 +74,14 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
                 },
                 {
-                    "name": "Templates/X/Section/Define.wikitext",
+                    "name": "Templates/Section/Define.wikitext",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Section/Define.wikitext"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Define.wikitext"
                 },
                 {
-                    "name": "Templates/X/Section/Transclude.wikitext",
+                    "name": "Templates/Section/Transclude.wikitext",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Section/Transclude.wikitext"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Transclude.wikitext"
                 },
                 {
                     "name": "Templates/X/Pages/AddSubpage.wikitext",
@@ -121,7 +121,7 @@
                 {
                     "name": "Templates/X/Pages/Status.wikitext",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/Stats.wikitext"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/Status.wikitext"
                 },
                 {
                     "name": "Templates/X/Reviews/ComingSoon.wikitext",
@@ -187,11 +187,6 @@
                     "name": "Forms/Create.wikitext",
                     "namespace": "PF_NS_FORM",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Create.wikitext"
-                },
-                {
-                    "name": "Forms/Review.wikitext",
-                    "namespace": "PF_NS_FORM",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Review.wikitext"
                 },
                 {
                     "name": "Widgets/AddThread-Modal.wikitext",
