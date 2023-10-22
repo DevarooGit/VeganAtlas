@@ -27,17 +27,17 @@
         		"namespaceSettings": [
         		    {
         			"namespace": "NS_TEMPLATE",
-                    "fileNamePrefix": "Templates%2F",
+                    "fileNamePrefix": "Templates/",
                     "fileNameSuffix": ".wikitext"
         		    },
                     {
                     "namespace": "PF_NS_FORM",
-                    "fileNamePrefix": "Forms%2F",
+                    "fileNamePrefix": "Forms",
                     "fileNameSuffix": ".wikitext"
                     },
                     {
                     "namespace": "NS_WIDGET",
-                    "fileNamePrefix": "Widgets%2F",
+                    "fileNamePrefix": "Widgets",
                     "fileNameSuffix": ".wikitext"
                     }
         		]
