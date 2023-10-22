@@ -10,13 +10,12 @@
             "publisherURL": "https://veganatlas.org",
             "description": "Templates for Vegan Atlas",
             "version": "0.1",
-            "pages": [
+            "pages":
                 {
                     "name": "PageExchange2",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/PageExchange2.wikitext"
                 }
-            ]
         }
     }
 }
