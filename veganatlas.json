@@ -32,12 +32,12 @@
         		    },
                     {
                     "namespace": "PF_NS_FORM",
-                    "fileNamePrefix": "Forms",
+                    "fileNamePrefix": "Forms/",
                     "fileNameSuffix": ".wikitext"
                     },
                     {
                     "namespace": "NS_WIDGET",
-                    "fileNamePrefix": "Widgets",
+                    "fileNamePrefix": "Widgets/",
                     "fileNameSuffix": ".wikitext"
                     }
         		]
@@ -186,7 +186,7 @@
                 {
                     "name": "Create",
                     "namespace": "PF_NS_FORM",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Create.wikitext"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms%2FCreate.wikitext"
                 },
                 {
                     "name": "AddThread-Modal",
