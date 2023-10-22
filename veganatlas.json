@@ -26,6 +26,15 @@
         		"repositoryName": "VeganAtlas",
         		"namespaceSettings": [
         		    {
+                    "namespace": "NS_PROJECT",
+                    "fileNamePrefix": "Atlas/",
+                    "fileNameSuffix": ".wikitext"
+                    },
+                    {
+                    "namespace": "NS_MEDIAWIKI",
+                    "fileNamePrefix": "MediaWiki/"
+                    },
+                    {
         			"namespace": "NS_TEMPLATE",
                     "fileNamePrefix": "Templates/",
                     "fileNameSuffix": ".wikitext"
@@ -44,34 +53,39 @@
         	    },
             "pages": [
                 {
-                    "name": "X%2FCategory",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Category.wikitext"
+                    "name": "Group-user.css",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Group-user.css"
                 },
                 {
-                    "name": "X%2FDisplayCat",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/DisplayCat.wikitext"
+                    "name": "Common.js",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Common.js"
                 },
                 {
-                    "name": "X%2FHeader",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Header.wikitext"
+                    "name": "Licenses",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Licenses"
                 },
                 {
-                    "name": "X%2FInterwiki",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Interwiki.wikitext"
+                    "name": "Secondary-menu",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Secondary-menu"
                 },
                 {
-                    "name": "X%2FMeta",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
+                    "name": "Toolbox",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Toolbox"
                 },
                 {
-                    "name": "X%2FSocialMedia",
-                    "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
+                    "name": "Main",
+                    "namespace": "NS_PROJECT",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Atlas/Main.wikitext"
+                },
+                {
+                    "name": "Create",
+                    "namespace": "PF_NS_FORM",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Create.wikitext"
                 },
                 {
                     "name": "Section%2FDefine",
@@ -179,19 +193,69 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/ForReviewDeclare.wikitext"
                 },
                 {
+                    "name": "X%2FCategory",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Category.wikitext"
+                },
+                {
+                    "name": "X%2FDisplayCat",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/DisplayCat.wikitext"
+                },
+                {
+                    "name": "X%2FHeader",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Header.wikitext"
+                },
+                {
+                    "name": "X%2FInterwiki",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Interwiki.wikitext"
+                },
+                {
+                    "name": "X%2FMeta",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
+                },
+                {
+                    "name": "X%2FSocialMedia",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
+                },
+                {
                     "name": "Icon",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Icon.wikitext"
                 },
                 {
-                    "name": "Create",
-                    "namespace": "PF_NS_FORM",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms%2FCreate.wikitext"
-                },
-                {
                     "name": "AddThread-Modal",
                     "namespace": "NS_WIDGET",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/AddThread-Modal.wikitext"
+                },
+                {
+                    "name": "Button%2FDropdown",
+                    "namespace": "NS_WIDGET",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Button/Dropdown.wikitext"
+                },
+                {
+                    "name": "Button%2FIcon",
+                    "namespace": "NS_WIDGET",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Button/Icon.wikitext"
+                },
+                {
+                    "name": "Button%2FPills",
+                    "namespace": "NS_WIDGET",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Button/Pills.wikitext"
+                },
+                {
+                    "name": "Button%2FToggler",
+                    "namespace": "NS_WIDGET",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Button/Toggler.wikitext"
+                },
+                {
+                    "name": "Toc",
+                    "namespace": "NS_WIDGET",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Toc.wikitext"
                 },
                 {
                     "name": "Toggle",
