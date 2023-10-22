@@ -1,0 +1,9 @@
+{{#switch: {{{1}}}
+|Is translation=
+{{#switch: {{#titleparts:{{ROOTPAGENAME}}||-1}}
+|{{PAGELANGUAGE}}={{#set:Is translation=true}}
+|#default={{#set:Is translation=false}}
+}}
+|Is translation mirror={{#set:Is translation mirror={{#ifeq: {{PAGELANGUAGE}} | {{#show: {{#titleparts:{{ROOTPAGENAME}}|-1|-2}}|?Language code}} | true | false}}}}
+|Language code={{#set:Language code={{PAGELANGUAGE}}}}
+}}
