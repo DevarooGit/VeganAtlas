@@ -44,157 +44,157 @@
         	    },
             "pages": [
                 {
-                    "name": "/X/Category",
+                    "name": "X/Category",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Category.wikitext"
                 },
                 {
-                    "name": "/X/DisplayCat",
+                    "name": "X/DisplayCat",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/DisplayCat.wikitext"
                 },
                 {
-                    "name": "/X/Header",
+                    "name": "X/Header",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Header.wikitext"
                 },
                 {
-                    "name": "/X/Interwiki",
+                    "name": "X/Interwiki",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Interwiki.wikitext"
                 },
                 {
-                    "name": "/X/Meta",
+                    "name": "X/Meta",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
                 },
                 {
-                    "name": "/X/SocialMedia",
+                    "name": "X/SocialMedia",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/SocialMedia.wikitext"
                 },
                 {
-                    "name": "/Section/Define",
+                    "name": "Section/Define",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Define.wikitext"
                 },
                 {
-                    "name": "/Section/Transclude",
+                    "name": "Section/Transclude",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Section/Transclude.wikitext"
                 },
                 {
-                    "name": "/X/Pages/AddSubpage",
+                    "name": "X/Pages/AddSubpage",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/AddSubpage.wikitext"
                 },
                 {
-                    "name": "/X/Pages/EditSubpage",
+                    "name": "X/Pages/EditSubpage",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/EditSubpage.wikitext"
                 },
                 {
-                    "name": "/X/Pages/SubpageBoilerplate",
+                    "name": "X/Pages/SubpageBoilerplate",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/SubpageBoilerplate.wikitext"
                 },
                 {
-                    "name": "/X/Pages/DeclareMetaTable",
+                    "name": "X/Pages/DeclareMetaTable",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/DeclareMetaTable.wikitext"
                 },
                 {
-                    "name": "/X/Pages/AttachMetaTable",
+                    "name": "X/Pages/AttachMetaTable",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/AttachMetaTable.wikitext"
                 },
                 {
-                    "name": "/X/Pages/MetaTableTemplate",
+                    "name": "X/Pages/MetaTableTemplate",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/MetaTableTemplate.wikitext"
                 },
                 {
-                    "name": "/X/Pages/ValueMappingCreateForm",
+                    "name": "X/Pages/ValueMappingCreateForm",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/ValueMappingCreateForm.wikitext"
                 },
                 {
-                    "name": "/X/Pages/Status",
+                    "name": "X/Pages/Status",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Pages/Status.wikitext"
                 },
                 {
-                    "name": "/X/Reviews/ComingSoon",
+                    "name": "X/Reviews/ComingSoon",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Reviews/ComingSoon.wikitext"
                 },
                 {
-                    "name": "/X/Threads/AddThread-Button",
+                    "name": "X/Threads/AddThread-Button",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/AddThread-Button.wikitext"
                 },
                 {
-                    "name": "/X/Threads/AddThread-Message",
+                    "name": "X/Threads/AddThread-Message",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/AddThread-Message.wikitext"
                 },
                 {
-                    "name": "/X/Threads/CountThreads",
+                    "name": "X/Threads/CountThreads",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/CountThreads.wikitext"
                 },
                 {
-                    "name": "/X/Threads/DisplayThreads",
+                    "name": "X/Threads/DisplayThreads",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/DisplayThreads.wikitext"
                 },
                 {
-                    "name": "/X/Threads/TableStart",
+                    "name": "X/Threads/TableStart",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/TableStart.wikitext"
                 },
                 {
-                    "name": "/X/Threads/TableRow-Local",
+                    "name": "X/Threads/TableRow-Local",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/TableRow-Local.wikitext"
                 },
                 {
-                    "name": "/X/Threads/TableRow-Global",
+                    "name": "X/Threads/TableRow-Global",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/TableRow-Global.wikitext"
                 },
                 {
-                    "name": "/X/Threads/TableEnd",
+                    "name": "X/Threads/TableEnd",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/TableEnd.wikitext"
                 },
                 {
-                    "name": "/X/Threads/ForReviewAttach",
+                    "name": "X/Threads/ForReviewAttach",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/ForReviewAttach.wikitext"
                 },
                 {
-                    "name": "/X/Threads/ForReviewDeclare",
+                    "name": "X/Threads/ForReviewDeclare",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Threads/ForReviewDeclare.wikitext"
                 },
                 {
-                    "name": "/Icon",
+                    "name": "Icon",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Icon.wikitext"
                 },
                 {
-                    "name": "/Create",
+                    "name": "Create",
                     "namespace": "PF_NS_FORM",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Forms/Create.wikitext"
                 },
                 {
-                    "name": "/AddThread-Modal",
+                    "name": "AddThread-Modal",
                     "namespace": "NS_WIDGET",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/AddThread-Modal.wikitext"
                 },
                 {
-                    "name": "/Toggle",
+                    "name": "Toggle",
                     "namespace": "NS_WIDGET",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Widgets/Toggle.wikitext"
                 }
