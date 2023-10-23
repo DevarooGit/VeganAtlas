@@ -218,6 +218,11 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
                 },
                 {
+                    "name": "X%2FNothingHere",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/NothingHere.wikitext"
+                },
+                {
                     "name": "X%2FNotLoggedIn",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/NotLoggedIn.wikitext"
