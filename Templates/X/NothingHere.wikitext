@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6"><!--
+            -->[[File:Undraw-Launching.png|frameless|class=img-width p-5 p-md-3 p-lg-5]]
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-5 p-md-3 p-lg-5">
+            <div class="text-center border-bottom mb-3 pb-3" style="font-family: 'Klee One', cursive;">
+                <p class="mb-1">Sorry, but there are no articles about this topic yet.</p>
+                <p>We've launched recently – please check again later.</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column my-3 mx-4">
+                    <!-- Button/Modal to create another article in this category -->
+                    <div class="btn" type="button" data-toggle="modal" data-target="#add-article"><!--
+                        --><span class="text-primary far fa-edit fa-3x" id="add-article-btn"></span>
+                    </div>
+                    <div class="modal fade" id="add-article" tabindex="-1" role="dialog" aria-labelledby="AddArticle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mt-0 mb-5" role="document">
+                            <div class="modal-content">
+                                <!-- InputBox (for logged in users) -->
+                                <div class="modal-body d-none user-show" id="add-article-user">
+                                    <div class="h3 text-center border-0">Add a new article</div>
+                                    {{#forminput:form=create
+                                        |button text=   {{#switch: {{PAGELANGUAGE}}
+                                                        |en=Add a new article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                                                        |de=Erstelle einen neuen Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                                                        }}
+                                        |placeholder=   {{#switch: {{PAGELANGUAGE}}
+                                                        |en=Article title
+                                                        |de=Titel des Artikels
+                                                        }}
+                                        |query string=Category[0][name]={{PAGENAME}}
+                                        |no autofocus
+                                        }}
+                                </div>
+                                <!-- Sign-up message for anonymous users -->
+                                <div class="modal-body anonymous-show" id="not-logged-in">
+                                    {{X/NotLoggedIn}}
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn btn-secondary" data-dismiss="modal">Close</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-family: 'Klee One', cursive;">Add article</div>
+                </div>
+                <div class="d-flex flex-column my-3 mx-4">
+                    <div class="btn" type="button" data-toggle="modal" data-target="#social-media"><!--
+                        --><span class="text-primary far fa-bell fa-3x" id="add-article-btn"></span>
+                    </div>
+                    <div style="font-family: 'Klee One', cursive;">Get updates</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
