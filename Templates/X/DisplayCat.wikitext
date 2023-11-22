@@ -71,20 +71,14 @@
                 <div class="modal-body">
                     <div class="h3 text-center border-0">Add a new article</div>
                     {{#forminput:form=create
-                        |button text=   {{#switch: {{PAGELANGUAGE}}
-                                        |en=Add a new article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                                        |de=Erstelle einen neuen Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                                        }}
-                        |placeholder=   {{#switch: {{PAGELANGUAGE}}
-                                        |en=Article title
-                                        |de=Titel des Artikels
-                                        }}
-                        |query string=Category[0][name]={{PAGENAME}}
-                        |no autofocus
-                        }}
+                    |button text={{int:atlas-section-displaycat-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}}
+                    |placeholder={{int:atlas-section-displaycat-title}}
+                    |query string=Category[0][name]={{PAGENAME}}
+                    |no autofocus
+                    }}
                 </div>
                 <div class="modal-footer">
-                    <div class="btn btn-secondary" data-dismiss="modal">Close</div>
+                    <div class="btn btn-secondary" data-dismiss="modal">{{int:atlas-section-displaycat-close}}</div>
                 </div>
             </div>
         </div>
