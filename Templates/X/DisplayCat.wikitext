@@ -90,18 +90,5 @@
         </div>
     </div>
 |   <!-- Input box to create the first article in this category -->
-    <div class="d-flex flex-column align-items-center p-md-5">
-        {{#forminput:form=create
-        |button text=   {{#switch: {{PAGELANGUAGE}}
-                        |en=Add the first article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                        |de=Erstelle den ersten Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                        }}
-        |placeholder=   {{#switch: {{PAGELANGUAGE}}
-                        |en=Article title
-                        |de=Titel des Artikels
-                        }}
-        |query string=Category[0][name]={{PAGENAME}}
-        |no autofocus
-        }}
-    </div>
+    {{X/NothingHere}}
 }}</includeonly>
