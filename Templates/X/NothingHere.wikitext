@@ -21,35 +21,29 @@
                                 <div class="modal-body d-none user-show" id="add-article-user">
                                     <div class="h3 text-center border-0">Add a new article</div>
                                     {{#forminput:form=create
-                                        |button text=   {{#switch: {{PAGELANGUAGE}}
-                                                        |en=Add a new article about {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                                                        |de=Erstelle einen neuen Artikel zum Thema {{#getdisplaytitle:{{FULLPAGENAME}} }}
-                                                        }}
-                                        |placeholder=   {{#switch: {{PAGELANGUAGE}}
-                                                        |en=Article title
-                                                        |de=Titel des Artikels
-                                                        }}
-                                        |query string=Category[0][name]={{PAGENAME}}
-                                        |no autofocus
-                                        }}
+                                    |button text={{int:atlas-section-nothinghere-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}}
+                                    |placeholder={{int:atlas-section-nothinghere-title}}
+                                    |query string=Category[0][name]={{PAGENAME}}
+                                    |no autofocus
+                                    }}
                                 </div>
                                 <!-- Sign-up message for anonymous users -->
                                 <div class="modal-body anonymous-show" id="not-logged-in">
                                     {{X/NotLoggedIn}}
                                 </div>
                                 <div class="modal-footer">
-                                    <div class="btn btn-secondary" data-dismiss="modal">Close</div>
+                                    <div class="btn btn-secondary" data-dismiss="modal">{{int:atlas-section-nothinghere-close}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div style="font-family: 'Klee One', cursive;">Add article</div>
+                    <div style="font-family: 'Klee One', cursive;">{{int:atlas-section-nothinghere-addarticle}}</div>
                 </div>
                 <div class="d-flex flex-column my-3 mx-4">
                     <div class="btn" type="button" data-toggle="modal" data-target="#social-media"><!--
                         --><span class="text-primary far fa-bell fa-3x" id="add-article-btn"></span>
                     </div>
-                    <div style="font-family: 'Klee One', cursive;">Get updates</div> 
+                    <div style="font-family: 'Klee One', cursive;">{{int:atlas-section-nothinghere-subscribe}}</div> 
                 </div>
             </div>
         </div>
