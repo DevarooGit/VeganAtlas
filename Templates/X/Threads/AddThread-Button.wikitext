@@ -7,4 +7,4 @@ This template is called by the [[Template:Section|Section template]] and adds a 
 This template adds this button:
 <div class="btn btn-primary disabled mb-2" title="Talk:Example">Talk:Example</div>
 (Disabled on this page)
-</noinclude><includeonly>{{#switch: {{{source}}}|local = [[{{{pageTalk}}}|<span class="btn btn-primary" title="{{X/Threads/Messages|atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}">{{X/Threads/Messages|atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}</span>]]|global = [https://www.veganatlas.org/global/{{{pageTalk}}} <span class="btn btn-primary" title="{{{text}}}">{{{text}}}</span>]}}</includeonly>
+</noinclude><includeonly>{{#switch: {{{source}}}|local = [[{{{pageTalk}}}|<span class="btn btn-primary" title="{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}">{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}</span>]]|global = [https://www.veganatlas.org/global/{{{pageTalk}}} <span class="btn btn-primary" title="{{{text}}}">{{{text}}}</span>]}}</includeonly>
