@@ -19,9 +19,9 @@
                             <div class="modal-content">
                                 <!-- InputBox (for logged in users) -->
                                 <div class="modal-body d-none user-show" id="add-article-user">
-                                    <div class="h3 text-center border-0">Add a new article</div>
+                                    <div class="h3 text-center border-0">{{int:atlas-section-nothinghere-addnewarticle}}</div>
                                     {{#forminput:form=create
-                                    |button text={{int:atlas-section-nothinghere-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}}
+                                    |button text={{int:atlas-section-nothinghere-addarticleabout}} {{#getdisplaytitle:{{FULLPAGENAME}} }}
                                     |placeholder={{int:atlas-section-nothinghere-title}}
                                     |query string=Category[0][name]={{PAGENAME}}
                                     |no autofocus
