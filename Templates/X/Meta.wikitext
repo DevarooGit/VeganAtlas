@@ -26,8 +26,8 @@ This template is intended for use on subpages and populates the Meta table (Carg
 |#default = [[{{ROOTPAGENAME}}]] > {{SUBPAGENAME}} }}</div>
 <!-- Documentation -->
 <div>{{#switch: {{SUBPAGENAME}}
-|{{PAGELANGUAGE}} = [[{{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}|Documentation]]
-|#default = [[{{FULLPAGENAME}}/doc|Documentation]]}}</div>
+|{{PAGELANGUAGE}} = [[{{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}|{{int:atlas-section-meta-documentation}}]]
+|#default = [[{{FULLPAGENAME}}/doc|{{int:atlas-section-meta-documentation}}]]}}</div>
 </div>
 {{X/Pages/AttachMetaTable
 |size =             {{REVISIONSIZE}}	
