@@ -2,7 +2,7 @@
 type=create
 hidden=yes
 default={{{fullpagename}}}
-buttonlabel={{X/Pages/Messages|atlas-section-edit}}
+buttonlabel={{int:atlas-pages-edit-section}}
 inline=true
 useve=true
 id=edit-subpage
