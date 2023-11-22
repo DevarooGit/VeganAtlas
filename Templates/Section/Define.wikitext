@@ -86,7 +86,6 @@ id=create-section-page
 :↳[[Template:X/Threads/DisplayThreads|DisplayThreads]]<br>
 :↳[[Template:X/Threads/AddThread-Button|AddThread-Button]]<br>
 :↳[[Template:X/Threads/AddThread-Message|AddThread-Message]]<br>
-:↳[[Template:X/General/Messages|Messages]]<br>
 :↳[[Template:X/General/Encoder|Encoder]]
 
 <p class="m-0">• [[Template:X/Pages/AddSubpage|'''Pages/AddSubpage''']]</p>
