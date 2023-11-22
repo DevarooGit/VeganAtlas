@@ -123,7 +123,7 @@
                 <div class="dropdown-menu rounded" aria-labelledby="{{{id}}}-actions-dropdown">
                     {{#switch: {{{source}}}
                     |local =<!-- Edit 
-                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">Edit</span>]
+                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">{{int:atlas-section-edit}}</span>]
                                 </div><!--
                                 Comment
                                 --><div class="dropdown-item position-relative">[[{{{talkpagename}}}|<span class="stretched-link">{{int:atlas-section-comment}}</span>]]
@@ -142,7 +142,7 @@
                                     }}
                                 </div><!--
                                 View
-                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}} <span class="stretched-link">View</span>]
+                                --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}} <span class="stretched-link">{{int:atlas-section-view}}</span>]
                                 </div>
                     |global =   <div class="dropdown-item position-relative fas fa-globe">[https://www.veganatlas.org/global/{{#replace:{{#explode:{{#titleparts:{{{sourcepage}}}|-1}}/{{CONTENTLANG}}|:|1|2}}#{{#titleparts:{{{sourcepage}}}||-1}}||_}} Atlas Global]
                                 </div>
