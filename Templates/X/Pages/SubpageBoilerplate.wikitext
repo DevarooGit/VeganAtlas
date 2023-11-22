@@ -10,7 +10,7 @@ This template contains the content that should be preloaded when new subpages ar
 [[Template:X/Pages/SubpageStatus|SubpageStatus]] {{#set: Uses template=XYZ/Resources/Pages/SubpageStatus}}
 
 == Boilerplate content ==
-</noinclude><no<includeonly></includeonly>include>{{X/Misc/Meta}}</no<includeonly></includeonly>include><!-- Content below this line --><nowiki/>
+</noinclude><no<includeonly></includeonly>include>{{X/Meta}}</no<includeonly></includeonly>include><!-- Content below this line --><nowiki/>
 
 
 
