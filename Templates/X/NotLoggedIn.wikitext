@@ -1,4 +1,4 @@
 <div class="d-flex flex-column align-items-center p-5">
-<div class="my-3">Please sign-up to add content</div>
-<div class="my-3">[[Atlas:Participation#Teams|<span class="btn btn-primary">Sign-up</span>]]</div>
+<div class="my-3">{{int:atlas-section-notloggedin}}</div>
+<div class="my-3">[[Atlas:Participation#Teams|<span class="btn btn-primary">{{int:atlas-section-notloggedin-signup}}</span>]]</div>
 </div>
