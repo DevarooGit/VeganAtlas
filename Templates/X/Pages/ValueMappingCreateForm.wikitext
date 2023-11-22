@@ -2,8 +2,8 @@
 == Description ==
 Value mappings for [[Form:Create]].
 </noinclude><includeonly>{{#switch: {{{1}}}
-|true={{X/Pages/Messages|atlas-pages-content}}
-|false={{X/Pages/Messages|atlas-pages-headingonly}}
+|true={{int:atlas-pages-content}}
+|false={{int:atlas-pages-headingonly}}
 |local = {{SITENAME}}	
 |global = Atlas Global
 |en={{#language:en|{{SITELANGUAGE}}}}
