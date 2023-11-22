@@ -4,8 +4,8 @@ This template adds a "Coming Soon" message that's displayed until the review fea
 </noinclude><includeonly><div class="container card mb-3 p-3">
     <div class="row d-flex align-items-center">
         <div class="col-12 col-md-8 px-md-4">
-            <div class="h3 mt-3 pr-0">{{X/Reviews/Messages|atlas-reviews-comingsoon-title}}</div>
-            <p>{{X/Reviews/Messages|atlas-reviews-comingsoon-message}}</p>
+            <div class="h3 mt-3 pr-0">{{int:atlas-reviews-comingsoon-title}}</div>
+            <p>{{int:atlas-reviews-comingsoon-message}}</p>
             <div>[[Atlas:About#Peer_Reviews|<span class="btn btn-primary">The case for peer-reviews</span>]]</div>
         </div>
         <div class="col-8 offset-2 col-md-4 offset-md-0 p-4 p-md-3 p-lg-5">[[File:Undraw-collaboration.png|frameless|none|class=img-width]]</div>
