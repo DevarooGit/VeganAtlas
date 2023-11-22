@@ -42,7 +42,7 @@ id=create-section-page
 <div class="d-flex flex-column align-items-center bg-light border p-5">
     {{#switch: {{{source}}}
     | local =   {{#switch: {{{action}}}
-                |translate =    <div>[[{{{fullpagename}}}|<span class="btn btn-primary">{{X/Pages/Messages|atlas-pages-translatesection-btn}}</span>]]</div>
+                |translate =    <div>[[{{{fullpagename}}}|<span class="btn btn-primary">{{int:atlas-pages-translatesection-btn}}</span>]]</div>
                 |create-doc =   {{#tag:inputbox |
                                 type=create
                                 default={{{fullpagename}}}/doc
@@ -55,17 +55,17 @@ id=create-section-page
                                 type=create
                                 default={{{fullpagename}}}
                                 hidden=yes
-                                buttonlabel={{X/Pages/Messages|atlas-pages-addcontent-btn}}
+                                buttonlabel={{int:atlas-pages-addcontent-btn}}
                                 preload=Template:X/Pages/SubpageBoilerplate
                                 useve=true
                                 id=create-section-page
                                 }}
                 }}
     | global =  {{#switch: {{{action}}}
-                | create =      <p>{{X/Pages/Messages|atlas-pages-global-page-404}}</p>
-                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{X/Pages/Messages|atlas-pages-global-create-btn}}</span>]]</div>
-                | translate =   <p>{{X/Pages/Messages|atlas-pages-global-page-untranslated}}</p>
-                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{X/Pages/Messages|atlas-pages-global-translate-btn}}</span>]]</div>
+                | create =      <p>{{int:atlas-pages-global-page-404}}</p>
+                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{int:atlas-pages-global-create-btn}}</span>]]</div>
+                | translate =   <p>{{int:atlas-pages-global-page-untranslated}}</p>
+                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{int:atlas-pages-global-translate-btn}}</span>]]</div>
                 }}
     }}
 </div></includeonly>
