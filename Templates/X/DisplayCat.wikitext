@@ -71,7 +71,7 @@
                 <div class="modal-body">
                     <div class="h3 text-center border-0">Add a new article</div>
                     {{#forminput:form=create
-                    |button text={{int:atlas-section-displaycat-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}}
+                    |button text={{int:atlas-section-displaycat-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}} }}
                     |placeholder={{int:atlas-section-displaycat-title}}
                     |query string=Category[0][name]={{PAGENAME}}
                     |no autofocus
