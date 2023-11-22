@@ -126,11 +126,11 @@
                                 --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">Edit</span>]
                                 </div><!--
                                 Comment
-                                --><div class="dropdown-item position-relative">[[{{{talkpagename}}}|<span class="stretched-link">{{Section/Transclude/Messages|atlas-section-comment}}</span>]]
+                                --><div class="dropdown-item position-relative">[[{{{talkpagename}}}|<span class="stretched-link">{{int:atlas-section-comment}}</span>]]
                                 </div><!--
                                 Review
                                 --><div class="dropdown-item disabled">{{#formlink:form=Review
-                                    |link text={{Section/Transclude/Messages|atlas-section-review}}
+                                    |link text={{int:atlas-section-review}}
                                     |link=
                                     |new window
                                     |query string=
@@ -175,15 +175,15 @@
     </div>
     <!-- Documentation -->
     <div class="tab-pane fade overflow-hidden pt-5 pr-3 pb-3 pl-5" style="margin-top:-1em; border-left: 10px solid #007bff;" id="{{{id}}}-documentation" role="tabpanel" aria-labelledby="{{{id}}}-documentation-tab">
-        <div class="h3 mt-0 mb-4 border-0">{{Section/Transclude/Messages|atlas-section-documentation}}</div>
+        <div class="h3 mt-0 mb-4 border-0">{{int:atlas-section-documentation}}</div>
         <!-- Meta data 
             --><div class="my-3" id="{{{id}}}-documentation-meta"><!--
             Authors 
-            --><div class="float-left mr-1">{{Section/Transclude/Messages|atlas-section-authors}}:</div><!--
+            --><div class="float-left mr-1">{{int:atlas-section-authors}}:</div><!--
             -->{{X/Pages/DisplayAuthors|fullpagename={{{fullpagename}}}}}<!--
             Last revision
             --><div class="mt-1"><!--
-            -->{{Section/Transclude/Messages|atlas-section-lastrevision}}:  {{REVISIONYEAR: {{{fullpagename}}}}}-{{REVISIONMONTH: {{{fullpagename}}}}}-{{REVISIONDAY: {{{fullpagename}}}}}
+            -->{{int:atlas-section-lastrevision}}:  {{REVISIONYEAR: {{{fullpagename}}}}}-{{REVISIONMONTH: {{{fullpagename}}}}}-{{REVISIONDAY: {{{fullpagename}}}}}
             </div>
         </div><!--
         Transclude documentation
@@ -240,7 +240,7 @@
                                 }}
                     }}
         |true =     <div class="d-flex justify-content-center align-items-center reviews-header">
-                        <div>{{Section/Transclude/Messages|atlas-section-peer-reviews}}</div>
+                        <div>{{int:atlas-section-peer-reviews}}</div>
                     </div>
                     -- Add table with reviews. --
                     {{X/Reviews/DisplayReviews
@@ -283,9 +283,9 @@
                     <!-- Header -->
                     <div class="d-flex justify-content-between align-items-center threads-header">
                         <!-- Toggle button for open/closed-threads windows. -->
-                        <div class="d-flex flex-even align-items-center" title="{{Section/Transclude/Messages|atlas-section-togglethreads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-on text-primary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{Section/Transclude/Messages|atlas-section-open}}</span></div>
+                        <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-togglethreads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-on text-primary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-open}}</span></div>
                         <!-- Title -->
-                        <div class="flex-even">{{Section/Transclude/Messages|atlas-section-currenttopics}}</div>
+                        <div class="flex-even">{{int:atlas-section-currenttopics}}</div>
                         <!-- Dummy -->
                         <div class="flex-even"></div>
                     </div>
@@ -304,9 +304,9 @@
                     <!-- Header -->
                     <div class="d-flex justify-content-between align-items-center threads-header" id="{{{id}}}-threads-closed">
                         <!-- Toggle button for open/closed-threads windows -->
-                        <div class="d-flex flex-even align-items-center" title="{{Section/Transclude/Messages|atlas-section-Toggle open/closed threads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-off pr-1 text-primary" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{Section/Transclude/Messages|atlas-section-Closed}}</span></div>
+                        <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-Toggle open/closed threads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-off pr-1 text-primary" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-Closed}}</span></div>
                         <!-- Title -->
-                        <div class="flex-even">{{Section/Transclude/Messages|atlas-section-resolvedtopics}}</div>
+                        <div class="flex-even">{{int:atlas-section-resolvedtopics}}</div>
                         <!-- Dummy -->
                         <div class="flex-even"></div>
                     </div>
@@ -325,9 +325,9 @@
                     <!-- Header. -->
                     <div class="d-flex justify-content-between align-items-center threads-header">
                         <!-- Disabled toggle button for open/closed-threads windows. -->
-                        <div class="d-flex flex-even align-items-center" title="{{Section/Transclude/Messages|atlas-section-noclosedthreads}}"><span class="fas fa-toggle-on text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{Section/Transclude/Messages|atlas-section-open}}</span></div>
+                        <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-noclosedthreads}}"><span class="fas fa-toggle-on text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-open}}</span></div>
                         <!-- Title -->
-                        <div class="flex-even">{{Section/Transclude/Messages|atlas-section-currenttopics}}</div>
+                        <div class="flex-even">{{int:atlas-section-currenttopics}}</div>
                         <!-- Dummy -->
                         <div class="flex-even"></div>
                     </div>
@@ -356,9 +356,9 @@
                     <!-- Header -->
                     <div class="d-flex justify-content-between align-items-center threads-header" id="{{{id}}}-threads-closed">
                         <!-- Disabled toggle button for open/closed-threads windows -->
-                        <div class="d-flex flex-even align-items-center" title="{{Section/Transclude/Messages|atlas-section-noopenthreads}}"><span class="fas fa-toggle-off text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{Section/Transclude/Messages|atlas-section-closed}}</span></div>
+                        <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-noopenthreads}}"><span class="fas fa-toggle-off text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-closed}}</span></div>
                         <!-- Title -->
-                        <div class="flex-even">{{Section/Transclude/Messages|atlas-section-resolvedtopics}}</div>
+                        <div class="flex-even">{{int:atlas-section-resolvedtopics}}</div>
                         <!-- Dummy -->
                         <div class="flex-even"></div>
                     </div>
