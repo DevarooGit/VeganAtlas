@@ -53,11 +53,6 @@
         	    },
             "pages": [
                 {
-                    "name": "Group-user.css",
-                    "namespace": "NS_MEDIAWIKI",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Group-user.css"
-                },
-                {
                     "name": "Common.js",
                     "namespace": "NS_MEDIAWIKI",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Common.js"
@@ -195,7 +190,7 @@
                 {
                     "name": "X%2FCategory",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Category.wikitext"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Categories.wikitext"
                 },
                 {
                     "name": "X%2FDisplayCat",
