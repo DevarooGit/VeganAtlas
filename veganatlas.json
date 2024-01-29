@@ -58,9 +58,9 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Common.js"
                 },
                 {
-                    "name": "Group-user.js",
+                    "name": "Group-user.css",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Group-user.js"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Group-user.css"
                 },
                 {
                     "name": "Secondary-menu",
