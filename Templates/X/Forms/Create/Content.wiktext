@@ -1,0 +1,14 @@
+<noinclude>
+{{X/Template
+|description=Mapping template for the [[Form:Create|Create form]] (Section template, <code>hascontent</code> parameter).
+|forms=
+{{X/Template/Form|1|form=Create}}
+{{X/Template/Template|2|template=X/Forms/Create/Content}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-form-create-section-hascontent-true}}
+{{X/Template/i18n|i18n=atlas-form-create-section-hascontent-false}}
+}}
+</noinclude><includeonly>{{#switch: {{{1}}}
+|true={{int:atlas-form-create-section-hascontent-true}}
+|false={{int:atlas-form-create-section-hascontent-false}}
+}}</includeonly>
