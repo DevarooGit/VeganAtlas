@@ -1,6 +1,0 @@
-<button class="card card-header collapsible-card d-flex align-items-center w-100 border-0" type="button" data-toggle="collapse" data-target="#collapsible-toc" aria-expanded="false" aria-controls="collapsible-toc">
-<div class="d-flex w-100 justify-content-between align-items-center">
-<div class="collapsible-title" style="font-size:1.5em; font-weight:300">Contents</div>
-<div><span class="hide-expand-text"><span class="fa fa-chevron-down"></span></span><span class="hide-collapse-text"><span class="fa fa-chevron-up"></span></span></div>
-</div>
-</button>

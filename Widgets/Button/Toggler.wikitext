@@ -1,6 +1,0 @@
-<noinclude>
-== Description ==
-This widget adds the a toggle button for collapsible menus on small screens ("hamburger menu").
-
-</noinclude><includeonly>
-<button class="navbar-toggler section-toggler" type="button" data-toggle="collapse" data-target="#<!--{$ID|escape:'html'}-->" aria-controls="<!--{$ID|escape:'html'}-->" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></includeonly>
