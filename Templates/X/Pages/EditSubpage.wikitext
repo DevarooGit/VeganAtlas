@@ -1,9 +1,0 @@
-<includeonly>{{#tag:inputbox |
-type=create
-hidden=yes
-default={{{fullpagename}}}
-buttonlabel={{int:atlas-pages-edit-section}}
-inline=true
-useve=true
-id=edit-subpage
-}}</includeonly>

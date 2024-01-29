@@ -1,8 +1,0 @@
-<noinclude>
-{{#template_params:
-|forReviewID
-}}
-{{#cargo_attach:_table=forReview
-|forReviewID=Integer
-}}
-</noinclude><includeonly>{{#cargo_store:_table=forReview}}

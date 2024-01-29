@@ -1,1 +1,0 @@
-<span class="cargo-list-item">[[User:{{{1}}}|{{{1}}}]]<span class="cargo-list-delimiter"></span></span>
