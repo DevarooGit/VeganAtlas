@@ -1,0 +1,127 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This widget adds a toggle button for collapsable elements, similar to [[Widget:Button]].</p>
+<p>In contrast to [[Widget:Button]], this widget allows for adding up to 3 icons and 3 labels.</p>
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Widget|3|widget=Button/3-Icons}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "id": {
+            "label": "id",
+            "type": "string",
+            "description": "HTML id of the button element."
+        },
+        "class": {
+            "label": "class",
+            "type": "string",
+            "description": "CSS classes for the button element.",
+            "suggestedvalues": ["active", "dropdown-toggle", "text-nowrap", "..."]
+        },
+        "role": {
+            "label": "role",
+            "type": "string",
+            "description": "Role of the button element."
+        },
+        "title": {
+            "label": "title",
+            "type": "string",
+            "description": "HTML title of the button element."
+        },
+        "datatoggle": {
+            "label": "data-toggle",
+            "type": "string",
+            "required": true,
+            "description": "data-toggle options.",
+            "suggestedvalues": ["collapse", "tab", "dropdown", "..."]
+        },
+        "datatarget": {
+            "label": "data-target",
+            "type": "string",
+            "required": true,
+            "description": "HTML id of the data-target."
+        },
+        "ariacontrols": {
+            "label": "aria-controls",
+            "type": "string",
+            "description": "aria-controls value of the button element."
+        },
+        "ariaselected": {
+            "label": "aria-selected",
+            "type": "string",
+            "description": "aria-selected value of the button element.",
+            "suggestedvalues": ["true", "false"]
+        },
+        "icon1": {
+            "label": "Icon 1",
+            "type": "string",
+            "description": "Classes for Icon 1.",
+            "suggestedvalues": ["FontAwesome classes"]
+        },
+        "icon2": {
+            "label": "Icon 2",
+            "type": "string",
+            "description": "Classes for Icon 2.",
+            "suggestedvalues": ["FontAwesome classes"]
+        },
+        "icon3": {
+            "label": "Icon 3",
+            "type": "string",
+            "description": "Classes for Icon 3.",
+            "suggestedvalues": ["FontAwesome classes"]
+        },
+        "label1": {
+            "label": "Label 1",
+            "type": "string",
+            "description": "Label 1; appears after Icon 1."
+        },
+        "label2": {
+            "label": "Label 2",
+            "type": "string",
+            "description": "Label 2; appears after Icon 2."
+        },
+        "label3": {
+            "label": "Label 3",
+            "type": "string",
+            "description": "Label 3; appears after Icon 3."
+        },
+        "label1class": {
+            "label": "Label 1 classes",
+            "type": "string",
+            "description": "CSS classes for Label 1."
+        },
+        "label2class": {
+            "label": "Label 2 classes",
+            "type": "string",
+            "description": "CSS classes for Label 2."
+        },
+        "label3class": {
+            "label": "Label 3 classes",
+            "type": "string",
+            "description": "CSS classes for Label 3."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><button
+class="<!--{$class|default:''|escape:'html'}-->"
+type="button"
+id="<!--{$id|default:''|escape:'html'}-->"
+data-toggle="<!--{$datatoggle|default:''|escape:'html'}-->"
+data-target="#<!--{$datatarget|default:''|escape:'html'}-->"
+role="<!--{$role|default:''|escape:'html'}-->"
+aria-controls="<!--{$ariacontrols|default:''|escape:'html'}-->"
+aria-selected="<!--{$ariaselected|default:''|escape:'html'}-->"
+title="<!--{$title|default:''|escape:'html'}-->">
+<span class="<!--{$icon1|default:''|escape:'html'}-->"></span>
+<span class="<!--{$label1class|default:''|escape:'html'}-->" style="font-weight:400"><!--{$label1|default:''|escape:'html'}--></span>
+<span class="<!--{$icon2|default:''|escape:'html'}-->"></span>
+<span class="<!--{$label2class|default:''|escape:'html'}-->" style="font-weight:400"><!--{$label2|default:''|escape:'html'}--></span>
+<span class="<!--{$icon3|default:''|escape:'html'}-->"></span>
+<span class="<!--{$label3class|default:''|escape:'html'}-->" style="font-weight:400"><!--{$label3|default:''|escape:'html'}--></span>
+</button></includeonly>
