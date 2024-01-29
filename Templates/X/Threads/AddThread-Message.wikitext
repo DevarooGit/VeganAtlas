@@ -1,0 +1,61 @@
+<noinclude>
+{{X/Template
+|description=This template adds a box that invites users to start the first discussion. For logged-in users, the box contains the [[Template:X/Threads/AddThread-Button|AddThread Button]], which links to the talk page associated with the section from where this template is called. For anonymous users, it contains the [[Template:X/Threads/AddThread-Modal|AddThread Modal]], which in turn shows an explanation that only registered users can start discussions.
+
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Threads/AddThread-Message}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Button}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Modal}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-threads-start-discussion-about}}
+{{X/Template/i18n|i18n=atlas-threads-improve-section}}
+{{X/Template/i18n|i18n=atlas-threads-hosted-global}}
+|files=
+{{X/Template/File|file=Undraw-chatting.png}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Local or global wiki.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "pageTitle": {
+            "label": "Pagename",
+            "type": "string",
+            "required": true,
+            "description": "Pagename of the section (without namespace).",
+            "example": "On 'Section:Foo/Bar', this would be 'Bar'."
+        },
+        "pageTalk": {
+            "label": "Talkpage name",
+            "type": "string",
+            "required": true,
+            "description": "Talkpage name incl. namespace",
+            "example": "Section_talk:Foo/Bar"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+<div class="container card mb-3 p-3">
+    <div class="row d-flex align-items-center">
+        <div class="col-12 col-md-8 px-md-4">
+            <div class="h3 mt-3 pr-0">{{int:atlas-threads-start-discussion-about}} {{{pageTitle}}}</div>
+            <p>{{int:atlas-threads-improve-section}}</p>
+            {{#switch: {{{source}}}
+            |local=
+            |global= <p>{{int:atlas-threads-hosted-global}}</p>
+            }}
+            <div class="d-none user-show mb-3">{{X/Threads/AddThread-Button|source={{{source}}}|pageTalk={{{pageTalk}}}}}</div>
+            <div class="anonymous-show mb-3">{{X/Threads/AddThread-Modal|id={{PAGENAME}}-{{{pageTitle}}}}}</div>
+        </div>
+        <div class="col-8 offset-2 col-md-4 offset-md-0 p-4 p-md-3 p-lg-5">[[File:Undraw-chatting.png|frameless|none|class=img-width]]</div>
+    </div>
+</div><nowiki/></includeonly>

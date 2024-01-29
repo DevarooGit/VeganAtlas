@@ -1,0 +1,112 @@
+<noinclude>
+{{X/Template
+|description=
+<p class="mb-4">This template adds a flowchart that shows the status of the article. This template is part of the [[Template:X/Pages/SubpageBoilerplate|SubpageBoilerplate]] and is therefore preloaded when creating subpages via an "Add Content" button. The flowchart below shows an example for an article that is in the "comments" phase:</p>
+
+<div class="d-none d-md-flex mb-3">
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-3 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0 0);">{{int:atlas-pages-status-teambuilding}}
+            <div class="position-absolute w-100 alert-primary px-3 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-teambuilding}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-research}}
+            <div class="position-absolute w-100 alert-primary px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-research}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-draft}}
+            <div class="position-absolute w-100 alert-primary px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-draft}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-comments}}
+            <div class="position-absolute w-100 alert-primary px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-comments}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-peerreview}}
+            <div class="position-absolute w-100 alert-light px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-peerreview}}</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center alert-light fas fa-share-square fa-lg p-2 card border ml-2" title="Share"></div>
+</div>
+
+Note: the status needs to be updated manually.
+
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Pages/Status}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-pages-status-teambuilding}}
+{{X/Template/i18n|i18n=atlas-pages-status-research}}
+{{X/Template/i18n|i18n=atlas-pages-status-draft}}
+{{X/Template/i18n|i18n=atlas-pages-status-peerreview}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "The current status of the article.",
+            "suggestedvalues": ["teambuilding", "research", "draft", "comments", "review", "complete"]
+        }
+    }
+}
+</templatedata>
+{{{!}} class="wikitable w-100"
+!Status
+!Description
+{{!}}-
+{{!}}<code>teambuilding</code>
+{{!}}A user is looking for co-authors to research/write this article
+{{!}}-
+{{!}}<code>research</code>
+{{!}}The article is currently being researched
+{{!}}-
+{{!}}<code>draft</code>
+{{!}}The article is currently a draft
+{{!}}-
+{{!}}<code>comments</code>
+{{!}}The article is open for comments
+{{!}}-
+{{!}}<code>review</code>
+{{!}}The article is open for peer-review
+{{!}}-
+{{!}}<code>complete</code>
+{{!}}The article has been peer-reviewed at least twice
+{{!}}}
+}}</noinclude><includeonly>
+<div class="d-none d-md-flex mb-5">
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-3 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0 0);">{{int:atlas-pages-status-teambuilding}}
+            <div class="position-absolute w-100 alert-{{#switch: {{lc:{{{status}}}}} | teambuilding=info |research=primary | draft=primary | comments=primary | review=primary | complete = success | #default=light}} px-3 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-teambuilding}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-research}}
+            <div class="position-absolute w-100 alert-{{#switch: {{lc:{{{status}}}}} | teambuilding=light |research=info | draft=primary | comments=primary | review=primary | complete = success | #default=light}} px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-research}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-draft}}
+            <div class="position-absolute w-100 alert-{{#switch: {{lc:{{{status}}}}} | teambuilding=light |research=light | draft=info | comments=primary | review=primary | complete = success | #default=light}} px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-draft}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-comments}}
+            <div class="position-absolute w-100 alert-{{#switch: {{lc:{{{status}}}}} | teambuilding=light |research=light | draft=light | comments=info | review=primary | complete = success | #default=light}} px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-comments}}</div>
+        </div>
+    </div>
+    <div class="flex-even">
+        <div class="position-relative w-100 bg-secondary px-4 py-2" style="clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0 0);">{{int:atlas-pages-status-peerreview}}
+            <div class="position-absolute w-100 alert-{{#switch: {{lc:{{{status}}}}} | teambuilding=light |research=light | draft=light | comments=light | review=info | complete = success | #default=light}} px-4 py-2" style="clip-path: polygon(94.85% 1%, 99.75% 50%, 94.85% 98.5%, 0.25% 98.5%, 5.25% 51%, 0.25% 1%); top:0; left:0">{{int:atlas-pages-status-peerreview}}</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center alert-{{#switch: {{{status}}} | complete = success text-dark | #default = light}} fas fa-share-square fa-lg p-2 card border ml-2" title="Share"></div>
+</div></includeonly>

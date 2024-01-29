@@ -1,0 +1,103 @@
+__NOTOC__<noinclude>{{X/Template
+|description=This template adds a header for user pages. It is usually added with the [[Form:MyProfile|MyProfile form]].
+|forms=
+{{X/Template/Form|1|form=MyProfile}}
+{{X/Template/Template|2|template=X/MyProfile/Header}}
+|extensions=
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=Semantic_Extra_Special_Properties}}
+|templates=
+{{X/Template/Template|1|template=X/MyProfile/Header}}
+{{X/Template/Template|2|template=X/SetProperty}}
+|files=
+{{X/Template/File|file=Undraw-profile-1.png}}
+{{X/Template/File|file=Atlas-Mail.png}}
+{{X/Template/File|file=Google_Scholar_logo.png|source=commons}}
+{{X/Template/File|file=ResearchGate_logo_2015.svg|source=commons}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-userprofile-header-usersince}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-latestedit}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-groups}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-group-sysop}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-group-socialscience}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-group-environment}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-group-header}}
+{{X/Template/i18n|i18n=atlas-userprofile-header-comingsoon}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "realname": {
+            "type": "string",
+            "suggested": true,
+            "description": "Real name"
+        },
+        "email": {
+            "type": "string",
+            "description": "Email address"
+        },
+        "linkedin": {
+            "type": "string",
+            "description": "LinkedIn username"
+        },
+        "website": {
+            "type": "string",
+            "description": "Website URL"
+        },
+        "researchgate": {
+            "type": "string",
+            "description": "Researchgate username"
+        },
+        "googlescholar": {
+            "type": "string",
+            "description": "Google Scholar user ID"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>{{X/SetProperty|Is translation}}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-sm-3 p-5 pt-0 p-sm-0">
+            <div class="d-flex justify-content-center align-items-center border MyProfile-Image" style="border-radius:50%"><!--
+             -->{{#ifexist: File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.png|false={{PAGENAME}}.png}}
+                |   <div>[[File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.png|false={{PAGENAME}}.png}}|class=img-width|link=]]</div>
+                |   {{#ifexist: File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.jpg|false={{PAGENAME}}.jpg}}
+                    |   <div>[[File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.jpg|false={{PAGENAME}}.jpg}}|class=img-width|link=]]</div>
+                    |   {{#ifexist: File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.jpeg|false={{PAGENAME}}.jpeg}}
+                        |   <div>[[File:User-{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}.jpeg|false={{PAGENAME}}.jpeg}}|class=img-width|link=]]</div>
+                        |   [https://veganatlas.org/mediawiki/global/index.php?title=Special:Upload&wpDestFile=User-{{urlencode:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}}|WIKI}} [[File:Undraw-profile-1.png|class=img-width MyProfile-Image|link=]] <span class="d-none" id="MyProfile-Image-Upload">Upload</span>]
+                        }}
+                    }}
+                }}
+            </div>
+        </div>
+        <div class="col-12 col-sm-8 offset-sm-1 d-flex flex-column">
+            <h2 class="mt-0 pt-0">{{#if:{{{realname|}}}|{{{realname}}} <span style="font-size:1.75rem; font-weight: 300; vertical-align:10%">({{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}})</span>|{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}} }}</h2>
+            <div style="line-height:1.75">
+                <div><b>{{int:atlas-userprofile-header-usersince}}:</b> {{#show: {{NAMESPACE}}:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}} |?User registration date#-F[Y-m-d]}}</div>
+                <div><b>{{int:atlas-userprofile-header-latestedit}}:</b> <span class="text-secondary" style="font-family:'Klee One'">{{int:atlas-userprofile-header-comingsoon}}</span></div>
+                <div><b>{{int:atlas-userprofile-header-groups}}: </b><!--
+                    --><span class="MyProfile-usergroups"><!--
+                    -->{{#if:{{#ask: [[User:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}}]][[User group::sysop]]}}|<span>{{int:atlas-userprofile-header-group-sysop}}</span>|}}<!--
+                    -->{{#if:{{#ask: [[User:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}}]][[User group::socialscience]]}}|<span>{{int:atlas-userprofile-header-group-socialscience}}</span>|}}<!--
+                    -->{{#if:{{#ask: [[User:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}}]][[User group::environment]]}}|<span>{{int:atlas-userprofile-header-group-environment}}</span>|}}<!--
+                    -->{{#if:{{#ask: [[User:{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}}}}|true={{#titleparts: {{PAGENAME}}|-1}}|false={{PAGENAME}}}}]][[User group::health]]}}|<span>{{int:atlas-userprofile-header-group-health}}</span>|}}<!--
+                    --></span>
+                </div>
+            </div>
+            <div class="d-flex flex-column mt-5" style="row-gap:1.5em;" id="{{PAGENAME}}-links">
+                <div class="d-flex flex-row" style="column-gap:1.5em;" id="{{PAGENAME}}-socials">
+                    {{#if:{{{email|}}}|<div style="width:2.35em">[mailto:{{{email}}} <span title="Email">[[File:Atlas-Mail.png{{!}}class=img-width MyProfile-link{{!}}link=]]</span>]</div>|}}
+                    {{#if:{{{linkedin|}}}|<div class="hide-external" style="width:6em">[https://linkedin.com/in/{{{linkedin}}} <span title="LinkedIn">[[File:LinkedIn 2021.svg{{!}}class=img-width MyProfile-link{{!}}link=]]</span>]</div>|}}
+                    {{#if:{{{website|}}}|<div class="hide-external MyProfile-link">[{{{website}}} <span class="text-primary" style="font-family:'Klee One'; font-size:1.15rem" title="Website">Website</span>]</div>|}}
+                </div>
+                <div class="d-flex flex-row" style="column-gap:1.5em;" id="{{PAGENAME}}-research">
+                    {{#if:{{{googlescholar|}}}|<div class="hide-external" style="width:10em; padding-top:2px">[https://scholar.google.com/citations?hl=en&user={{{googlescholar}}} <span title="Google Scholar">[[File:Google_Scholar_logo.png{{!}}class=img-width MyProfile-link{{!}}link=]]</span>]</div>|}}
+                    {{#if:{{{researchgate|}}}|<div class="hide-external" style="width:8em">[https://www.researchgate.net/profile/{{{researchgate}}} <span title="ResearchGate">[[File:ResearchGate logo 2015.svg{{!}}class=img-width MyProfile-link{{!}}link=]]</span>]</div>|}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div></includeonly>

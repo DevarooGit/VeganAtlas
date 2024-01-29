@@ -1,0 +1,113 @@
+<noinclude>{{X/Template
+|description=<p>This template adds a column with an education object containing the variables listed below. This template should be set as the <code>objects</code> parameter of the [[Template:X/MyProfile/Education|Education template]], which defines a grid and row; each instance of this template will then be a column in that grid.</p><p>{{#cargo_declare:
+_table = UserEducation
+|User=String
+|Degree=String
+|Program=String
+|College=String
+|Country=String
+|DateStart=Date
+|DateEnd=Date
+|Graduated=Boolean
+|GPA=Float
+|Distinction=String
+}}</p>
+|templates=
+{{X/Template/Template|1|template=X/MyProfile/Education}}
+{{X/Template/Template|2|template=X/MyProfile/Education/Object}}
+{{X/Template/Template|3|template=X/SetProperty}}
+
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-userprofile-education-nodegree}}
+{{X/Template/i18n|i18n=atlas-userprofile-education-noprogram}}
+{{X/Template/i18n|i18n=atlas-userprofile-present}}
+{{X/Template/i18n|i18n=atlas-userprofile-nodate}}
+{{X/Template/i18n|i18n=atlas-userprofile-nd}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "degree": {
+            "type": "string",
+            "required": true,
+            "description": "Kind of degree."
+        },
+        "program": {
+            "type": "string",
+            "required": true,
+            "description": "Name of the program."
+        },
+        "college": {
+            "type": "string",
+            "suggested": true,
+            "description": "Name of the college / university."
+        },
+        "country": {
+            "type": "string",
+            "suggested": true,
+            "description": "Country of the college / university."
+        },
+        "dateStart": {
+            "type": "date",
+            "suggested": true,
+            "description": "Start date in ISO format."
+        },
+        "dateEnd": {
+            "type": "date",
+            "suggested": true,
+            "description": "Start date in ISO format."
+        },
+        "gpa": {
+            "type": "string",
+            "suggested": true,
+            "description": "Grade point average."
+        },
+        "distinction": {
+            "type": "string",
+            "suggested": true,
+            "description": "Distinction, e.g. cum laude."
+        }
+    }
+}
+</templatedata>
+}}</noinclude>
+<includeonly>{{#switch:{{lc:{{#show: {{FULLPAGENAME}} |?Is translation|link=none}} }}
+|true=
+|false={{#cargo_store:
+_table = UserEducation
+|User={{PAGENAME}}
+|Degree={{#if:{{{degree|}}}|{{{degree}}}|}}
+|Program={{#if:{{{program|}}}|{{{program}}}|}}
+|College={{#if:{{{college|}}}|{{{college}}}|}}
+|Country={{#if:{{{country|}}}|{{{country}}}|}}
+|DateStart={{#if:{{{dateStart|}}}|{{{dateStart}}}|}}
+|DateEnd={{#if:{{{dateEnd|}}}|{{{dateEnd}}}|}}
+|Graduated={{#if:{{{dateEnd|}}}|{{#if:{{{graduated|}}}|{{{graduated}}}|}}|0}}
+|GPA={{#if:{{{gpa|}}}|{{{gpa}}}|}}
+|Distinction={{#if:{{{distinction|}}}|{{{distinction}}}|}}
+}}
+}}
+<div class="col-12 col-md-6 d-flex p-0">
+    <div class="align-top font-weight-normal pr-3" style="min-width:130px"><!--
+        --> {{#if:{{{dateStart|}}}
+            |   {{#if:{{{dateEnd|}}}
+                | {{#time:Y|{{{dateStart}}}}} - {{#time:Y|{{{dateEnd}}}}}
+                | {{#time:Y|{{{dateStart}}}}} - {{int:atlas-userprofile-present}}
+                }}
+            |   {{#if:{{{dateEnd|}}}
+                | {{Icon|Warning}} {{int:atlas-userprofile-nd}} - {{#time:Y|{{{dateEnd}}}}}
+                | ''{{int:atlas-userprofile-nodate}}''
+                }}
+            }}
+    </div>
+    <div class="pb-3 pl-3"><!--
+    -->'''{{#if:{{{degree|}}}|{{{degree}}}|<span class="text-danger">{{Icon|Warning}} {{int:atlas-userprofile-education-nodegree}}</span>}}<!--
+    --> {{#if:{{{program|}}}|{{{program}}}|<span class="text-danger">{{Icon|Warning}} {{int:atlas-userprofile-education-noprogram}}</span>}}'''<!--
+    -->{{#if:{{{college|}}}|<br>{{{college}}}|}}<!--
+    -->{{#if:{{{gpa|}}}|<br>{{{gpa}}}{{#if:{{{distinction|}}}|, {{{distinction}}}|}}|}}
+    </div>
+</div></includeonly>

@@ -1,0 +1,192 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template adds a collapsible element with toggle button.</p>
+<p>The only required parameters are <code>id</code> and <code>content</code>. For customization options see the template parameters table.</p>
+
+|widgets=
+{{X/Template/Template|1|template=Collapse}}
+{{X/Template/Widget|2|widget=Collapse}}
+{{X/Template/Widget|2|widget=Collapse/Expand}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "id": {
+            "label": "id",
+            "type": "string",
+            "required": true,
+            "description": "HTML ID of the collapsible section; must be unique on this page."
+        },
+        "content": {
+            "label": "content",
+            "required": true,
+            "description": "Content of the collapsible section.",
+            "type": "content"
+        },
+        "heading": {
+            "label": "heading",
+            "type": "string",
+            "description": "Heading of the collapsible section."
+        },
+        "headingclass": {
+            "label": "heading class",
+            "type": "string",
+            "description": "CSS classes for the heading of the collapsible section."
+        },
+         "headerclass": {
+            "label": "header class",
+            "type": "string",
+            "description": "CSS classes for the div that contains the heading and toggle button."
+        },
+        "expand-icon": {
+            "label": "expand-icon",
+            "type": "string",
+            "description": "Apply Font Awesome classes to customize the icon that's displayed when the element is collapsed.",
+            "default": "fas fa-chevron-down"
+        },
+        "collapse-icon": {
+            "label": "collapseicon",
+            "type": "string",
+            "description": "Apply Font Awesome classes to customize the icon that's displayed when the element is expanded.",
+            "default": "fas fa-chevron-up"
+        },
+        "expand-label": {
+            "label": "expand-label",
+            "type": "string",
+            "description": "Enter a custom text that's displayed when the element is collapsed.",
+            "suggestedvalues": ["Customer label text", "none"],
+            "default": "Show"
+        },
+        "collapse-label": {
+            "label": "collapse-label",
+            "type": "string",
+            "description": "Enter a custom text that's displayed when the element is expanded.",
+            "suggestedvalues": ["Customer label text", "none"],
+            "default": "Hide"
+        },
+        "expand-label-class": {
+            "label": "expand-label-class",
+            "type": "string",
+            "description": "Apply bootstrap classes to customize the style of the expand-label text."
+        },
+        "collapse-label-class": {
+            "label": "collapse-label-class",
+            "type": "string",
+            "description": "Apply bootstrap classes to customize the style of the collapse-label text."
+        },
+        "icon-label-order": {
+            "label": "icon-label-order",
+            "type": "string",
+            "description": "Order of the collapse/expand icon and label.",
+            "suggestedvalues": ["icon-first", "label-first"],
+            "default": "label-first"
+        },
+        "position": {
+            "label": "position",
+            "type": "string",
+            "description": "Should the toggle button appear above or below the content?",
+            "suggestedvalues": ["above", "below"],
+            "default": "above"
+        },
+        "toggle-x": {
+            "label": "toggle-x",
+            "type": "string",
+            "description": "Where should the toggle button and heading (if present) appear in the x-direction?",
+            "suggestedvalues": ["left", "right", "center", "between"],
+            "default": "between"
+        },
+        "class": {
+            "label": "class",
+            "type": "string",
+            "description": "CSS classes for the button element.",
+            "suggestedvalues": ["nav-link", "btn btn-primary", "stretched-link"],
+            "default": "nav-link"
+        },
+        "border": {
+            "label": "border",
+            "type": "string",
+            "description": "Should there be a border around the content?",
+            "suggestedvalues": ["true", "rounded"],
+            "default": "false"
+        },
+        "datatoggle": {
+            "label": "data-toggle",
+            "type": "string",
+            "description": "Custom value for the data-toggle attribute of the button element.",
+            "default": "collapse"
+        },
+        "collapsed": {
+            "label": "collapsed",
+            "type": "string",
+            "description": "Should the section initially be collapsed or not?",
+            "suggestedvalues": ["true", "false"],
+            "default": "true"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!-- 
+Using different widgets for collapsed=true/false because parsing a variable for aria-expanded into 1 Widget doesn't work for some reason. The aria-expanded attribute is simply not set on page load, which results in both the collapse and expand button being displayed until click.
+ --><!--
+-->{{#switch:  {{{collapsed}}}
+    |false  =  {{#switch: {{{position}}}
+                |below  =   <div class="collapse show {{#switch:{{{border}}}|true=border p-3|rounded=border rounded p-3|#default=}} my-3" id="{{{id}}}">{{{content}}}</div>
+                            <div class="d-flex align-items-center justify-content-{{#switch:{{{toggle-x}}}|left=left|right=right|center=center|#default=between}} {{{headerclass}}}"><!--
+                            -->{{#if: {{{heading|}}}|<div class="{{{headingclass}}}">{{{heading}}}</div>|}}
+                |#default  =   <div class="d-flex align-items-center justify-content-{{#switch:{{{toggle-x}}}|left=left|right=right|center=center|#default=between}} {{{headerclass}}}"><!--
+                -->{{#if: {{{heading|}}}|<div class="{{{headingclass}}}">{{{heading}}}</div>|}}
+                }}<!--
+                -->{{#if:  {{{id|}}}
+                        |   {{#if: {{{content|}}}
+                            |   {{#Widget:Collapse
+                                |class={{#if:{{{class|}}}|{{{class}}}|nav-link}} {{#switch:{{{position}}}|above=d-block|below=d-block|#default=d-inline}}
+                                |datatarget={{{id}}}
+                                |ariacontrols={{{id}}}
+                                |datatoggle={{#if:{{{data-toggle|}}}|{{{data-toggle}}}|collapse}}
+                                |expandicon={{#if:{{{expand-icon|}}}|{{{expand-icon}}}|fas fa-chevron-down}}
+                                |expandlabel={{#if:{{{expand-label|}}}|{{#switch:{{{expand-label}}}|none=|#default={{{expand-label}}}}}|Show}}
+                                |expandlabelclass={{#if:{{{expand-label-class|}}}|{{{expand-label-class}}}|}}
+                                |collapseicon={{#if:{{{collapse-icon|}}}|{{{collapse-icon}}}|fas fa-chevron-up}}
+                                |collapselabel={{#if:{{{collapse-label|}}}|{{#switch:{{{collapse-label}}}|none=|#default={{{collapse-label}}}}}|Hide}}
+                                |collapselabelclass={{#if:{{{collapse-label-class|}}}|{{{collapse-label-class}}}|}}
+                                |iconlabelorder={{#switch:{{{icon-label-order}}}|icon-first=row-reverse|#default=row}}
+                                }}</div>{{#switch:{{{position}}}
+                                        |below=
+                                        |#default=<div class="collapse show {{#switch:{{{border}}}|true=border p-3|rounded=border rounded p-3|#default=}} my-3" id="{{{id}}}">{{{content}}}</div>
+                                        }}
+                            |Error: <code>content</code> undefined
+                            }}
+                |Error: <code>id</code> undefined
+                }}
+    |#default=  {{#switch: {{{position}}}
+                |below  =   <div class="collapse {{#switch:{{{border}}}|true=border p-3|rounded=border rounded p-3|#default=}} my-3" id="{{{id}}}">{{{content}}}</div>
+                            <div class="d-flex align-items-center justify-content-{{#switch:{{{toggle-x}}}|left=left|right=right|center=center|#default=between}} {{{headerclass}}}"><!--
+                            -->{{#if: {{{heading|}}}|<div class="{{{headingclass}}}">{{{heading}}}</div>|}}
+                |#default = <div class="d-flex align-items-center justify-content-{{#switch:{{{toggle-x}}}|left=left|right=right|center=center|#default=between}} {{{headerclass}}}"><!--
+                            -->{{#if: {{{heading|}}}|<div class="{{{headingclass}}}">{{{heading}}}</div>|}}
+                }}<!--
+                -->{{#if:  {{{id|}}}
+                        |   {{#if:{{{content|}}}
+                            |   {{#Widget:Collapse/Expand
+                                |class={{#if:{{{class|}}}|{{{class}}}|nav-link}} {{#switch:{{{position}}}|above=d-block|below=d-block|#default=d-inline}}
+                                |datatarget={{{id}}}
+                                |ariacontrols={{{id}}}
+                                |datatoggle={{#if:{{{data-toggle|}}}|{{{data-toggle}}}|collapse}}
+                                |expandicon={{#if:{{{expand-icon|}}}|{{{expand-icon}}}|fas fa-chevron-down}}
+                                |expandlabel={{#if:{{{expand-label|}}}|{{#switch:{{{expand-label}}}|none=|#default={{{expand-label}}}}}|Show}}
+                                |expandlabelclass={{#if:{{{expand-label-class|}}}|{{{expand-label-class}}}|}}
+                                |collapseicon={{#if:{{{collapse-icon|}}}|{{{collapse-icon}}}|fas fa-chevron-up}}
+                                |collapselabel={{#if:{{{collapse-label|}}}|{{#switch:{{{collapse-label}}}|none=|#default={{{collapse-label}}}}}|Hide}}
+                                |collapselabelclass={{#if:{{{collapse-label-class|}}}|{{{collapse-label-class}}}|}}
+                                |iconlabelorder={{#switch:{{{icon-label-order}}}|icon-first=row-reverse|#default=row}}
+                                }}</div>{{#switch:{{{position}}}
+                                        |below=
+                                        |#default=<div class="collapse {{#switch:{{{border}}}|true=border p-3|rounded=border rounded p-3|#default=}} my-3" id="{{{id}}}">{{{content}}}</div>
+                                        }}
+                            |Error: <code>content</code> undefined
+                            }}
+                |Error: <code>id</code> undefined
+                }}
+}}</includeonly>

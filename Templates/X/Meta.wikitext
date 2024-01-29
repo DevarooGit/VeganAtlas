@@ -1,0 +1,73 @@
+<noinclude>
+{{X/Template
+|description=This template does three things:
+# It adds a breadcrumb that leads to the main article
+# It adds a link to the documentation of the article that calls this template
+# It populates the [[Special:CargoTables/Meta|Meta table]] with page information (this is done automatically so there's no need to specify parameters).<br>This information will be of statistical interest, plus some information is currently used in the [[Template:X/Pages/DisplayAuthors|DisplayAuthors template]].
+
+This template is part of the [[Template:X/Pages/SubpageBoilerplate|SubpageBoilerplate]] and is therefore preloaded when creating subpages via an "Add Content" button.
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+{{X/Template/Extension|extension=Display_Title}}
+{{X/Template/Extension|extension=PageAutors}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Pages/Status}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-section-meta-documentation}}
+}}</noinclude>
+{{#switch: {{SITENAME}}
+|Atlas Global = <languages/>
+|#default=
+}}
+<div class="meta-header d-flex justify-content-between border-bottom pb-1 mb-3">
+<!-- Breadcrumbs -->
+<div>{{#switch: {{SUBPAGENAME}}
+|{{PAGELANGUAGE}} = [[{{#ifexist: {{ROOTPAGENAME}}/{{SUBPAGENAME}}|{{ROOTPAGENAME}}/{{SUBPAGENAME}}|{{ROOTPAGENAME}}}}]] > {{#titleparts: {{#getdisplaytitle:{{FULLPAGENAME}} }}|1|-1}}
+|#default = [[{{ROOTPAGENAME}}]] > {{SUBPAGENAME}} }}</div>
+<!-- Documentation -->
+<div>{{#switch: {{SUBPAGENAME}}
+|{{PAGELANGUAGE}} = [[{{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}|{{int:atlas-section-meta-documentation}}]]
+|#default = [[{{FULLPAGENAME}}/doc|{{int:atlas-section-meta-documentation}}]]}}</div>
+</div>
+{{X/Pages/AttachMetaTable
+|size =             {{REVISIONSIZE}}	
+|authors =          {{PAGEAUTHORS}}
+|lastrevision =
+|documentation =    {{#switch: {{SUBPAGENAME}}
+                    <!-- Since SUBPAGENAME = PAGELANGUAGE, we know that this template is located on a page with directory pattern ~/pagename/{language-code} and check if the doc exists at ~/pagename/doc/{language-code}. -->
+                    |{{PAGELANGUAGE}} = {{#ifexist: {{#titleparts: {{FULLPAGENAME}}|-1|-10}}/doc/{{SUBPAGENAME}}
+                                        |yes <!-- HasDocumentation = true -->
+                                        |no <!-- HasDocumentation = false -->
+                                        }}
+                    <!-- Since SUBPAGENAME ≠ PAGELANGUAGE, we know that this template is located on a page with directory pattern ~/pagename and check if the doc exists at ~/pagename/doc. -->
+                    |#default = {{#ifexist: {{FULLPAGENAME}}/doc
+                                |yes <!-- HasDocumentation = true -->
+                                |no <!-- HasDocumentation = false -->
+                                }}
+                    }}
+|editprotection =   {{PROTECTIONLEVEL:edit}}
+|threadsOpen =      {{#ask:
+                    [[Topic owner::{{X/Decoder|{{FULLPAGENAME}}}}]]
+                    [[Topic is locked::false]]
+                    |format=count
+                    |default=
+                    |no html
+                    }}
+|threadsClosed =    {{#ask:
+                    [[Topic owner::{{X/Decoder|{{FULLPAGENAME}}}}]]
+                    [[Topic is locked::true]]
+                    |format=count
+                    |default=
+                    |no html
+                    }}
+|reviewsAccepted =
+|reviewsRejected =
+}}<!-- The empty div in the next line prevents Visual Editor from placing the text that follows this template in the <noinclude> tags that surround this template. -->
+<div></div>

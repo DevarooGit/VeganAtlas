@@ -1,0 +1,72 @@
+<noinclude>{{X/Template
+|description=
+<p>This template provides a count of open and/or closed threads.</p>
+<p>The count is used, for instance, to display the number of open threads for a given section in the Threads tab.</p>
+<p>It builds on the extensions [https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki Semantic MediaWiki], [https://www.mediawiki.org/wiki/Extension:StructuredDiscussions Structured Discussions], [https://www.mediawiki.org/wiki/Extension:Semantic_Structured_Discussions Semantic Structured Discussions] and [https://www.mediawiki.org/wiki/Extension:External_Data Exernal Data]. Since Structured Discussions is unmaintained as of December 2023, it's uncertain if this will be continued to be used on here. For a discussion on alternatives see [[Atlas:Development/Agenda|Agenda / External forum]].
+
+==== How threads are counted ====
+
+<p>The count is generated via a Semantic MediaWiki request that lists threads with the following properties:</p>
+
+<p class="code"><nowiki>[[Topic owner::{{{sourcepage}}}||{{{sourcepage}}}/en||{{{sourcepage}}}/de]]</nowiki><br><nowiki>[[Topic is locked::{{{Topic is locked}}}]]</nowiki>
+</p>
+
+As shown above, the call returns threads from untranslated and translated pages. However, the supported languages are currently hardcoded into the request. If the overall setup stays in use then this should be changed in the future, e.g. through a Lua module with a pertinent function.
+
+==== Parser functions used ====
+
+<p>For source=local the request is made via the [https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki SMW] parser function <code>#ask:</code> with format = <code>count</code></p>
+
+<p>For source=global the request is made via the [https://www.mediawiki.org/wiki/Extension:External_Data External data] parser function <code>#external_value</code>. The <code>source</code> parameter is set to the URL of a call to the Semantic MediaWiki API of Atlas Global. Parameter values are already hypen encoded when they're parsed into this template from the [[Template:Section/Transclude|Section/Transclude]] template. The list of threads is fetched in JSON format but only "row" is returned, which is the count of matching threads.</p>
+|extensions=
+{{X/Template/Extension|extension=StructuredDiscussions}}
+{{X/Template/Extension|extension=Semantic_Structured_Discussions}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=External_Data}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Encoder}}
+{{X/Template/Template|3|template=X/Threads/CountThreads}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Local or global wiki.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "sourcepage": {
+            "label": "Sourcepage",
+            "type": "string",
+            "required": true,
+            "description": "Pagename of the section with namespace but without language code."
+        },
+        "Topic is locked": {
+            "label": "Topic is locked",
+            "type": "boolean",
+            "required": true,
+            "description": "Used to indicate if template should count open or closed threads.",
+            "suggestedvalues": ["true", "false"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+{{#switch: {{{source}}}
+|local =    {{#ask:
+            [[Topic owner::{{{sourcepage}}}||{{{sourcepage}}}/en||{{{sourcepage}}}/de]]
+            [[Topic is locked::{{{Topic is locked}}}]]
+            |format=count
+            |default=0
+            |no html
+            }}
+|global={{#external_value:rows
+|source=https://veganatlas.org/global/Special:Ask/format%3Djson/default-3D-7B-22rows-22-3A0-7D/-5B-5BTopic-20owner::{{{sourcepage}}}-7C-7C{{{sourcepage}}}-2Fen-7C-7C{{{sourcepage}}}-2Fde-5D-5D-20-5B-5BTopic-20is-20locked::{{{Topic is locked}}}-5D-5D
+|format=JSON
+}}
+}}</includeonly>

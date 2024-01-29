@@ -1,0 +1,22 @@
+<noinclude>
+{{X/Template
+|description=This template holds a link to an extension; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>extensions</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/Extension}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "extension": {
+            "label": "Extension",
+            "type": "string",
+            "required": true,
+            "description": "Extension name"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+* [https://www.mediawiki.org/wiki/Extension:{{{extension}}} {{#replace:{{{extension}}}|_|&#32;}}]</includeonly>

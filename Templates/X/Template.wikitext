@@ -1,0 +1,145 @@
+<noinclude>
+{{X/Template
+|description=This template holds structured information about templates; it ought be included in the <code><nowiki>noinclude</nowiki></code> section of other templates.
+
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/Template}}
+{{X/Template/Template|2|template=X/Template/Widget}}
+{{X/Template/Template|2|template=X/Template/Form}}
+{{X/Template/Template|2|template=X/Template/File}}
+{{X/Template/Template|2|template=X/Template/i18n}}
+{{X/Template/Template|2|template=X/Template/Extension}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "description": {
+            "label": "Description",
+            "type": "string",
+            "required": true,
+            "description": "Description of what the template does."
+        },
+        "templates": {
+            "label": "Templates",
+            "type": "wiki-template-name",
+            "description": "Templates that use, or are used by, this template. Each object must be set to the suggested template below. '1/2/3/4/5' = hierarchy, 'template' = template name.",
+            "suggestedvalues": ["{{X/Template/Template|1,2,3,4,5|template=}}"]
+        },
+        "widgets": {
+            "label": "Widgets",
+            "type": "wiki-template-name",
+            "description": "Widgets that use, or are used by, this template. Each object must be set to the suggested template below. '1/2/3/4/5' = hierarchy, 'widget' = widget name.",
+            "suggestedvalues": ["{{X/Template/Widget|1,2,3,4,5|widget=}}"]
+        },
+        "forms": {
+            "label": "Forms",
+            "type": "wiki-template-name",
+            "description": "Forms that use, or are used by, this template. Each object must be set to the suggested template below. '1/2/3/4/5' = hierarchy, 'form' = form name.",
+            "suggestedvalues": ["{{X/Template/Form|1,2,3,4,5|form=}}"]
+        },
+        "files": {
+            "label": "Files",
+            "type": "wiki-template-name",
+            "description": "Files used by this template. Each object must be set to the suggested template below. 'file' = file name. If the file is hosted at Wikimedia, set 'source' = 'commons'.",
+            "suggestedvalues": ["{{X/Template/File|file=|source=}}"]
+        },
+        "i18n": {
+            "label": "i18n",
+            "type": "wiki-template-name",
+            "description": "i18n definitions that are used by this template. Each object must be set to the suggested template below. 'i18n' = i18n name.",
+            "suggestedvalues": ["{{X/Template/i18n|i18n=}}"]
+        },
+        "extensions": {
+            "label": "Extensions",
+            "type": "wiki-template-name",
+            "description": "Extensions that are used by this template. Each object must be set to the suggested template below. 'extension' = extension name.",
+            "suggestedvalues": ["{{X/Template/Extension|extension=}}"]
+        },
+        "preview": {
+            "label": "Preview",
+            "type": "content",
+            "description": "Preview of the template."
+        },
+        "templatedata": {
+            "label": "TemplateData",
+            "type": "string",
+            "description": "TemplateData for this template. Set this parameter to one instance of a TemplateData definition, i.e. use templatedata tags and add the template data in JSON format.",
+            "suggestedvalues": ["<templatedata>...<\/templatedata>"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>__NOTOC__{{#set: Uses X/Template=true}}
+{{#if: {{{description|}}}
+|
+=== Description ===
+{{#if:{{{authors|}}}|<p>Authors: {{{authors}}}</p>|}}
+<p>{{{description}}}</p>
+|}}
+{{#if: {{{templates|}}}
+|
+=== Dependencies ===
+|
+{{#if: {{{widgets|}}}
+|
+=== Dependencies ===
+|{{#if: {{{forms|}}}
+|
+=== Dependencies ===
+|{{#if: {{{files|}}}
+|
+=== Dependencies ===
+|{{#if: {{{i18n|}}}
+|
+=== Dependencies ===
+|{{#if: {{{extensions|}}}
+|
+=== Dependencies ===
+}}
+}}
+}}
+}}
+}}
+}}
+{{#if: {{{extensions|}}}
+|<div>
+==== Extensions ====
+{{{extensions}}}</div>
+|}}<!--
+-->{{#if: {{{templates|}}}
+|<div>
+==== Templates ====
+{{{templates}}}</div>
+|}}<!--
+-->{{#if: {{{widgets|}}}
+|<div>
+==== Widgets ====
+{{{widgets}}}</div>
+|}}<!--
+-->{{#if: {{{forms|}}}
+|<div>
+==== Forms ====
+{{{forms}}}</div>
+|}}<!--
+-->{{#if: {{{files|}}}
+|<div>
+==== Files ====
+<ul>{{{files}}}</ul></div>
+|}}<!--
+-->{{#if: {{{i18n|}}}
+|<div>
+==== i18n ====
+{{{i18n}}}</div>
+|}}<!--
+-->{{#if: {{{templatedata|}}}
+|<div>
+=== Parameters ===
+{{{templatedata}}}</div>
+|}}
+{{#if: {{{preview|}}}
+|<div>
+=== Preview ===
+{{{preview}}}</div>
+|}}</includeonly>

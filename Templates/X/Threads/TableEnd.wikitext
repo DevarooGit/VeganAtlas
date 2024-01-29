@@ -1,0 +1,13 @@
+<noinclude>{{X/Template
+|description=This template contains the closing tags for the table created by the [[Template:X/Threads/DisplayThreads|DisplayThreads]] template.
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Encoder}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+}}</noinclude><includeonly>
+|}</div></includeonly>

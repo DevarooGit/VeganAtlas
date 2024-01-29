@@ -1,0 +1,34 @@
+<noinclude>
+{{X/Template
+|description=This template adds structured data about work. It is usually added with the [[Form:MyProfile|MyProfile form]].
+|templates=
+{{X/Template/Template|1|template=X/MyProfile/Work}}
+{{X/Template/Template|2|template=X/MyProfile/Work/Object}}
+|forms=
+{{X/Template/Form|1|form=MyProfile}}
+{{X/Template/Template|2|template=X/MyProfile/Work}}
+|i18n={{X/Template/i18n|i18n=atlas-userprofile-work-heading}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "objects": {
+            "label": "Work objects",
+            "type": "wiki-template-name",
+            "required": true,
+            "description": "Each object must be set to the suggested template below. For parameters, see the \/Work\/Object template. Each work object adds an additional column to the grid that's defined in this template.",
+            "suggestedvalues": ["{{X/MyProfile/Work/Object}}"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+<div class="my-5" id="{{PAGENAME}}-work">
+<h3 class="mt-0"> {{int:atlas-userprofile-work-heading}} </h3>
+
+<div class="container">
+<div class="row my-4">
+{{{objects|}}}
+</div>
+</div></includeonly>

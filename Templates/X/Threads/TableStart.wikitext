@@ -1,0 +1,24 @@
+<noinclude>{{X/Template
+|description=This template contains the opening div, opening table tag and header row for the table created by the [[Template:X/Threads/DisplayThreads|DisplayThreads]] template.
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Encoder}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-threads-table-topic}}
+{{X/Template/i18n|i18n=atlas-threads-table-author}}
+{{X/Template/i18n|i18n=atlas-threads-table-date}}
+{{X/Template/i18n|i18n=atlas-threads-table-language}}
+}}</noinclude><includeonly>
+<div class="overflow-auto">
+{| class="wikitable sortable w-100 m-0"
+! class="text-left" style="width:55%" | {{int:atlas-threads-table-topic}}
+! class="text-left" style="width:15%" | {{int:atlas-threads-table-author}}
+! class="text-left" style="width:15%" | {{int:atlas-threads-table-date}}
+! class="text-left" style="width:15%" | {{int:atlas-threads-table-language}}
+|-</includeonly>

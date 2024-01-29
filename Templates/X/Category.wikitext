@@ -1,0 +1,25 @@
+<noinclude>
+{{X/Template
+|description=This template adds a category link.
+|forms=
+{{X/Template/Form|1|form=Create}}
+{{X/Template/Template|2|template=X/Categories}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Category",
+            "type": "string",
+            "description": "Comma separated list of categories.",
+            "required": true
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>{{#if:{{{1|}}}
+|{{#arraymap:{{{1|}}}|,|x|[[Category:x{{#switch:{{PAGELANGUAGE}}|en=|#default=/{{PAGELANGUAGE}}}}]]|\n}}
+|
+}}</includeonly>
+

@@ -1,0 +1,95 @@
+<noinclude>
+{{X/Template
+|description=
+This template adds a [https://fontawesome.com/v5/search?o=r&m=free FontAwesome] icon.
+|preview=
+{{{!}} class="wikitable"
+! Preset value
+! Displayed icon
+{{!}}-
+{{!}}<code>check</code>
+{{!}} class="text-center" {{!}} {{Icon|check}}
+{{!}}-
+{{!}}<code>cross</code>
+{{!}} class="text-center" {{!}} {{Icon|cross}}
+{{!}}-
+{{!}}<code>crossyellow</code>
+{{!}} class="text-center" {{!}} {{Icon|crossyellow}}
+{{!}}-
+{{!}}<code>dots-h</code>
+{{!}} class="text-center" {{!}} {{Icon|dots-h}}
+{{!}}-
+{{!}}<code>heart</code>
+{{!}} class="text-center" {{!}} {{Icon|heart}}
+{{!}}-
+{{!}}<code>info</code>
+{{!}} class="text-center" {{!}} {{Icon|info}}
+{{!}}-
+{{!}}<code>no</code>
+{{!}} class="text-center" {{!}} {{Icon|no}}
+{{!}}-
+{{!}}<code>plus</code>
+{{!}} class="text-center" {{!}} {{Icon|plus}}
+{{!}}-
+{{!}}<code>puzzle</code>
+{{!}} class="text-center" {{!}} {{Icon|puzzle}}
+{{!}}-
+{{!}}<code>setting</code>
+{{!}} class="text-center" {{!}} {{Icon|setting}}
+{{!}}-
+{{!}}<code>smart</code>
+{{!}} class="text-center" {{!}} {{Icon|smart}}
+{{!}}-
+{{!}}<code>warning</code>
+{{!}} class="text-center" {{!}} {{Icon|warning}}
+{{!}}-
+{{!}}<code>warningred</code>
+{{!}} class="text-center" {{!}} {{Icon|warningred}}
+{{!}}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Preset icon",
+            "type": "string",
+            "description": "Preset icon name",
+            "suggestedvalues": ["check", "cross", "crossyellow", "dots-h", "heart", "info", "no", "plus", "puzzle", "setting", "smart", "warning", "warningred"]
+        },
+        "fa": {
+            "label": "FontAwesome",
+            "type": "string",
+            "description": "FontAwesome class(es); only applied if {{{1}}} is not set."
+        },
+        "color": {
+            "label": "Icon color",
+            "type": "string",
+            "description": "CSS color for the icon; only applied when 'fa' is also set."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><span {{#if:{{{1|}}}
+|class="{{#switch: {{lc:{{{1}}}}}
+|check=fas fa-check-circle text-success
+|cross=fas fa-times-circle text-danger
+|crossyellow=fas fa-times-circle text-warning
+|dots-h=fas fa-ellipsis-h
+|heart=fas fa-heart text-danger
+|info=fas fa-info-circle text-primary
+|no=fas fa-minus-circle text-danger
+|plus=fas fa-plus-circle text-success
+|puzzle=fas fa-puzzle-piece text-primary
+|setting=fas fa-cog text-secondary
+|smart=far fa-lightbulb text-warning
+|warning=fas fa-exclamation-triangle text-warning
+|warningred=fas fa-exclamation-triangle text-danger
+}}"
+|{{#if:{{{fa|}}}
+|{{#if: {{{color|}}}
+|class="{{{fa}}}" style="color:{{{color}}}"
+|class="{{{fa}}}"
+}}
+|}}
+}}></span>

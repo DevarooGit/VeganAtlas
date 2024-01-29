@@ -1,0 +1,89 @@
+<noinclude>{{X/Template
+|description=
+<p>This template displays a table with open and/or closed threads in the Threads tab.</p>
+<p class="alert-light text-dark border p-3">This template builds on the extensions [https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki Semantic MediaWiki], [https://www.mediawiki.org/wiki/Extension:StructuredDiscussions Structured Discussions], [https://www.mediawiki.org/wiki/Extension:Semantic_Structured_Discussions Semantic Structured Discussions] and [https://www.mediawiki.org/wiki/Extension:External_Data Exernal Data]. Since Structured Discussions is unmaintained as of December 2023, it's uncertain if this will be continued to be used on here. For a discussion on alternatives see [[Atlas:Development/Agenda|Agenda / External forum]].
+
+==== How threads are listed ====
+
+<p>The table is generated via a Semantic MediaWiki request that lists threads with the following properties:</p>
+
+<p class="code"><nowiki>[[Topic owner::{{{sourcepage}}}||{{{sourcepage}}}/en||{{{sourcepage}}}/de]]</nowiki><br><nowiki>[[Topic is locked::{{{Topic is locked}}}]]</nowiki>
+</p>
+
+As shown above, the call returns threads from untranslated and translated pages. However, the supported languages are currently hardcoded into the request. If the overall setup stays in use then this should be changed in the future, e.g. through a Lua module with a pertinent function.
+
+The following property values are returned: Topic title, author, date, and language.
+
+==== Parser functions used ====
+
+<p>For source=local the request is made via the [https://www.mediawiki.org/wiki/Extension:Semantic_MediaWiki SMW] parser function <code>#ask:</code>; display format is determined by templates (see dependencies).</p>
+
+<p>For source=global the request is made via the [https://www.mediawiki.org/wiki/Extension:External_Data External data] parser function <code>#display_external_table</code>. The <code>source</code> parameter is set to the URL of a call to the Semantic MediaWiki API of Atlas Global. Parameter values are already hypen encoded when they're parsed into this template from the [[Template:Section/Transclude|Section/Transclude]] template. The list of threads is fetched in "CSV with header" format; display format is determined by templates (see dependencies).</p>
+|extensions=
+{{X/Template/Extension|extension=StructuredDiscussions}}
+{{X/Template/Extension|extension=Semantic_Structured_Discussions}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=External_Data}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Encoder}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Local or global wiki.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "sourcepage": {
+            "label": "Sourcepage",
+            "type": "string",
+            "required": true,
+            "description": "Pagename of the section with namespace but without language code."
+        },
+        "Topic is locked": {
+            "label": "Topic is locked",
+            "type": "boolean",
+            "required": true,
+            "description": "Used to indicate if template should display open or closed threads.",
+            "suggestedvalues": ["true", "false"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!--
+-->{{#switch: {{{source}}}
+|local =    {{#ask:
+            [[Topic owner::{{{sourcepage}}}||{{{sourcepage}}}/en||{{{sourcepage}}}/de]]
+            [[Topic is locked::{{{Topic is locked}}}]]
+            |?=Topic
+            |?Topic title=Title
+            |?Topic owner=Owner
+            |?Topic modification date#ISO=Date
+            |?Topic creator=Author
+            |mainlabel=-
+            |link=none
+            |format=plainlist
+            |named args=yes
+            |introtemplate=X/Threads/TableStart
+            |template=X/Threads/TableRow-Local
+            |outrotemplate=X/Threads/TableEnd
+            }}
+|global={{#display_external_table: source = https://veganatlas.org/mediawiki/global/index.php?title=Special:Ask&x=-5B-5BTopic-20owner%3A%3A{{{sourcepage}}}-7C-7C{{{sourcepage}}}-2Fen-7C-7C{{{sourcepage}}}-2Fde-5D-5D-20-5B-5BTopic-20is-20locked%3A%3A{{{Topic is locked}}}-5D-5D%2F-3F%3DTopic%2F-3FTopic-20owner%3DOwner%2F-3FTopic-20title%3DTitle%2F-3FTopic-20creator%3DAuthor%2F-3FTopic-20modification-20date%3DDate&format=csv&limit=20&link=none&headers=show&mainlabel=-&searchlabel=CSV&propsep=%2C+&valuesep=%2C+&template=Threads%2FTableRow&named+args=1&class=sortable+wikitable+smwtable&introtemplate=Threads%2FTableStart&outrotemplate=Threads%2FTableEnd&sep=%2C+&sort=&order=asc&offset=0&prettyprint=true&unescape=true
+|format=CSV with header
+|data=Owner=Owner,Topic=Topic,Title=Title,Author=Author,Date=Date
+|delimiter=,
+|intro template=X/Threads/TableStart
+|template=X/Threads/TableRow-Global
+|outro template=X/Threads/TableEnd
+}}}}</includeonly>

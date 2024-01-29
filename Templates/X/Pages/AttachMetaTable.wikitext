@@ -1,0 +1,81 @@
+<noinclude>
+{{X/Template
+|description=
+{{#cargo_attach:_table=Meta
+|size=Integer
+|authors=List (,) of String
+|lastrevision=Date
+|documentation=Boolean
+|threadsOpen=Integer
+|threadsClosed=Integer
+|reviewsAccepted=Integer
+|reviewsRejected=Integer
+|editprotection=String
+}}
+
+<p>The meta table contains structured information about pages. It's populated by the [[Template:X/Meta|Meta template]], which is added via the [[Template:X/Pages/SubpageBoilerplate|SubpageBoilerplate]].</p>
+
+<templatedata>
+{
+    "description": "",
+    "params": {
+       "authors": {
+            "label": "Authors",
+            "type": "string",
+            "description": "List (,) of page authors"
+        },
+        "lastrevision": {
+            "label": "Latest revision",
+            "type": "date",
+            "description": "Latest revision date of the page"
+        },
+         "size": {
+            "label": "Revision size",
+            "type": "number",
+            "description": "Revision size of the page (in bytes)"
+        },
+        "documentation": {
+            "label": "Documentation status",
+            "type": "boolean",
+            "description": "Has a documentation attached at ~/doc"
+        },
+        "editprotection": {
+            "label": "Edit protection",
+            "type": "string",
+            "description": "User groups with edit rights for the page"
+        },
+        "threadsOpen": {
+            "label": "Open threads",
+            "type": "number",
+            "description": "Open discussion threads for this page"
+        },
+        "threadsClosed": {
+            "label": "Closed threads",
+            "type": "number",
+            "description": "Closed discussion threads for this page"
+        },
+        "reviewsAccepted": {
+            "label": "Accepted reviews",
+            "type": "number",
+            "description": "Accepted peer-reviews for this page"
+        },
+        "reviewsRejected": {
+            "label": "Rejected reviews",
+            "type": "number",
+            "description": "Rejected peer-reviews for this page"
+        }
+    }
+}</templatedata>
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+{{X/Template/Template|5|template=X/Pages/AttachMetaTable}}
+{{X/Template/Template|6|template=X/Pages/DeclareMetaTable}}
+}}</noinclude>
+<includeonly>{{#cargo_store:_table=Meta}}<nowiki /></includeonly>

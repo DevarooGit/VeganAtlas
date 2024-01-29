@@ -1,0 +1,32 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template decodes characters that the <code><nowiki>{{PAGENAME}}</nowiki></code> magic word [https://www.mediawiki.org/wiki/Manual:PAGENAMEE_encoding#PAGENAME HTML-encodes].</p>
+<p>Decoding characters is required to select pages via [https://www.semantic-mediawiki.org/wiki/Help:Inline_queries#Parser_function_.23ask SMW #Ask queries] (e.g., in the [[Template:X/Meta|Meta template]]).</p>
+
+{{{!}} class="wikitable"
+! HTML-encoded
+! Decoded output
+{{!}}-
+{{!}} class="text-center code" {{!}} &amp;#34;
+{{!}} class="text-center code" {{!}} "
+{{!}}-
+{{!}} class="text-center code" {{!}} &amp;#38;
+{{!}} class="text-center code" {{!}} &
+{{!}}-
+{{!}} class="text-center code" {{!}} &amp;#39;
+{{!}} class="text-center code" {{!}} '
+{{!}}}
+
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+}}</noinclude><includeonly>{{#replace:
+{{#replace:
+{{#replace:{{{1}}}|&#34;|"}}
+|&#38;|&}}
+|&#39;|'}}</includeonly>

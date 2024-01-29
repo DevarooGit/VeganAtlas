@@ -1,0 +1,21 @@
+<noinclude>
+{{X/Template
+|description=This template adds interwiki links.
+|forms=
+{{X/Template/Form|1|form=Create}}
+{{X/Template/Template|2|template=X/Interwiki}}
+}}</noinclude><includeonly>
+{{#if: {{{en-us|}}}|[[atlas-en-us:{{ucfirst:{{{en-us}}}}}]]|}}
+{{#if: {{{en-gb|}}}|[[atlas-en-gb:{{ucfirst:{{{en-gb}}}}}]]|}}
+{{#if: {{{en-au|}}}|[[atlas-en-au:{{ucfirst:{{{en-au}}}}}]]|}}
+{{#if: {{{en-nz|}}}|[[atlas-en-nz:{{ucfirst:{{{en-nz}}}}}]]|}}
+{{#if: {{{en-ca|}}}|[[atlas-en-ca:{{ucfirst:{{{en-ca}}}}}]]|}}
+{{#if: {{{de-de|}}}|[[atlas-de-de:{{ucfirst:{{{de-de}}}}}]]|}}
+{{#if: {{{nl-nl|}}}|[[atlas-nl-nl:{{ucfirst:{{{nl-nl}}}}}]]|}}
+{{#if: {{{fr-fr|}}}|[[atlas-fr-fr:{{ucfirst:{{{fr-fr}}}}}]]|}}
+{{#if: {{{es-es|}}}|[[atlas-es-es:{{ucfirst:{{{es-es}}}}}]]|}}
+{{#if: {{{zh-cn|}}}|[[atlas-zh-cn:{{ucfirst:{{{zh-cn}}}}}]]|}}
+{{#if: {{{hi-in|}}}|[[atlas-hi-in:{{ucfirst:{{{hi-in}}}}}]]|}}
+{{#if: {{{global|}}}|[[atlas-global:{{ucfirst:{{{global}}}}}]]|}}
+[[atlas-addnew:Atlas:Add_country_or_language]]
+</includeonly>

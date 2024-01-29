@@ -1,0 +1,108 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template adds a button to create - or link to - a subpage with specified parameters.</p>
+<p>It is called by the [[Template:Section/Define{{!}}Section/Define]] or [[Template:Section/Transclude{{!}}Section/Transclude]] template if the requested page doesn't exist.</p>
+|extensions={{X/Template/Extension|extension=InputBox}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Pages/Status}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-pages-addcontent-btn}}
+{{X/Template/i18n|i18n=atlas-pages-translatesection-btn}}
+{{X/Template/i18n|i18n=atlas-pages-global-page-404}}
+{{X/Template/i18n|i18n=atlas-pages-global-create-btn}}
+{{X/Template/i18n|i18n=atlas-pages-global-translate-btn}}
+{{X/Template/i18n|i18n=atlas-pages-global-page-untranslated}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "source": {
+            "type": "string",
+            "required": true,
+            "description": "Page location (local/global Vegan Atlas site)",
+            "suggestedvalues": ["local", "global"]
+        },
+        "fullpagename": {
+            "type": "string",
+            "required": true,
+            "description": "Full page name of the pertinent subpage"
+        },
+        "action": {
+            "type": "string",
+            "description": "Specifies button behavior",
+            "suggestedvalues": ["create", "create-doc", "translate"]
+        },
+        "heading": {
+            "type": "string",
+            "description": "Section heading"
+        },
+        "level": {
+            "type": "number",
+            "description": "Heading level",
+            "suggestedvalues": ["2", "3", "4", "5"]
+        }
+    }
+}
+</templatedata>
+==== Button behavior ====
+{{{!}} class="wikitable w-100"
+!Action
+!Button behavior
+{{!}}-
+{{!}}<code>create</code>, <code>#default</code>
+{{!}}Creates subpage at the specified path and preloads [[Template:X/Pages/SubpageBoilerplate{{!}}Section/Boilerplate template]]
+{{!}}-
+{{!}}<code>create-doc</code>
+{{!}}Creates subpage at the specified path with <code>/doc</code> appended
+{{!}}-
+{{!}}<code>translate</code>
+{{!}}Links to the translatable page
+{{!}}-
+{{!}} colspan="2" class="font-italic" {{!}} {{Icon|Info}} The below behaviour applies when a non-existing Atlas Global page is requested
+{{!}}-
+{{!}}<code>create</code>
+{{!}}Links to the non-existing page at Atlas Global
+{{!}}-
+{{!}}<code>translate</code>
+{{!}}Links to the translatable page at Atlas Global
+{{!}}}
+}}</noinclude><includeonly>
+{{#if:{{{heading|}}}|<h{{{level}}}>{{{heading}}}</h{{{level}}}>|}}
+<div class="d-flex flex-column align-items-center bg-light border p-5">
+    {{#switch: {{{source}}}
+    | local =   {{#switch: {{{action}}}
+                |translate =    <div>[[{{{fullpagename}}}|<span class="btn btn-primary">{{int:atlas-pages-translatesection-btn}}</span>]]</div>
+                |create-doc =   {{#tag:inputbox |
+                                type=create
+                                default={{{fullpagename}}}/doc
+                                hidden=yes
+                                buttonlabel=Add documentation
+                                useve=true
+                                id=create-documentation-page
+                                }}
+                |#default =     {{#tag:inputbox |
+                                type=create
+                                default={{{fullpagename}}}
+                                hidden=yes
+                                buttonlabel={{int:atlas-pages-addcontent-btn}}
+                                preload=Template:X/Pages/SubpageBoilerplate
+                                useve=true
+                                id=create-section-page
+                                }}
+                }}
+    | global =  {{#switch: {{{action}}}
+                | create =      <p>{{int:atlas-pages-global-page-404}}</p>
+                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{int:atlas-pages-global-create-btn}}</span>]]</div>
+                | translate =   <p>{{int:atlas-pages-global-page-untranslated}}</p>
+                                <div>[[atlasglobal:{{#replace:{{{fullpagename}}}| |_}}|<span class="btn btn-primary">{{int:atlas-pages-global-translate-btn}}</span>]]</div>
+                }}
+    }}
+</div></includeonly>

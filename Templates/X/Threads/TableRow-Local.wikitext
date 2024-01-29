@@ -1,0 +1,62 @@
+<noinclude>{{X/Template
+|description=This template contains a data row for the table created by the [[Template:X/Threads/DisplayThreads|DisplayThreads]] template (when source=local).
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Encoder}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "Topic": {
+            "label": "Topic",
+            "type": "string",
+            "required": true,
+            "description": "Topic pagename",
+            "example": "XZIUXOIXOIBBIU"
+        },
+        "Title": {
+            "label": "Title",
+            "type": "string",
+            "required": true,
+            "description": "Topic title",
+            "example": "Lorem Ipsum"
+        },
+        "Author": {
+            "label": "Author",
+            "type": "wiki-user-name",
+            "required": true,
+            "description": "Topic author",
+            "example": "User123"
+        },
+        "Date": {
+            "label": "Date",
+            "type": "date",
+            "required": true,
+            "description": "Date",
+            "example": "2023-12-31" 
+        },
+        "Owner": {
+            "label": "Owner",
+            "type": "string",
+            "required": true,
+            "description": "Used to obtain language"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+| class="text-left" style="width:55%" | [[{{{Topic}}}|{{{Title}}}]]
+| class="text-left" style="width:15%" | [[User:{{{Author}}}|{{{Author}}}]]
+| class="text-left" style="width:15%" | {{#time:Y-m-d|{{{Date}}}}}
+| class="text-left" style="width:15%" | {{#switch: {{#count:{{{Owner}}}|/}}
+                                        |1={{#switch:{{SITENAME}}|Atlas Global={{#language:en}}|#default={{#language:{{CONTENTLANG}}}} }}
+                                        |#default={{#language:{{#titleparts: {{{Owner}}}|1|-1}} }}
+                                        }}
+|-</includeonly>

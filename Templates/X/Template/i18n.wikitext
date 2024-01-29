@@ -1,0 +1,22 @@
+<noinclude>
+{{X/Template
+|description=This template holds the name of an i18n definition; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>i18n</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/i18n}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "i18n": {
+            "label": "i18n name",
+            "type": "string",
+            "required": true,
+            "description": "i18n name"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+* {{{i18n}}}</includeonly>

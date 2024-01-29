@@ -1,0 +1,285 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template checks if the defined section exists.</p>
+<p>Depending on the result, it adds either of the following templates:</p>
+{{{!}} class="wikitable"
+!Section exists
+!Template added
+!Displayed output
+{{!}}-
+{{!}} class="text-center" {{!}} True
+{{!}} [[Template:Section/Transclude|Section/'''Transclude''']]
+{{!}} The content of the defined section
+{{!}}-
+{{!}} class="text-center" {{!}} False
+{{!}} [[Template:X/Pages/AddSubpage|X/Pages/'''AddSubpage''']]
+{{!}} Button to create the defined section
+{{!}}}
+
+<p>For both templates, the present template sets all parameter values.</p>
+<p>See the respective templates for details of the displayed output.</p>
+
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=Display_Title}}
+{{X/Template/Extension|extension=External_Data}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage|bold}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Pages/Status}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+{{X/Template/Template|2|template=Section/Transclude|bold}}
+{{X/Template/Template|3|template=X/Pages/AddSubpage}}
+{{X/Template/Template|4|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|5|template=X/Pages/Status}}
+{{X/Template/Template|5|template=X/Meta}}
+{{X/Template/Template|6|template=X/Decoder}}
+{{X/Template/Template|3|template=X/Pages/DisplayAuthors}}
+{{X/Template/Template|4|template=X/Pages/MetaTableTemplate}}
+{{X/Template/Template|3|template=X/Threads/CountThreads}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Message}}
+{{X/Template/Template|4|template=X/Threads/AddThread-Button}}
+{{X/Template/Template|4|template=X/Threads/AddThread-Modal}}
+{{X/Template/Template|3|template=X/Reviews/ComingSoon}}
+{{X/Template/Template|3|template=X/Encoder}}
+|widgets=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Widget|3|widget=Button}}
+{{X/Template/Widget|3|widget=Button/3-Icons}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "hascontent": {
+            "label": "Section has content",
+            "type": "boolean",
+            "required": true,
+            "description": "Set to \"false\" to add headings without content.",
+            "suggestedvalues": ["true", "false"]
+        },
+        "heading": {
+            "label": "Heading",
+            "type": "string",
+            "required": false,
+            "description": "Custom heading for the section. This is ptional for local sections as the section's pagename will be used as heading. However it is required for global sections."
+        },
+        "level": {
+            "label": "Heading level",
+            "type": "number",
+            "required": true,
+            "description": "The heading level for this section. The heading level must be an integer ≥ 2.",
+            "suggestedvalues": ["2", "3", "4", "5"]
+        },
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Defines if the section exists at this wiki or at Atlas Global.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "pagename": {
+            "label": "Section pagename",
+            "type": "string",
+            "required": true,
+            "description": "For local sections, set this to the pagename of the section (e.g., 'Breeding'). For global sections, set this to the full pagename of the section (e.g., 'Chicken/Breeding')."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+<!-- Only show heading if section doesn't have content -->
+{{#switch: {{{hascontent}}}
+|false ={{#switch: {{{level}}}
+        |1
+        |2 = <h2 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h2>
+        |3 = <h3 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h3>
+        |4 = <h4 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h4>
+        |5 = <h5 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h5>
+        }}
+|true = <!--  Check if section is defined. -->
+        {{#if: {{{pagename|}}}
+        |   {{#switch: {{{source}}}
+            | local =   <!-- Check if template is called from a translated page. -->
+                        {{#ifeq: {{lc:{{#titleparts:{{SUBPAGENAME}}|1|-1}} }} | {{PAGELANGUAGE}}
+                        |   <!-- Template is called from translated page; check if translated section exists. -->
+                            {{#ifexist: {{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/{{PAGELANGUAGE}}
+                            |   <!-- Translated section exists; transclude translated section. -->
+                                {{Section/Transclude
+                                |source =       local
+                                |translated=true
+                                |id =           {{lc:{{#replace:{{#replace:{{#replace:{{#replace:{{{pagename}}}| |-}}|:|-}}|/|-}}|#|-}} }} <!-- For html id's -->
+                                <!-- No spaces between pagename variables and values as they caused bugs -->
+                                |sourcepage={{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                |fullpagename={{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/{{PAGELANGUAGE}}
+                                |talkpagename={{ns:3001}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/{{PAGELANGUAGE}}
+                                |heading =      {{#if: {{{heading|}}}
+                                                |{{ucfirst:{{{heading}}}}}
+                                                |{{#titleparts:{{#getdisplaytitle:{{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/{{PAGELANGUAGE}} }} |1|-1}}
+                                                }}
+                                |level =        {{#if:{{{level|}}}
+                                                |{{{level}}}
+                                                |2
+                                                }}
+                                |doc =          <!-- Check if translated documentation exists-->
+                                                {{#ifexist: {{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/doc/{{PAGELANGUAGE}}
+                                                |translated
+                                                |   <!-- Check if untranslated documentation exists -->
+                                                    {{#ifexist: {{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/doc
+                                                    |untranslated <!-- Untranslated documentation exists -->
+                                                    |false <!-- No documentation exists -->
+                                                    }}
+                                                }}
+                                }}
+                            |   <!-- Translated section page doesn't exist; check if untranslated page exists -->
+                                {{#ifexist: {{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                |   <!-- Page exists; add untranslated section content -->
+                                    {{Section/Transclude
+                                    |source =       local
+                                    |translated=false
+                                    |id =           {{lc:{{#replace:{{#replace:{{#replace:{{#replace:{{{pagename}}}| |-}}|:|-}}|/|-}}|#|-}} }}
+                                    <!-- No spaces between pagename variables and values as they caused bugs -->
+                                    |sourcepage={{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                    |fullpagename={{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                    |talkpagename={{ns:3001}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                    |heading =      {{#if:{{{heading|}}}
+                                                    |{{ucfirst:{{{heading}}}}}
+                                                    |{{ucfirst:{{{pagename}}}}}
+                                                    }}
+                                    |level =        {{#if:{{{level|}}}|{{{level}}}|2}}
+                                    |doc =          {{#ifexist: {{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}/doc
+                                                    |true
+                                                    |false
+                                                    }}
+                                    |notranslation=true
+                                    }}
+                                |   <!-- Page doesn't exist – add "AddSubpage" template. -->
+                                    {{X/Pages/AddSubpage
+                                    |source =       local
+                                    <!-- No spaces between pagename variables and values as they caused bugs -->
+                                    |fullpagename={{ns:3000}}:{{#titleparts:{{ROOTPAGENAME}}|1}}/{{ucfirst:{{{pagename}}}}}
+                                    |heading =      {{#if: {{{heading|}}}
+                                                    |{{ucfirst:{{{heading}}}}}
+                                                    |{{ucfirst:{{{pagename}}}}}
+                                                    }}
+                                    |level =        {{#if: {{{level|}}}
+                                                    |{{{level}}}
+                                                    |2
+                                                    }}
+                                    }}
+                                }}
+                            }}
+                        |   <!-- Section template is called from non-translated page; check if page exists. -->
+                            {{#ifexist: {{ns:3000}}:{{PAGENAME}}/{{ucfirst:{{{pagename}}}}}
+                            |   <!-- Page exists -->
+                                {{Section/Transclude
+                                |source =       local
+                                |translated=false
+                                |id =           {{lc:{{#replace:{{#replace:{{#replace:{{#replace:{{{pagename}}}| |-}}|:|-}}|/|-}}|#|-}} }}
+                                <!-- No spaces between pagename variables and values as they caused bugs -->
+                                |sourcepage={{ns:3000}}:{{PAGENAME}}/{{ucfirst:{{{pagename}}}}}
+                                |fullpagename={{ns:3000}}:{{PAGENAME}}/{{ucfirst:{{{pagename}}}}}
+                                |talkpagename={{ns:3001}}:{{PAGENAME}}/{{ucfirst:{{{pagename}}}}}
+                                |heading =      {{#if:{{{heading|}}}
+                                                |{{ucfirst:{{{heading}}}}}
+                                                |{{ucfirst:{{{pagename}}}}}
+                                                }}
+                                |level =        {{#if:{{{level|}}}|{{{level}}}|2}}
+                                |doc =          {{#ifexist: {{ns:3000}}:{{FULLPAGENAME}}/{{ucfirst:{{{pagename}}}}}/doc
+                                                |true
+                                                |false
+                                                }}
+                                }}
+                            |   <!-- Page doesn't exist – add "AddSubpage" template. -->
+                                {{X/Pages/AddSubpage
+                                |source =       local
+                                <!-- No spaces between pagename variables and values as they caused bugs -->
+                                |fullpagename={{ns:3000}}:{{PAGENAME}}/{{ucfirst:{{{pagename}}}}}
+                                |heading =      {{#if: {{{heading|}}}
+                                                |{{ucfirst:{{{heading}}}}}
+                                                |{{ucfirst:{{{pagename}}}}}
+                                                }}
+                                |level =        {{#if: {{{level|}}}
+                                                |{{{level}}}
+                                                |2
+                                                }}
+                                }}
+                            }}
+                        }}
+            | global =  <!-- Check if rootpage exist. -->
+                        {{#switch:  {{#sub: {{raw:atlas-global::{{{pagename}}}}}
+                                    |-4|-1 <!-- Extract 404 error (get last four digits and remove trailing bracket) -->
+                                    }}
+                        |   404 =   <!-- Rootpage doesn't exist; add "AddSubpage" template with action=create. -->
+                                    {{X/Pages/AddSubpage
+                                    |source =       global
+                                    |action =       create
+                                    <!-- No spaces between pagename variables and values as they caused bugs -->
+                                    |fullpagename={{{pagename}}}
+                                    |heading =      {{#if: {{{heading|}}}
+                                                    |{{ucfirst:{{{heading}}}}}
+                                                    |{{{pagename}}}
+                                                    }}
+                                    |level =        {{#if: {{{level|}}}
+                                                    | {{{level}}}
+                                                    | 2
+                                                    }}
+                                    }}
+                        |   #default =  <!-- Rootpage exists; check if translation exists. -->
+                                        {{#switch:  {{#sub:{{raw:atlas-global::{{{pagename}}}/{{CONTENTLANG}} }}
+                                                    |-4|-1 <!-- Extract 404 error (get last four digits and remove trailing bracket) -->
+                                                    }}
+                                        |   404 =   <!-- Translated page doesn't exist; add "AddSubpage" template with action=translate. -->
+                                                    {{X/Pages/AddSubpage
+                                                    |source =       global
+                                                    |action =       translate
+                                                    <!-- No spaces between pagename variables and values as they caused bugs -->
+                                                    |fullpagename={{{pagename}}}
+                                                    |lang =         {{CONTENTLANG}}
+                                                    |heading =      {{#if: {{{heading|}}}
+                                                                    |{{ucfirst:{{{heading}}}}}
+                                                                    |{{#titleparts: {{{pagename}}}||-1}}
+                                                                    }}
+                                                    |level =        {{#if: {{{level|}}}
+                                                                    |{{{level}}}
+                                                                    |2
+                                                                    }}
+                                                    }}
+                                        |   #default =  <!-- Transclude translated page. -->
+                                                        {{Section/Transclude
+                                                        |source =       global
+                                                        |id =           {{lc:{{#replace:{{#replace:{{#replace:{{#replace:{{{pagename}}}| |-}}|:|-}}|/|-}}|#|-}} }}
+                                                        <!-- No spaces between pagename variables and values as they caused bugs -->
+                                                        |sourcepage={{{pagename}}}
+                                                        |fullpagename={{{pagename}}}/{{CONTENTLANG}}
+                                                        |talkpagename=Section_talk:{{#explode: {{{pagename}}}|:|1|2}}{{#switch:{{CONTENTLANG}}|en=|#default=/{{CONTENTLANG}}}}
+                                                        |heading =      {{#if:{{{heading|}}}|{{{heading}}}|{{#titleparts: {{{pagename}}}||-1}} }}
+                                                        |level =        {{#if:{{{level|}}}|{{{level}}}|2}}
+                                                        |doc=           {{#switch:  {{#sub: {{raw:atlas-global::{{{pagename}}}/doc}}
+                                                                                    |-4|-1 <!-- Extract 404 error (get last four digits and remove trailing bracket) -->
+                                                                                    }}
+                                                                        |404 =      false
+                                                                        |#default=  {{#switch:{{#sub: {{raw:atlas-global::{{{pagename}}}/doc/{{CONTENTLANG}}}}|-4|-1}}
+                                                                                    |404=untranslated
+                                                                                    |#default=translated
+                                                                                    }}
+                                                                        }}
+                                                        }}
+                                        }}
+                        }}
+            }}
+        | Error: page not defined.
+        }}
+|#default = Error: 'hascontent' not defined or no valid value.
+}}
+</includeonly>

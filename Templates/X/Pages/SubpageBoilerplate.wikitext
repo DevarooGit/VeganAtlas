@@ -1,0 +1,25 @@
+<noinclude>
+{{X/Template
+|description=This template adds two templates which should be present on all subpages: the [[Template:X/Meta|Meta template]] (wrapped in noinclude tags) and the [[Template:X/Pages/Status|Status template]]. This template is preloaded when pages are created via the [[Template:X/Pages/AddSubpage|AddSubpage template]] (i.e., when clicking on an "Add Content" button).
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Pages/AddSubpage}}
+{{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|4|template=X/Pages/Status}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Decoder}}
+}}
+
+=== Preview ===
+<p>The preview below shows the structure of the transcluded content. <small>(Which by the way also can't be hidden from this template page without breaking the template's functionality, which relies on a weird mix of [https://www.mediawiki.org/wiki/Help:Transclusion#Source_page_syntax noinclude and includeonly tags], but let's just pretend including the template preview here makes sense.)</small></p>
+
+<p> The breadcrumbs and documentation link are part of the [[Template:X/Meta|Meta template]] (note that most of what the Meta template does isn't visible); thanks to the noinclude tags both are only visible when visiting the actual subpage, not when viewing the transclusion in the parent article. Conversely, the status flowchart below will be visible in both locations.</p>
+
+<p class="mb-4">'''Template content:'''</p>
+
+</noinclude><no<includeonly></includeonly>include>{{X/Meta}}</no<includeonly></includeonly>include>{{X/Pages/Status}}<!-- Content below this line --><nowiki/>
+
+
+
+<noinclude/>

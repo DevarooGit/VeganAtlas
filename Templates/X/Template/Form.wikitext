@@ -1,0 +1,29 @@
+<noinclude>
+{{X/Template
+|description=This template holds a link to a form; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>forms</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/Form}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "form": {
+            "label": "Form",
+            "type": "string",
+            "required": true,
+            "description": "Form name"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+{{#switch: {{{1}}}
+|1=*
+|2=:*
+|3=::*
+|4=:::*
+|5=::::*
+|#default=*
+}} [[Form:{{{form}}}]]</includeonly>

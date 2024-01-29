@@ -1,0 +1,35 @@
+<noinclude>
+{{X/Template
+|description=This template holds a link to a widget; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>widgets</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/Widget}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "widget": {
+            "label": "Widget",
+            "type": "string",
+            "required": true,
+            "description": "Widget name"
+        },
+        "1": {
+            "label": "Hierarchy",
+            "type": "number",
+            "description": "Templates that use [are used by] this widget = lower number [higher number]",
+            "suggestedvalues": ["1", "2", "3", "4", "5"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+{{#switch: {{{1}}}
+|1=*
+|2=:*
+|3=::*
+|4=:::*
+|5=::::*
+|#default=*
+}} [[Widget:{{{widget}}}]]</includeonly>

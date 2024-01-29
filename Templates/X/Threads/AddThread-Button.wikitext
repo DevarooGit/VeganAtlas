@@ -1,0 +1,33 @@
+<noinclude>
+{{X/Template
+|description=This template adds a button that links to talk pages. It gets the talkpage name as value for the parameter <code>pageTalk</code>.
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|1|template=Section/Transclude}}
+{{X/Template/Template|2|template=X/Threads/AddThread-Message}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Button}}
+|i18n={{X/Template/i18n|i18n=atlas-threads-startdiscussion-btn}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Local or global wiki.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "pageTalk": {
+            "label": "Talkpage name",
+            "type": "string",
+            "required": true,
+            "description": "Talkpage name incl. namespace",
+            "example": "Section_talk:Foo/Bar"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!--
+-->{{#switch: {{{source}}}|local = [[{{{pageTalk}}}|<span class="btn btn-primary" title="{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}">{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}</span>]]|global = [https://www.veganatlas.org/global/{{{pageTalk}}} <span class="btn btn-primary" title="{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}">{{int:atlas-threads-startdiscussion-btn}}{{#explode:{{{pageTalk}}}|:|1|2}}</span>]}}</includeonly>

@@ -1,0 +1,31 @@
+<noinclude>
+{{X/Template
+|description=This template holds a link to a file; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>files</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/File}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "file": {
+            "label": "File",
+            "type": "string",
+            "required": true,
+            "description": "File name"
+        },
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "description": "If file is hosted at Wikimedia Commons, set this parameter to 'commons'.",
+            "suggestedvalues": ["commons"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+{{#switch: {{{source}}}
+|commons=<li>[https://commons.wikimedia.org/wiki/File:{{{file}}} {{{file}}}]</li>
+|#default=<li>[[:File:{{{file}}}|{{{file}}}]]</li>
+}}</includeonly>

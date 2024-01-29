@@ -1,0 +1,78 @@
+<noinclude>
+{{X/Template
+|description=
+This template shows the placeholder that's called by the [[Template:X/DisplayCat|DisplayCat template]] when a category contains no articles; see [[Template:X/NothingHere#Preview|preview]].
+
+|extensions=
+{{X/Template/Extension|extension=Display_Title}}
+{{X/Template/Extension|extension=Page_Forms}}
+|templates=
+{{X/Template/Template|1|template=X/DisplayCat}}
+{{X/Template/Template|2|template=X/SetProperty}}
+{{X/Template/Template|2|template=X/NothingHere}}
+{{X/Template/Template|3|template=X/NotLoggedIn}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-section-nothinghere-addarticle}}
+{{X/Template/i18n|i18n=atlas-section-nothinghere-addnewarticle}}
+{{X/Template/i18n|i18n=atlas-section-nothinghere-addarticleabout}}
+{{X/Template/i18n|i18n=atlas-section-nothinghere-title}}
+{{X/Template/i18n|i18n=atlas-section-nothinghere-close}}
+{{X/Template/i18n|i18n=atlas-section-nothinghere-subscribe}}
+|files=
+{{X/Template/File|file=Undraw-Launching.png}}
+|preview=
+<div class="border px-3">
+{{X/DisplayCat}}
+</div>
+}}</noinclude><includeonly>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6"><!--
+            -->[[File:Undraw-Launching.png|frameless|class=img-width p-5 p-md-3 p-lg-5|link=]]
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-5 p-md-3 p-lg-5">
+            <div class="text-center border-bottom mb-3 pb-3" style="font-family: 'Klee One', cursive;">
+                <p class="mb-1">Sorry, but there are no articles about this topic yet.</p>
+                <p>We've launched recently – please check again later.</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column my-3 mx-4">
+                    <!-- Button/Modal to create another article in this category -->
+                    <div class="btn" type="button" data-toggle="modal" data-target="#add-article"><!--
+                        --><span class="text-primary far fa-edit fa-3x" id="add-article-btn"></span>
+                    </div>
+                    <div class="modal fade" id="add-article" tabindex="-1" role="dialog" aria-labelledby="AddArticle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mt-0 mb-5" role="document">
+                            <div class="modal-content">
+                                <!-- InputBox (for logged in users) -->
+                                <div class="modal-body d-none user-show" id="add-article-user">
+                                    <div class="h3 text-center border-0">{{int:atlas-section-nothinghere-addnewarticle}}</div>
+                                    {{#forminput:form=create
+                                    |button text={{int:atlas-section-nothinghere-addarticleabout}} {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                                    |placeholder={{int:atlas-section-nothinghere-title}}
+                                    |query string=Category[0][name]={{PAGENAME}}
+                                    |no autofocus
+                                    }}
+                                </div>
+                                <!-- Sign-up message for anonymous users -->
+                                <div class="modal-body anonymous-show" id="not-logged-in">
+                                    {{X/NotLoggedIn}}
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn btn-secondary" data-dismiss="modal">{{int:atlas-section-nothinghere-close}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-family: 'Klee One', cursive;">{{int:atlas-section-nothinghere-addarticle}}</div>
+                </div>
+                <div class="d-flex flex-column my-3 mx-4">
+                    <div class="btn" type="button" data-toggle="modal" data-target="#social-media"><!--
+                        --><span class="text-primary far fa-bell fa-3x" id="add-article-btn"></span>
+                    </div>
+                    <div style="font-family: 'Klee One', cursive;">{{int:atlas-section-nothinghere-subscribe}}</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div></includeonly>

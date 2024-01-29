@@ -1,0 +1,72 @@
+<noinclude>
+{{X/Template
+|description=This template sets certain Semantic MediaWiki properties. It can set the following properties:
+
+* [[Property:Is translation{{!}}Is translation]]
+* [[Property:Is translation mirror{{!}}Is translation mirror]]
+* [[Property:Language code{{!}}Language code]]
+
+The table below show how the values of these properties are determined.
+
+==== Determination of property values ====
+
+{{{!}} class="wikitable w-100"
+! style="width:15%" {{!}} Property
+! style="width:30%" {{!}} Description
+! style="width:55%" {{!}} Code
+{{!}}-
+{{!}}[[Property:Is translation{{!}}Is translation]]
+{{!}}<p class="mb-3">Whether the page on which this template is located is a translated page. E.g.:</p>
+
+*'''Page''' → <code>false</code>
+*Page'''/de''' → <code>true</code> 
+*Page'''/en''' → <code>true</code> 
+The code works because the template location moves with the translation.
+{{!}}<div class="code" style="white-space:pre-wrap"><nowiki>{{#set:Is translation</nowiki><br><nowiki>  {{#switch: {{#titleparts:{{ROOTPAGENAME}}||-1}}</nowiki><br>     <nowiki>|{{PAGELANGUAGE}}=true</nowiki><br>     <nowiki>|#default=false</nowiki><br>  <nowiki>}}</nowiki><br><nowiki>}}</nowiki></div>
+{{!}}-
+{{!}}[[Property:Is translation mirror{{!}}Is translation mirror]]
+{{!}}<p class="mb-3">Whether the page language is the same as its root page. E.g., when the page language of '''Page''' is <code>en</code>:</p>
+
+*'''Page''' → <code>false</code> 
+*Page/'''de''' → <code>false</code>
+*Page'''/en'''  → <code>true</code>
+The code works because the template location moves with the translation.
+{{!}}<div class="code" style="white-space:pre-wrap"><nowiki>{{#set:Is translation mirror=</nowiki><br>    <nowiki>{{#ifeq:</nowiki><br>        <nowiki>{{PAGELANGUAGE}} | </nowiki><br>        <nowiki>{{#show: {{#titleparts:{{ROOTPAGENAME}}|-1|-2}}|?Language code}}</nowiki><br>    <nowiki>|true</nowiki><br>    <nowiki>|false</nowiki><br>    <nowiki>}}</nowiki>
+<nowiki>}}</nowiki></div>
+{{!}}-
+{{!}}[[Property:Language code{{!}}Language code]]
+{{!}}The page language of the page on which this template is located.
+{{!}}<code><nowiki>{{#set:Language code= {{PAGELANGUAGE}} }}</nowiki></code>
+{{!}}}
+|extensions=
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+|templates=
+{{X/Template/Template|1|template=X/DisplayCat}}
+{{X/Template/Template|1|template=X/MyProfile/Header}}
+{{X/Template/Template|2|template=X/SetProperty}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Property",
+            "type": "string",
+            "required": true,
+            "description": "The Semantic MediaWiki property that should be set.",
+            "suggestedvalues": ["Is translation", "Is translation mirror", "Language code"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!--
+-->{{#switch: {{{1}}}
+|Is translation={{#set:Is translation=
+{{#switch: {{#titleparts:{{ROOTPAGENAME}}||-1}}
+|{{PAGELANGUAGE}}=true
+|#default=false
+}}
+}}
+|Is translation mirror={{#set:Is translation mirror={{#ifeq: {{PAGELANGUAGE}} | {{#show: {{#titleparts:{{ROOTPAGENAME}}|-1|-2}}|?Language code}} | true | false}} }}
+|Language code={{#set:Language code={{PAGELANGUAGE}}}}
+}}</includeonly>

@@ -1,0 +1,34 @@
+<noinclude>
+{{X/Template
+|description=This template adds structured data about education. It is usually added with the [[Form:MyProfile|MyProfile form]].
+|templates=
+{{X/Template/Template|1|template=X/MyProfile/Education}}
+{{X/Template/Template|2|template=X/MyProfile/Education/Object}}
+{{X/Template/Template|3|template=X/SetProperty}}
+|forms=
+{{X/Template/Form|1|form=MyProfile}}
+{{X/Template/Template|2|template=X/MyProfile/Education}}
+|i18n={{X/Template/i18n|i18n=atlas-userprofile-education-heading}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "objects": {
+            "label": "Education object",
+            "type": "wiki-template-name",
+            "required": true,
+            "description": "Each object must be set to the suggested template below. For parameters, see the \/Education\/Object template. Each education object adds an additional column to the grid that's defined in this template.",
+            "suggestedvalues": ["{{X/MyProfile/Education/Object}}"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>{{X/SetProperty|Is translation}}
+<div class="my-5" id="{{PAGENAME}}-education">
+<h3 class="mt-0"> {{int:atlas-userprofile-education-heading}} </h3>
+<div class="container">
+<div class="row my-4">
+{{{objects|}}}
+</div>
+</div></includeonly>

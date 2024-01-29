@@ -1,0 +1,9 @@
+<noinclude>{{X/Template
+|description=
+<p>This template is a placeholder.</p>
+<p>Only its two subpages contain code:</p>
+*[[Template:Section/Define]]
+*[[Template:Section/Transclude]]
+Happy days!
+}}
+</noinclude>

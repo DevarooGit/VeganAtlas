@@ -1,0 +1,33 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template provides results formatting for the [[Template:X/Pages/DisplayAuthors|DisplayAuthors template]].</p>
+
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Username",
+            "type": "wiki-user-name",
+            "required": true,
+            "description": "Username"
+        }
+    }
+}
+</templatedata>
+
+<div class="code"><nowiki><span class="cargo-list-item">
+    [[User:{{{1}}}|{{{1}}}]]
+    <span class="cargo-list-delimiter"></span>
+</span></nowiki></div>
+
+
+<code>.cargo-list-item</code> and <code>cargo-list-delimiter</code> are used to add delimiters to the results list.
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Pages/DisplayAuthors}}
+{{X/Template/Template|4|template=X/Pages/MetaTableTemplate}}
+}}</noinclude><includeonly>
+<span class="cargo-list-item">[[User:{{{1}}}|{{{1}}}]]<span class="cargo-list-delimiter"></span></span></includeonly>

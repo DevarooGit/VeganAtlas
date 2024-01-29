@@ -1,0 +1,562 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template adds a section with tabs to the article and transcludes content from <code>Section:Foo/Bar</code> to the main article, <code>Foo</code>. This template is called from its sibling [[Template:Section/Define]], which sets all parameter values of the present template. The table below summarizes which tabs are added, what they contain and how this is implemented.</p>
+
+{{{!}} class="wikitable w-100"
+! rowspan="2" {{!}} Tab
+! rowspan="2" {{!}} Content
+! colspan="2" {{!}} Implementation
+{{!}}-
+! Condition
+! Mechanism
+{{!}}-
+{{!}} class="text-center" rowspan="2" {{!}} Content
+{{!}} class="text-center" rowspan="2" {{!}} Article content
+{{!}} class="text-center" {{!}} source=<code>local</code>
+{{!}} class="text-center" {{!}} [https://www.mediawiki.org/wiki/Help:Transclusion Transclusion]
+{{!}}-
+{{!}} class="text-center" {{!}} source=<code>global</code>
+{{!}} class="text-center" {{!}} [https://www.mediawiki.org/wiki/Manual:$wgEnableScaryTranscluding#Raw_transclusion Raw transclusion]
+{{!}}-
+{{!}} class="text-center" rowspan="5" {{!}} Documentation
+{{!}} class="text-center" rowspan="5" {{!}} Article documentation
+{{!}} class="text-center" {{!}} source=<code>local</code>
+{{!}} class="text-center" {{!}} [https://www.mediawiki.org/wiki/Help:Transclusion Transclusion]
+{{!}}-
+{{!}} class="text-center" {{!}} source=<code>global</code>
+{{!}} class="text-center" {{!}} [https://www.mediawiki.org/wiki/Manual:$wgEnableScaryTranscluding#Raw_transclusion Raw transclusion]
+{{!}}-
+{{!}} class="text-center" {{!}} No documentation
+{{!}} class="text-center" {{!}} [[Template:X/Pages/AddSubpage]]
+{{!}}-
+{{!}} class="text-center" {{!}} Displayed authors
+{{!}} class="text-center" {{!}} [[Template:X/Pages/DisplayAuthors]]
+{{!}}-
+{{!}} class="text-center" {{!}} Latest revision
+{{!}} class="text-center" {{!}} [https://www.mediawiki.org/wiki/Help:Magic_words#Technical_metadata_of_another_page Magic words]
+{{!}}-
+{{!}} class="text-center" {{!}} Threads
+{{!}} class="text-center" {{!}} Table with open/closed threads
+{{!}} class="text-center" colspan="2" {{!}}
+<p class="m-0">
+[[Template:X/Threads/CountThreads]]<br>
+[[Template:X/Threads/DisplayThreads]]<br>
+[[Template:X/Threads/AddThread-Message]]
+</p>
+{{!}}-
+{{!}} class="text-center" {{!}} Reviews
+{{!}} class="text-center" {{!}} Coming soon message for peer-reviews
+{{!}} class="text-center" colspan="2" {{!}}
+<p class="m-0">
+[[Template:X/Reviews/ComingSoon]]
+</p>
+{{!}}-
+{{!}} class="text-center" {{!}} Action
+{{!}} class="text-center" {{!}} Action links (edit, comment, <span class="text-secondary">review</span>, view)
+{{!}} class="text-center" colspan="2" {{!}}
+<p class="m-0">
+[[Widget:Button/3-Icons]]
+</p>
+{{!}}}
+
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Pages/AddSubpage}}
+{{X/Template/Template|4|template=X/Pages/SubpageBoilerplate}}
+{{X/Template/Template|5|template=X/Pages/Status}}
+{{X/Template/Template|5|template=X/Meta}}
+{{X/Template/Template|6|template=X/Decoder}}
+{{X/Template/Template|3|template=X/Pages/DisplayAuthors}}
+{{X/Template/Template|4|template=X/Pages/MetaTableTemplate}}
+{{X/Template/Template|3|template=X/Threads/CountThreads}}
+{{X/Template/Template|3|template=X/Threads/DisplayThreads}}
+{{X/Template/Template|4|template=X/Threads/TableStart}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Local}}
+{{X/Template/Template|4|template=X/Threads/TableRow-Global}}
+{{X/Template/Template|4|template=X/Threads/TableEnd}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Message}}
+{{X/Template/Template|4|template=X/Threads/AddThread-Button}}
+{{X/Template/Template|4|template=X/Threads/AddThread-Modal}}
+{{X/Template/Template|3|template=X/Reviews/ComingSoon}}
+{{X/Template/Template|3|template=X/Encoder}}
+|widgets=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Widget|3|widget=Button}}
+{{X/Template/Widget|3|widget=Button/3-Icons}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+    "heading": {
+            "label": "Heading",
+            "type": "string",
+            "required": true,
+            "description": "Section heading"
+        },
+        "level": {
+            "label": "Heading level",
+            "type": "number",
+            "required": true,
+            "description": "Heading level; must be an integer ≥ 2.",
+            "suggestedvalues": ["2", "3", "4", "5"]
+        },
+        "id": {
+            "label": "Section ID",
+            "type": "string",
+            "required": true,
+            "description": "Set to pagename; replace colons, slashes, hash keys and spaces with a hyphen."
+        },
+        "source": {
+            "label": "Source",
+            "type": "string",
+            "required": true,
+            "description": "Defines if the section exists at this wiki or at Atlas Global.",
+            "suggestedvalues": ["local", "global"]
+        },
+        "sourcepage": {
+            "label": "Sourcepage",
+            "type": "string",
+            "required": true,
+            "description": "Pagename of the section with namespace but without language code."
+        },
+        "fullpagename": {
+            "label": "Full pagename",
+            "type": "string",
+            "required": true,
+            "description": "Full pagename of the section, incl. language code if applicable."
+        },
+        "talkpagename": {
+            "label": "Talkpage name",
+            "type": "string",
+            "required": true,
+            "description": "Talkpage name of the section, incl. language code if applicable."
+        },
+        "translated": {
+            "label": "Translated page",
+            "type": "boolean",
+            "required": true,
+            "description": "Whether the page is a translated page or not.",
+            "suggestedvalues": ["true", "false"]
+        },
+        "notranslation": {
+            "label": "Translation n/a",
+            "type": "boolean",
+            "required": true,
+            "description": "Whether the section is available in the requested language.",
+            "suggestedvalues": ["true", "false"]
+        },
+        "doc": {
+            "label": "Documentation",
+            "type": "string",
+            "required": true,
+            "description": "Whether the section has a documentation.",
+            "suggestedvalues": ["true", "false", "untranslated"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!-- 
+-- Header -->
+<div class="section-container" id="{{{id}}}-container">
+    <div class="d-flex justify-content-between align-items-end my-3" id="{{{id}}}-header">
+        <h{{{level}}} class="flex-fill m-0 pt-0 pb-1 border-bottom">{{{heading}}}</h{{{level}}}>
+        <div class="navbar navbar-expand-lg text-center order-1 p-0"><!--
+        -->{{#Widget: Button
+        |class=navbar-toggler section-toggler
+        |datatarget={{{id}}}-nav-tab
+        |datatoggle=collapse
+        |arialabel=Menu
+        |labelclass=navbar-toggler-icon
+        }}<!--
+         --><div class="collapse navbar-collapse section-navbar nav-tabs text-nowrap" id="{{{id}}}-nav-tab" role="tablist" style="z-index:1"><!-- 
+                Article tab
+                -->{{#Widget: Button/3-Icons
+                |id={{{id}}}-article-tab
+                |class=nav-link article-tab text-nowrap w-100 active
+                |role=tab
+                |datatoggle=tab
+                |datatarget={{{id}}}-article
+                |ariacontrols={{{id}}}-article
+                |ariaselected=true
+                |icon1=fas fa-book-reader text-primary
+                |title=Article
+                }}<!--
+                Documentation tab
+                -->{{#Widget: Button/3-Icons
+                |id={{{id}}}-documentation-tab
+                |class=nav-link documentation-tab text-nowrap w-100
+                |role=tab
+                |datatoggle=tab
+                |datatarget={{{id}}}-documentation
+                |ariacontrols={{{id}}}-documentation
+                |ariaselected=false
+                |icon1=fas fa-file-alt text-primary
+                |title=Documentation
+                }}<!--
+                Review tab
+                -->{{#Widget: Button/3-Icons
+                |id={{{id}}}-reviews-tab
+                |class=nav-link reviews-tab text-nowrap w-100 pl-0
+                |role=tab
+                |datatoggle=tab
+                |datatarget={{{id}}}-reviews
+                |ariacontrols={{{id}}}-reviews
+                |ariaselected=false
+                |title=Peer-Reviews
+                |icon1=fa fa-users text-primary pl-3<!--
+                |icon1= {{#ifexpr:   {{X/Reviews/CountReviews
+                                    |source={{{source}}}
+                                    |sourcepage={{{sourcepage}}}
+                                    |fullpagename={{{fullpagename}}}
+                                    |scope=contentissues
+                                    }} > 0
+                        |   fas fa-flag text-danger pl-3 pr-2
+                        |   {{#ifexpr:  {{X/Reviews/CountReviews
+                                        |source={{{source}}}
+                                        |sourcepage={{{sourcepage}}}
+                                        |fullpagename={{{fullpagename}}}
+                                        }} > 0
+                            |fas fa-check text-success pl-3 pr-2
+                            |fa fa-user-clock text-primary pl-3
+                            }}
+                        }}
+                |label1= {{#ifexpr:  {{X/Reviews/CountReviews
+                                    |source={{{source}}}
+                                    |sourcepage={{{sourcepage}}}
+                                    |fullpagename={{{fullpagename}}}
+                                    |scope=contentissues
+                                    }} > 0
+                        |   {{X/Reviews/CountReviews
+                            |source={{{source}}}
+                            |sourcepage={{{sourcepage}}}
+                            |fullpagename={{{fullpagename}}}
+                            |scope=contentissues
+                            }}
+                        |   {{#ifexpr:  {{X/Reviews/CountReviews
+                                        |source={{{source}}}
+                                        |sourcepage={{{sourcepage}}}
+                                        |fullpagename={{{fullpagename}}}
+                                        }} > 0
+                            |   {{X/Reviews/CountReviews
+                                |source={{{source}}}
+                                |sourcepage={{{sourcepage}}}
+                                |fullpagename={{{fullpagename}}}
+                                }}
+                            |
+                            }}
+                        }}
+                -->}}<!-- 
+                Threads tab
+                -->{{#Widget: Button/3-Icons
+                |id={{{id}}}-threads-tab
+                |class=nav-link threads-tab text-nowrap w-100
+                |role=tab
+                |datatoggle=tab
+                |datatarget={{{id}}}-threads
+                |ariacontrols={{{id}}}-threads
+                |ariaselected=false
+                |title=Discussions
+                |icon1 = {{#ifexpr: {{X/Threads/CountThreads
+                                    |source={{{source}}}
+                                    |sourcepage={{#switch:{{{source}}}
+                                                |local={{{sourcepage}}}
+                                                |global={{X/Encoder|{{{sourcepage}}}}}
+                                                }}
+                                    |Topic is locked=false
+                                    }} > 0
+                        |far fa-comment-dots text-success pr-2
+                        |fas fa-comment text-primary
+                        }}
+                |label1={{#ifexpr:  {{X/Threads/CountThreads
+                                    |source={{{source}}}
+                                    |sourcepage={{#switch:{{{source}}}
+                                                |local={{{sourcepage}}}
+                                                |global={{X/Encoder|{{{sourcepage}}}}}
+                                                }}
+                                    |Topic is locked=false
+                                    }} > 0
+                        |   {{X/Threads/CountThreads
+                            |source={{{source}}}
+                            |sourcepage={{#switch:{{{source}}}
+                                        |local={{{sourcepage}}}
+                                        |global={{X/Encoder|{{{sourcepage}}}}}
+                                        }}
+                            |Topic is locked=false
+                            }}
+                        |
+                        }}
+                }}<!--
+                Actions tab
+                --><div class="dropdown">{{#Widget: Button/3-Icons
+                    |id={{{id}}}-actions-tab
+                    |class=nav-link actions-tab text-nowrap w-100
+                    |role=tab
+                    |datatoggle=dropdown
+                    |datatarget={{{id}}}-actions
+                    |ariacontrols={{{id}}}-actions
+                    |ariaselected=false
+                    |title=Actions
+                    |icon1= fas fa-pencil-ruler text-primary pr-2
+                    |icon2= fas fa-chevron-down text-primary fa-xs
+                    }}
+                    <div class="dropdown-menu rounded" aria-labelledby="{{{id}}}-actions-dropdown">
+                        {{#switch: {{{source}}}
+                        |local =<!-- Edit 
+                                    --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}}&veaction=edit <span class="stretched-link">{{int:atlas-section-edit}}</span>]
+                                    </div><!--
+                                    Comment
+                                    --><div class="dropdown-item position-relative">[[{{{talkpagename}}}|<span class="stretched-link">{{int:atlas-section-comment}}</span>]]
+                                    </div><!--
+                                    Review
+                                    --><div class="dropdown-item disabled">{{#formlink:form=Review
+                                        |link text={{int:atlas-section-review}}
+                                        |link=
+                                        |new window
+                                        |query string=
+                                        &X/Reviews/AttachReviewTable[forPage]={{{fullpagename}}}
+                                        &X/Reviews/AttachReviewTable[forPageID]={{PAGEID:{{{fullpagename}}}}}
+                                        &X/Reviews/AttachReviewTable[forPageRevID]={{REVISIONID:{{{fullpagename}}}}}
+                                        &X/Reviews/AttachReviewTable[forPageRev]={{#time: H:i, d F Y | {{REVISIONTIMESTAMP:{{{fullpagename}}}}} }}
+                                        &X/Reviews/AttachReviewTable[forPageLang]={{CONTENTLANG}}
+                                        }}
+                                    </div><!--
+                                    View
+                                    --><div class="dropdown-item position-relative hide-external">[https://veganatlas.org{{SCRIPTPATH}}/index.php?title={{urlencode:{{{fullpagename}}}}} <span class="stretched-link">{{int:atlas-section-view}}</span>]
+                                    </div>
+                        |global =   <div class="dropdown-item position-relative fas fa-globe">[https://www.veganatlas.org/global/{{#replace:{{#explode:{{#titleparts:{{{sourcepage}}}|-1}}/{{CONTENTLANG}}|:|1|2}}#{{#titleparts:{{{sourcepage}}}||-1}}||_}} Atlas Global]
+                                    </div>
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content order-2" id="{{{id}}}-content">
+        <!-- Content-->
+        <div class="tab-pane article-pane fade show active" id="{{{id}}}-article" role="tabpanel" aria-labelledby="{{{id}}}-article-tab"><!--
+            No translation note
+            -->{{#switch: {{{notranslation|}}}
+            |true = <div class="d-flex justify-content-between align-items-end alert-light text-dark border border-secondary font-italic p-2 mb-3">
+                        <div>This section hasn't been translated yet, so we're showing it in its original language.</div>
+                        <div class="btn btn-light border-secondary text-dark px-1 py-0">[[{{{fullpagename}}}|Translate]]</div>
+                    </div>
+            }}{{#switch: {{{source}}}
+            | local =   {{#switch:  {{{translated}}}
+                        |false={{#ifexist: {{{fullpagename}}}/en <!-- Use /en version if it exists. -->
+                                |<div>{{:{{{fullpagename}}}/en}}</div>
+                                |<div>{{:{{{fullpagename}}}}}</div>
+                                }}
+                        |true=<div>{{:{{{fullpagename}}}}}</div> <!-- Fullpagename already includes /xx -->
+                        }}
+            | global =  {{#set: Has content from=Global}}
+                        {{raw:atlas-global::{{{fullpagename}}}}}
+            }}
+        </div>
+        <!-- Documentation -->
+        <div class="tab-pane documentation-pane fade overflow-hidden" id="{{{id}}}-documentation" role="tabpanel" aria-labelledby="{{{id}}}-documentation-tab">
+            <!-- Meta data 
+                --><div class="my-3" id="{{{id}}}-documentation-meta"><!--
+                Authors 
+                --><div class="float-left mr-1">{{int:atlas-section-authors}}:</div><!--
+                -->{{X/Pages/DisplayAuthors|fullpagename={{{fullpagename}}}}}<!--
+                Lastest revision
+                --><div class="mt-1"><!--
+                -->{{int:atlas-section-lastrevision}}:  {{REVISIONYEAR: {{{fullpagename}}}}}-{{REVISIONMONTH: {{{fullpagename}}}}}-{{REVISIONDAY: {{{fullpagename}}}}}
+                </div>
+            </div><!--
+            Transclude documentation
+            --><div>
+                {{#switch:  {{{source}}}
+                |local =    {{#switch:      {{{doc}}}
+                            |true =         {{#ifexist: {{{fullpagename}}}/doc/en <!-- Use /en version if it exists. -->
+                                            |{{:{{{fullpagename}}}/doc/en}}
+                                            |{{:{{{fullpagename}}}/doc}}
+                                            }}
+                            |translated =   {{:{{{sourcepage}}}/doc/{{PAGELANGUAGE}}}}
+                            |untranslated = <p>{{Icon|Info}} ''Documentation not translated to {{#language:{{PAGELANGUAGE}}}} yet.''</p>
+                                            <p>{{:{{{sourcepage}}}/doc}}</p>
+                            |false =    {{X/Pages/AddSubpage
+                                        |source =       local
+                                        <!-- No spaces between pagename variables and values as they caused bugs -->
+                                        |fullpagename={{{fullpagename}}}
+                                        |action=        create-doc
+                                        }}
+                            }}
+                |global =   {{#switch:      {{{doc}}}
+                            |translated =   {{raw:atlas-global::{{{sourcepage}}}/doc/{{CONTENTLANG}}}}
+                            |untranslated = <p>{{Icon|Info}} ''Documentation not translated to {{#language:{{PAGELANGUAGE}}}} yet. [[atlasglobal:{{{sourcepage}}}/doc|<small>Translate</small>]]''</p>
+                                            <p>{{raw:atlas-global::{{{sourcepage}}}/doc}}</p>
+                            }}
+                }}
+            </div>
+            <!-- References 
+            <references /> -->
+        </div>
+        <!-- Reviews -->
+        <div class="tab-pane reviews-pane fade overflow-hidden" id="{{{id}}}-reviews" role="tabpanel" aria-labelledby="{{{id}}}-reviews-tab">
+            <!-- Check if reviews exist --
+            {{#switch:  {{#switch:  {{{source}}}
+                        |   -- Check if local reviews exist --
+                            local=  {{#if:  {{#cargo_query:table=Reviews
+                                            |where= forPageID="{{PAGEID:{{{sourcepage}}}}}"
+                                            |default=
+                                            }}
+                                    |true
+                                    |false
+                                    }}
+                        |   -- Check if global reviews exist --
+                            global= {{#ifexpr:  {{X/Reviews/CountReviews
+                                                |source={{{source}}}
+                                                |sourcepage={{{sourcepage}}}
+                                                |fullpagename={{{fullpagename}}}
+                                                |scope=All
+                                                }} > 0
+                                    |true
+                                    |false
+                                    }}
+                        }}
+            |true =     <div class="d-flex justify-content-center align-items-center reviews-header">
+                            <div>{{int:atlas-section-peer-reviews}}</div>
+                        </div>
+                        -- Add table with reviews. --
+                        {{X/Reviews/DisplayReviews
+                        |source={{{source}}}
+                        |sourcepage={{{sourcepage}}}
+                        |fullpagename={{{fullpagename}}}
+                        }}
+            |false =    -- Add review message --
+                        {{X/Reviews/AddReview-Message
+                        |sourcepage={{{sourcepage}}}
+                        |fullpagename={{{fullpagename}}}
+                        |talkpagename={{{talkpagename}}}
+                        }}
+            }}-->
+            {{X/Reviews/ComingSoon}}
+        </div>
+        <!-- Threads -->
+        <div class="tab-pane threads-pane fade overflow-hidden" id="{{{id}}}-threads" role="tabpanel" aria-labelledby="{{{id}}}-threads-tab">
+            <!-- Check if open threads exist. -->
+            {{#ifexpr:  {{X/Threads/CountThreads
+                        |source={{{source}}}
+                        |sourcepage={{#switch:{{{source}}}
+                                    |local={{{sourcepage}}}
+                                    |global={{X/Encoder|{{{sourcepage}}}}}
+                                    }}
+                        |Topic is locked=false
+                        }} > 0
+            |   <!-- Open threads exist; check if closed threads exist -->
+                {{#ifexpr:  {{X/Threads/CountThreads
+                            |source={{{source}}}
+                            |sourcepage={{#switch:{{{source}}}
+                                        |local={{{sourcepage}}}
+                                        |global={{X/Encoder|{{{sourcepage}}}}}
+                                        }}
+                            |Topic is locked=true
+                            }} > 0
+                |   <!-- Both open and closed threads exist. Add containers for both. -->
+                    <!-- Container for open threads -->
+                    <div class="mw-collapsible mb-3" id="mw-customcollapsible-{{{id}}}-threads-open">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center threads-header">
+                            <!-- Toggle button for open/closed-threads windows. -->
+                            <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-togglethreads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-on text-primary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-open}}</span></div>
+                            <!-- Title -->
+                            <div class="flex-even">{{int:atlas-section-currenttopics}}</div>
+                            <!-- Dummy -->
+                            <div class="flex-even"></div>
+                        </div>
+                        <!-- Add table with open threads. -->
+                        {{X/Threads/DisplayThreads
+                        |source =           {{{source}}}
+                        |sourcepage =       {{#switch:{{{source}}}
+                                            |local={{{sourcepage}}}
+                                            |global={{X/Encoder|{{{sourcepage}}}}}
+                                            }}
+                        |Topic is locked =  false
+                        }}
+                    </div>
+                    <!-- Container for closed threads -->
+                    <div class="mw-collapsible mw-collapsed mb-3" id="mw-customcollapsible-{{{id}}}-threads-closed">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center threads-header" id="{{{id}}}-threads-closed">
+                            <!-- Toggle button for open/closed-threads windows -->
+                            <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-Toggle open/closed threads}}"><span class="mw-customtoggle-{{{id}}}-threads-open mw-customtoggle-{{{id}}}-threads-closed fas fa-toggle-off pr-1 text-primary" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-Closed}}</span></div>
+                            <!-- Title -->
+                            <div class="flex-even">{{int:atlas-section-resolvedtopics}}</div>
+                            <!-- Dummy -->
+                            <div class="flex-even"></div>
+                        </div>
+                        <!-- Table with closed threads -->
+                        {{X/Threads/DisplayThreads
+                        |source={{{source}}}
+                        |sourcepage={{#switch:{{{source}}}
+                                    |local={{{sourcepage}}}
+                                    |global={{X/Encoder|{{{sourcepage}}}}}
+                                    }}
+                        |Topic is locked=true
+                        }}
+                    </div>
+                |   <!-- Only open threads exist. Add container for open threads. -->
+                    <div class="mb-3" id="{{{id}}}-threads-open">
+                        <!-- Header. -->
+                        <div class="d-flex justify-content-between align-items-center threads-header">
+                            <!-- Disabled toggle button for open/closed-threads windows. -->
+                            <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-noclosedthreads}}"><span class="fas fa-toggle-on text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-open}}</span></div>
+                            <!-- Title -->
+                            <div class="flex-even">{{int:atlas-section-currenttopics}}</div>
+                            <!-- Dummy -->
+                            <div class="flex-even"></div>
+                        </div>
+                        <!-- Add table with open threads. -->
+                        {{X/Threads/DisplayThreads
+                        |source =           {{{source}}}
+                        |sourcepage =       {{#switch:{{{source}}}
+                                            |local={{{sourcepage}}}
+                                            |global={{X/Encoder|{{{sourcepage}}}}}
+                                            }}
+                        |Topic is locked =  false
+                        }}
+                    </div>
+                }}
+            |   <!-- No open threads exist; check if closed threads exist -->
+                {{#ifexpr:  {{X/Threads/CountThreads
+                            |source={{{source}}}
+                            |sourcepage={{#switch:{{{source}}}
+                                        |local={{{sourcepage}}}
+                                        |global={{X/Encoder|{{{sourcepage}}}}}
+                                        }}
+                            |Topic is locked=true
+                            }}
+                |   <!-- Only closed threads exist. Add container for closed threads. -->
+                    <div class="mb-3" id="{{{id}}}-threads-closed">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center threads-header" id="{{{id}}}-threads-closed">
+                            <!-- Disabled toggle button for open/closed-threads windows -->
+                            <div class="d-flex flex-even align-items-center" title="{{int:atlas-section-noopenthreads}}"><span class="fas fa-toggle-off text-secondary pr-1" style="vertical-align:middle"></span><span style="font-size: 80%; vertical-align:middle">{{int:atlas-section-closed}}</span></div>
+                            <!-- Title -->
+                            <div class="flex-even">{{int:atlas-section-resolvedtopics}}</div>
+                            <!-- Dummy -->
+                            <div class="flex-even"></div>
+                        </div>
+                        <!-- Table with closed threads -->
+                        {{X/Threads/DisplayThreads
+                        |source =           {{{source}}}
+                        |sourcepage =       {{{sourcepage}}}
+                        |Topic is locked =  true
+                        }}
+                    </div>
+                |   <!-- Add "Add thread" message. -->
+                    {{X/Threads/AddThread-Message
+                    |source =   {{{source}}}
+                    |pageTalk = {{{talkpagename}}}
+                    |pageTitle= {{{heading}}}
+                    }}
+                }}
+            }}
+        </div>
+    </div>
+</div></includeonly>

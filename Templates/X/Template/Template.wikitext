@@ -1,0 +1,42 @@
+<noinclude>
+{{X/Template
+|description=This template holds a link to a template; it ought be included in the [[Template:X/Template|Template]] template, as a value of the <code>templates</code> parameter.
+|templates=
+{{X/Template/Template|1|template=X/Template}}
+{{X/Template/Template|2|template=X/Template/Template}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "template": {
+            "label": "Template",
+            "type": "string",
+            "required": true,
+            "description": "Template name"
+        },
+        "1": {
+            "label": "Hierarchy",
+            "type": "number",
+            "description": "Templates that use [are used by] this template = lower number [higher number]",
+            "suggestedvalues": ["1", "2", "3", "4", "5", "6"]
+        },
+        "2": {
+            "label": "Font style",
+            "type": "string",
+            "description": "Font style of the list item.",
+            "suggestedvalues": ["bold"]
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+{{#switch: {{{1}}}
+|1=*
+|2=:*
+|3=::*
+|4=:::*
+|5=::::*
+|6=:::::*
+|#default=*
+}} [[Template:{{{template}}}|{{#switch:{{{2}}}|bold='''{{{template}}}'''|{{{template}}}}}]]</includeonly>

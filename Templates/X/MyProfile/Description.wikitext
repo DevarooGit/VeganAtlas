@@ -1,0 +1,24 @@
+<noinclude>
+{{X/Template
+|description=This template holds a description (free text). It is usually added with the [[Form:MyProfile|MyProfile form]].
+|forms=
+{{X/Template/Form|1|form=MyProfile}}
+{{X/Template/Template|2|template=X/MyProfile/Description}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Description",
+            "type": "content",
+            "required": true,
+            "description": "Free text"
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+<div class="border-top pt-5 mb-5">
+{{{1}}}
+</div></includeonly>

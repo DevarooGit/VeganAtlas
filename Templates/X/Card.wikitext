@@ -1,0 +1,69 @@
+<noinclude>
+{{X/Template
+|description=This template adds a card with image, description and button.
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "img": {
+            "label": "Image",
+            "type": "wiki-file-name",
+            "required": true,
+            "description": "File name with extension."
+        },
+        "img-class": {
+            "label": "Image class",
+            "type": "string",
+            "description": "CSS classes to apply to the image parent container."
+        },
+        "title": {
+            "label": "Heading",
+            "type": "string",
+            "required": true,
+            "description": "Heading text."
+        },
+        "text": {
+            "label": "Text",
+            "type": "string",
+            "required": true,
+            "description": "Body text."
+        },
+        "link": {
+            "label": "Link",
+            "type": "string",
+            "required": true,
+            "description": "Name of page to which the button links."
+        },
+        "btn": {
+            "label": "Button",
+            "type": "string",
+            "required": true,
+            "description": "Button text."
+        }
+    }
+}
+</templatedata>
+|preview=
+<div class="container p-0">
+<div class="row">
+<div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center px-0 py-2">
+{{X/Card
+|img=Undraw-reading-book.png
+|title=Example heading
+|text=What a beautiful lorem ipsum dolor sit amet placeholder this is. But why not read some articles?
+|link=Atlas:Home
+|btn=Explore articles
+}}
+</div>
+</div>
+</div>
+}}</noinclude><includeonly>
+<div class="card m-2" style="width: 90%;" id="card-{{lc:{{#replace:{{{title}}}| |-}}}}">
+<div {{#if:{{{img-class|}}}|class="{{{img-class}}}" |}}id="card-image-{{lc:{{#replace:{{{title}}}| |-}}}}">[[File:{{{img}}}|class=img-width]]</div>
+<div class="card-body" id="card-body-{{lc:{{#replace:{{{title}}}| |-}}}}">
+<h5 class="card-title my-2 p-0">{{{title}}}</h5>
+<p class="card-text">{{{text}}}</p>
+<p class="m-0">[[{{{link}}}|<span class="btn btn-primary stretched-link m-0">{{{btn}}}</span>]]</p>
+</div>
+</div></includeonly>

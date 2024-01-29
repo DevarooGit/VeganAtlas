@@ -1,0 +1,22 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template shows a prompt and button to sign-up.</p>
+<p>It's displayed by the [[Template:X/NothingHere|NothingHere template]] when anonymous users click on the "Add article" button.</p>
+
+|templates=
+{{X/Template/Template|1|template=X/DisplayCat}}
+{{X/Template/Template|2|template=X/NothingHere}}
+{{X/Template/Template|3|template=X/NotLoggedIn}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-section-notloggedin}}
+{{X/Template/i18n|i18n=atlas-section-notloggedin-signup}}
+|preview=
+<div class="border px-3">
+{{X/NotLoggedIn}}
+</div>
+}}</noinclude><includeonly>
+<div class="d-flex flex-column align-items-center p-5">
+<div class="my-3">{{int:atlas-section-notloggedin}}</div>
+<div class="my-3">[[Atlas:Participation#Teams|<span class="btn btn-primary">{{int:atlas-section-notloggedin-signup}}</span>]]</div>
+</div></includeonly>

@@ -1,0 +1,24 @@
+<noinclude>
+{{X/Template
+|description=This template adds a "Coming Soon" message that's displayed in the "Review" tab until the review feature is live.
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Reviews/ComingSoon}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-reviews-comingsoon-heading}}
+{{X/Template/i18n|i18n=atlas-reviews-comingsoon-message}}
+{{X/Template/i18n|i18n=atlas-reviews-comingsoon-button}}
+|preview=
+{{X/Reviews/ComingSoon}}
+}}</noinclude><includeonly>
+<div class="container card mb-3 p-3">
+    <div class="row d-flex align-items-center">
+        <div class="col-12 col-md-8 px-md-4">
+            <div class="h3 mt-3 pr-0">{{int:atlas-reviews-comingsoon-heading}}</div>
+            <p class="my-4">{{int:atlas-reviews-comingsoon-message}}</p>
+            <div>[[Atlas:About#Peer_Reviews|<span class="btn btn-primary">{{int:atlas-reviews-comingsoon-button}}</span>]]</div>
+        </div>
+        <div class="col-8 offset-2 col-md-4 offset-md-0 p-4 p-md-3">[[File:Undraw-collaboration.png|frameless|none|class=img-width]]</div>
+    </div>
+</div></includeonly>

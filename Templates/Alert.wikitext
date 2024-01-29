@@ -1,0 +1,30 @@
+<noinclude>
+{{X/Template
+|description=
+This template adds an alert box.
+|preview=
+{{Alert|light|Light}}
+{{Alert|primary|Primary}}
+{{Alert|success|Success}}
+{{Alert|warning|Warning}}
+{{Alert|danger|Danger}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Type",
+            "type": "string",
+            "description": "Type / color of the alert",
+            "suggestedvalues": ["light", "primary", "success", "warning", "danger"]
+        },
+        "2": {
+            "label": "Text",
+            "type": "string",
+            "description": "Text of the alert."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><div class="alert alert-{{lc:{{{1}}}}} border-{{lc:{{{1}}}}} text-dark p-3">{{{2}}}</div></includeonly>

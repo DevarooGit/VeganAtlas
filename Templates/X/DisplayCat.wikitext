@@ -1,0 +1,184 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template shows articles from some category that exist in the page language. This means that the page on which this template is located can be translated via the [https://www.mediawiki.org/wiki/Extension:Translate Translate extension]. This template will then, on each translated page, only show results that match that language.</p>
+
+==== Add article ====
+
+This template also always shows a button to add an article. The button opens a modal that contains a form field for the [[Form:Create|Create form]].
+
+==== Filter ====
+
+<p>On AtlasGlobal it's possible to filter these results according to translation direction; see the table below for examples.</p>
+
+{{{!}} class="wikitable"
+! colspan="2" {{!}} Article
+! colspan="2" {{!}} Filters that show the page
+{{!}}-
+! class="text-center" {{!}} Source language
+! class="text-center" {{!}} Translations
+! class="text-center" {{!}} Category/en
+! class="text-center" {{!}} Category/de
+{{!}}-
+{{!}} class="text-center" {{!}} <code>en</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>English source</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}}-
+{{!}} class="text-center" {{!}} <code>en</code>
+{{!}} class="text-center" {{!}} <code>de</code>
+{{!}} class="text-center" {{!}} <code>English source</code>
+{{!}} class="text-center" {{!}} <code>Translated to German</code>
+{{!}}-
+{{!}} class="text-center" {{!}} <code>de</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>German source</code>
+{{!}}-
+{{!}} class="text-center" {{!}} <code>de</code>
+{{!}} class="text-center" {{!}} <code>en</code>
+{{!}} class="text-center" {{!}} <code>Translated to English</code>
+{{!}} class="text-center" {{!}} <code>German source</code>
+{{!}}-
+{{!}} class="text-center" {{!}} <code>fr</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}}-
+{{!}} class="text-center" {{!}} <code>fr</code>
+{{!}} class="text-center" {{!}} <code>es</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}} class="text-center" {{!}} <code>––</code>
+{{!}}}
+
+==== Placeholder ====
+
+If no articles exist for the requested category and language the template [[Template:X/NothingHere|NothingHere]] is displayed which contains the placeholder below.
+
+<div class="border px-3">
+{{X/DisplayCat}}
+</div>
+
+|extensions=
+{{X/Template/Extension|extension=Display_Title}}
+{{X/Template/Extension|extension=Page_Forms}}
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=Translate}}
+|templates=
+{{X/Template/Template|1|template=X/DisplayCat}}
+{{X/Template/Template|2|template=X/SetProperty}}
+{{X/Template/Template|2|template=X/NothingHere}}
+{{X/Template/Template|3|template=X/NotLoggedIn}}
+|widgets=
+{{X/Template/Widget|widget=Button}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-section-displaycat-addarticle}}
+{{X/Template/i18n|i18n=atlas-section-displaycat-title}}
+{{X/Template/i18n|i18n=atlas-section-displaycat-close}}
+}}</noinclude><includeonly>
+{{X/SetProperty|Language code}}{{X/SetProperty|Is translation}}
+= {{#getdisplaytitle:{{FULLPAGENAME}} }} =
+{{#ifexpr:  {{#ask: [[Category:{{PAGENAME}}]]|format=count}} > 0
+|   {{#ifeq: {{SCRIPTPATH}} | /mediawiki/global
+    |   <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
+            <div class="show"><languages /></div>
+            <div class="dropdown"><!--
+            -->{{#widget:Button
+            |class=btn btn-outline-primary btn-sm dropdown-toggle
+            |datatoggle=dropdown
+            |label=Filter
+            }}<!--
+            --><div class="dropdown-menu">
+                    <div>
+                        <ul class="nav nav-pills m-0" id="filter-pills" role="tablist">
+                            <li class="nav-item w-100 my-2" role="presentation">
+                                {{#widget: Button
+                                |id=all-pills-tab
+                                |class=nav-link w-100 rounded-0 text-left active
+                                |datatoggle=pill
+                                |role=tab
+                                |datatarget=all-pills-content
+                                |ariaselected=true
+                                |label= {{#switch: {{PAGELANGUAGE}}
+                                        |en=All
+                                        |de=Alle
+                                        }}
+                                }}
+                            </li>
+                            <li class="nav-item w-100 my-2" role="presentation">
+                                {{#widget: Button
+                                |id=source-pills-tab
+                                |class=nav-link w-100 rounded-0 text-left
+                                |datatoggle=pill
+                                |role=tab
+                                |datatarget=source-pills-content
+                                |ariaselected=false
+                                |label= {{#switch: {{PAGELANGUAGE}}
+                                        |en=English source
+                                        |de=Deutsche Quelle
+                                        }}
+                                }}
+                            </li>
+                            <li class="nav-item w-100 my-2" role="presentation">
+                            {{#widget: Button
+                            |id=translated-pills-tab
+                            |class=nav-link w-100 rounded-0 text-left
+                            |datatoggle=pill
+                            |role=tab
+                            |datatarget=translated-pills-content
+                            |ariaselected=false
+                            |label= {{#switch: {{PAGELANGUAGE}}
+                                    |en=Translated to English
+                                    |de=Ins Deutsche übersetzt
+                                    }}
+                            }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="filter-pills-content">
+            <!-- Articles that have the same language as the source page are always hidden-->
+            <!-- Display all articles in this category -->
+            <div class="tab-pane fade show active" id="all-pills-content" role="tabpanel" aria-labelledby="all-pills-tab">
+                {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]]|format=ul}}
+            </div>
+            <!-- Display articles that are originally written in the selected language -->
+            <div class="tab-pane fade" id="source-pills-content" role="tabpanel" aria-labelledby="source-pills-tab">
+                {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]][[Is translation::!true]]|format=ul}}
+            </div>
+            <!-- Display articles that were translated to the selected language -->
+            <div class="tab-pane fade" id="translated-pills-content" role="tabpanel" aria-labelledby="translated-pills-tab">
+                {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]][[Is translation::true]]|format=ul}}
+            </div>
+        </div>
+    |   <!-- Display all articles in this category -->
+        <div class="show"><languages /></div>
+        <div class="tab-pane fade show active" id="all-pills-content" role="tabpanel" aria-labelledby="all-pills-tab">
+            {{#ask: [[Category:{{PAGENAME}}]][[Is translation mirror::!true]]|format=ul}}
+        </div>
+    }}
+    <!-- Input box to create another article in this category -->
+    <div class="position-fixed" style="bottom:6rem; right:3rem" type="button" data-toggle="modal" data-target="#add-article"><span class="text-primary far fa-edit fa-3x" id="add-article-btn"></span></div>
+    <div class="modal fade" id="add-article" tabindex="-1" role="dialog" aria-labelledby="AddArticle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="h3 text-center border-0">Add a new article</div>
+                    {{#forminput:form=create
+                    |button text={{int:atlas-section-displaycat-addarticle}} {{#getdisplaytitle:{{FULLPAGENAME}} }}
+                    |placeholder={{int:atlas-section-displaycat-title}}
+                    |query string=Category[0][name]={{PAGENAME}}
+                    |no autofocus
+                    }}
+                </div>
+                <div class="modal-footer">
+                    <div class="btn btn-secondary" data-dismiss="modal">{{int:atlas-section-displaycat-close}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+|   <!-- Input box to create the first article in this category -->
+    {{X/NothingHere}}
+}}</includeonly>

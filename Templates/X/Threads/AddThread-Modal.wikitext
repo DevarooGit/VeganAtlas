@@ -1,0 +1,79 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template displays a "Join the discussion" button that is intended for anonymous (non-logged in) users. Clicking the button opens a modal that informs the user that only logged-in users can participate in discussions. The modal contains messages and pertinent buttons for (a) creating an account or (b) providing feedback through a feedback form.</p>
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Threads/AddThread-Message}}
+{{X/Template/Template|4|template=X/Threads/AddThread-Modal}}
+|widgets=
+{{X/Template/Template|1|template=X/Threads/AddThread-Modal}}
+{{X/Template/Widget|2|widget=Button}}
+|files=
+{{X/Template/File|file=Undraw-chatting.png}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-threads-modal-btn}}
+{{X/Template/i18n|i18n=atlas-threads-modal-close-window}}
+{{X/Template/i18n|i18n=atlas-threads-modal-title}}
+{{X/Template/i18n|i18n=atlas-threads-modal-signup}}
+{{X/Template/i18n|i18n=atlas-threads-modal-feedback}}
+{{X/Template/i18n|i18n=atlas-threads-modal-signup-btn}}
+{{X/Template/i18n|i18n=atlas-threads-modal-feedback-btn}}
+{{X/Template/i18n|i18n=atlas-threads-modal-illustration-alt}}
+|preview=
+{{X/Threads/AddThread-Modal|id=Example-Modal}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "id": {
+            "label": "id",
+            "type": "string",
+            "required": true,
+            "description": "HTML id for the modal; must be unique on page; no spaces."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly><!--
+--><!-- Button trigger modal -->
+{{#Widget:Button
+|class=btn btn-primary
+|datatoggle=modal
+|datatarget=AddThreadModal-{{{id}}}
+|label={{int:atlas-threads-modal-btn}}
+}}<!--
+--><!-- Modal -->
+<div class="modal fade" id="AddThreadModal-{{{id}}}" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header pb-0 border-bottom-0"><!--
+-->{{#Widget:Button
+|class=close
+|datadismiss=modal
+|arialabel=Close
+|labelclass=fas fa-times
+|title={{int:atlas-threads-modal-close-window}}
+}}<!--
+--></div>
+<div class="modal-body container pt-0 mb-lg-2">
+<div class="row d-flex align-items-center">
+<div class="col-12 col-lg-8">
+<p class="h3 mt-0 p-0">{{int:atlas-threads-modal-title}}</p>
+<p>{{int:atlas-threads-modal-signup}}</p>
+<p>{{int:atlas-threads-modal-feedback}}</p>
+<div class="d-flex flex-column flex-lg-row mt-4">
+<div class="btn btn-primary btn-lg-responsive mr-lg-3 mb-3 mb-lg-0">{{int:atlas-threads-modal-signup-btn}}</div>
+<div class="btn btn-primary btn-lg-responsive">{{int:atlas-threads-modal-feedback-btn}}</div>
+</div>
+</div>
+<div class="col-8 offset-2 col-lg-4 offset-lg-0 mt-3 mt-lg-0 p-3">
+[[File:Undraw-chatting.png|class=img-width|alt={{int:atlas-threads-modal-illustration-alt}}]]
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></includeonly>

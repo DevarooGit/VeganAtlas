@@ -1,0 +1,48 @@
+<noinclude>
+{{X/Template
+|description=
+<p>This template displays page authors as recorded by the [https://www.mediawiki.org/wiki/Extension:PageAuthors PageAuhors extension].</p>
+
+<p>The list is fetched from the [[Special:CargoTables/Meta|Meta table]] (which is populated by the [[Template:X/Meta|Meta template]]).</p>
+
+<p>The results are displayed in the format defined in the [[Template:X/Pages/MetaTableTemplate|MetaTableTemplate]].</p>
+
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+|templates=
+{{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Pages/DisplayAuthors}}
+{{X/Template/Template|4|template=X/Meta}}
+{{X/Template/Template|5|template=X/Pages/DeclareMetaTable}}
+{{X/Template/Template|5|template=X/Pages/AttachMetaTable}}
+{{X/Template/Template|5|template=X/Decoder}}
+{{X/Template/Template|4|template=X/Pages/MetaTableTemplate}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "fullpagename": {
+            "label": "Full pagename",
+            "type": "string",
+            "required": true,
+            "description": "Page for which authors should be displayed."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>
+<div class="cargo-list-container">{{#cargo_query:
+tables=Meta,Meta__authors
+|join on=Meta._ID = Meta__authors._rowID
+|where=Meta__authors._rowID='{{#cargo_query: tables=Meta
+                                |where=Meta._pageName='{{{fullpagename}}}'
+                                |fields=_ID
+                                |no html
+                                }}'
+|fields=_value
+|format=template
+|template=X/Pages/MetaTableTemplate
+|order by=Meta__authors._position
+}}</div></includeonly>

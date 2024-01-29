@@ -1,0 +1,74 @@
+<noinclude>
+{{X/Template
+|description=This template adds a header to articles. It is usually added with the [[Form:Create|Create form]].
+|templates=
+{{X/Template/Template|1|template=X/Header}}
+{{X/Template/Template|2|template=Collapse}}
+{{X/Template/Template|2|template=X/SetProperty}}
+|widgets=
+{{X/Template/Template|1|template=X/Header}}
+{{X/Template/Template|2|template=Collapse}}
+{{X/Template/Widget|3|widget=Collapse}}
+{{X/Template/Widget|3|widget=Collapse/Expand}}
+|forms=
+{{X/Template/Form|1|form=Create}}
+{{X/Template/Template|2|template=X/Header}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "image": {
+            "label": "Header image",
+            "type": "wiki-file-name",
+            "suggested": true,
+            "description": "Name of file hosted on this wiki or on Wikimedia Commons."
+        },
+        "border": {
+            "label": "Border",
+            "type": "string",
+            "description": "Whether the header image should have a border; default = true.",
+            "suggestedvalues": ["true","false"]
+        },
+        "text": {
+            "label": "Text",
+            "type": "string",
+            "description": "Text area for alerts etc."
+        }
+    }
+}
+</templatedata>
+|preview=
+{{X/Header}}
+}}</noinclude><includeonly><!--
+-->{{X/SetProperty|Language code}}<!--
+-->{{X/SetProperty|Is translation}}<!--
+-->{{X/SetProperty|Is translation mirror}}<!--
+-->{{#switch: {{SITENAME}}|Atlas Global= <languages />|#default=}}<!--
+--><div class="container p-0 mt-md-3 mt-lg-5">
+<div class="row m-0">
+<!-- Col-1: Table of contents -->
+<div class="col-12 col-md-6 col-lg-5 mb-5 mb-md-0 p-0">
+<div class="card">
+{{Collapse
+|id=header
+|headerclass=card card-header collapsible-card border-0 flex-row p-3
+|class=stretched-link
+|heading=Contents
+|headingclass=h4 my-0 mx-3 border-0
+|content=<div class="px-5">__TOC__</div>
+|toggle-x=center
+|expand-label=none
+|collapse-label=none
+|collapsed=true
+}}
+</div>
+</div>
+<!-- Col-2: Image -->
+<div class="col-12 col-md-5 offset-md-1 offset-lg-2 p-0">
+[[File:{{#If: {{{image|}}} | {{{image}}} | Undraw-reading-book.png}}|class=img-width {{#switch: {{{border|}}} | false = | #default = border}}]]
+</div>
+</div>{{#if: {{{text|}}}
+|<div class="row my-4 mx-0"><div class="col-12 p-0">{{{text}}}</div></div>
+|
+}}</div></includeonly>

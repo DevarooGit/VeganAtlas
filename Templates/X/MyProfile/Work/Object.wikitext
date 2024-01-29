@@ -1,0 +1,89 @@
+<noinclude>{{X/Template
+|description=<p>This template adds a column with a work object containing the variables listed below. This template should be set as the <code>objects</code> parameter of the [[Template:X/MyProfile/Work|Work template]], which defines a grid and row; each instance of this template will then be a column in that grid.</p><p>{{#cargo_declare:
+_table = UserWork
+|User=String
+|Role=String
+|Field=String
+|Organization=String
+|Country=String
+|DateStart=Date
+|DateEnd=Date
+}}</p>
+|templates=
+{{X/Template/Template|1|template=X/MyProfile/Work}}
+{{X/Template/Template|2|template=X/MyProfile/Work/Object}}
+|extensions={{X/Template/Extension|extension=Cargo}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-userprofile-education-noorganization}}
+{{X/Template/i18n|i18n=atlas-userprofile-education-norole}}
+{{X/Template/i18n|i18n=atlas-userprofile-present}}
+{{X/Template/i18n|i18n=atlas-userprofile-nodate}}
+{{X/Template/i18n|i18n=atlas-userprofile-nd}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "role": {
+            "type": "string",
+            "required": true,
+            "description": "Role in the organization."
+        },
+        "organization": {
+            "type": "string",
+            "required": true,
+            "description": "Name of the organization."
+        },
+        "country": {
+            "type": "string",
+            "suggested": true,
+            "description": "Country of the organization."
+        },
+        "field": {
+            "type": "string",
+            "suggested": true,
+            "description": "Field of the organization."
+        },
+        "dateStart": {
+            "type": "date",
+            "suggested": true,
+            "description": "Start date in ISO format."
+        },
+        "dateEnd": {
+            "type": "date",
+            "suggested": true,
+            "description": "Start date in ISO format."
+        }
+    }
+}
+</templatedata>
+}}</noinclude>
+<includeonly>{{#cargo_store:
+_table = UserWork
+|User={{PAGENAME}}
+|Role={{#if:{{{role|}}}|{{{role}}}|}}
+|Field={{#if:{{{field|}}}|{{{field}}}|}}
+|Organization={{#if:{{{organization|}}}|{{{organization}}}|}}
+|Country={{#if:{{{country|}}}|{{{country}}}|}}
+|DateStart={{#if:{{{dateStart|}}}|{{{dateStart}}}|}}
+|DateEnd={{#if:{{{dateEnd|}}}|{{{dateEnd}}}|}}
+}}
+<div class="col-12 col-md-6 d-flex p-0">
+    <div class="align-top font-weight-normal pr-3" style="min-width:130px"><!--
+        --> {{#if:{{{dateStart|}}}
+            |   {{#if:{{{dateEnd|}}}
+                | {{#time:Y|{{{dateStart}}}}} - {{#time:Y|{{{dateEnd}}}}}
+                | {{#time:Y|{{{dateStart}}}}} - {{int:atlas-userprofile-present}}
+                }}
+            |   {{#if:{{{dateEnd|}}}
+                | {{Icon|Warning}} {{int:atlas-userprofile-nd}} - {{#time:Y|{{{dateEnd}}}}}
+                | ''{{int:atlas-userprofile-nodate}}''
+                }}
+            }}
+    </div>
+    <div class="pb-3 pl-3"><!--
+    -->'''{{#if:{{{organization|}}}|{{{organization}}}|<span class="text-danger">{{Icon|Warning}} {{int:atlas-userprofile-work-noorganization}}</span>}}'''<!--
+    --> <br>{{#if:{{{role|}}}|{{{role}}}|<span class="text-danger">{{Icon|Warning}} {{int:atlas-userprofile-work-norole}}</span>}}<!--
+    -->{{#if:{{{description|}}}|<br>{{{description}}}|}}
+    </div>
+</div></includeonly>
