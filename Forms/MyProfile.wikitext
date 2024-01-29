@@ -1,0 +1,191 @@
+<noinclude>{{X/Template
+|description=
+This form adds the following templates to user pages:
+
+* [[Template:X/MyProfile/Header|Header]]
+* [[Template:X/MyProfile/Description|Description]]
+* [[Template:X/MyProfile/Education|Education]]
+* [[Template:X/MyProfile/Work|Work]]
+
+The form opens automatically when editing a page in the <code>User:</code> namespace.
+|extensions=
+{{X/Template/Extension|extension=Cargo}}
+{{X/Template/Extension|extension=Semantic_Extra_Special_Properties}}
+|templates=
+{{X/Template/Form|1|form=MyProfile}}
+{{X/Template/Template|2|template=X/MyProfile/Header}}
+{{X/Template/Template|3|template=X/SetProperty}}
+{{X/Template/Template|2|template=X/MyProfile/Description}}
+{{X/Template/Template|2|template=X/MyProfile/Education}}
+{{X/Template/Template|3|template=X/MyProfile/Education/Object}}
+{{X/Template/Template|2|template=X/MyProfile/Work}}
+{{X/Template/Template|3|template=X/MyProfile/Work/Object}}
+}}</noinclude><includeonly>
+{{{info|create title=Create article:<br><page name>|edit title=Edit article:<br><page name>}}}
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>__NOTOC__
+
+{{{for template|X/MyProfile/Header}}}
+<div class="container px-5 py-3">
+    <div class="row">
+        <div class="col-3 d-flex justify-content-center align-items-center MyProfile-Image link-in-tab p-0" style="border-radius:50%"><!--
+        -->{{#ifexist: File:User-{{PAGENAME}}.png
+            |   [https://veganatlas.org/mediawiki/global/index.php?title=Special:Upload&wpDestFile=User-{{urlencode:{{PAGENAME}}|WIKI}}.png [[File:User-{{PAGENAME}}.png|class=img-width MyProfile-Image|link=]] <span class="d-none" id="MyProfile-Image-Upload">Change</span>]
+            |   {{#ifexist: File:User-{{PAGENAME}}.jpg
+                |   [https://veganatlas.org/mediawiki/global/index.php?title=Special:Upload&wpDestFile=User-{{urlencode:{{PAGENAME}}|WIKI}}.jpg [[File:User-{{PAGENAME}}.jpg|class=img-width MyProfile-Image|link=]] <span class="d-none" id="MyProfile-Image-Upload">Change</span>]
+                |   {{#ifexist: File:User-{{PAGENAME}}.jpeg
+                    |   [https://veganatlas.org/mediawiki/global/index.php?title=Special:Upload&wpDestFile=User-{{urlencode:{{PAGENAME}}|WIKI}}.jpeg [[File:User-{{PAGENAME}}.jpeg|class=img-width MyProfile-Image|link=]] <span class="d-none" id="MyProfile-Image-Upload">Change</span>]
+                    |   [https://veganatlas.org/mediawiki/global/index.php?title=Special:Upload&wpDestFile=User-{{urlencode:{{PAGENAME}}|WIKI}} [[File:Undraw-profile-1.png|class=img-width MyProfile-Image|link=]] <span class="d-none" id="MyProfile-Image-Upload">Upload</span>]
+                    }}
+                }}
+            }}
+        </div>
+        <div class="col-8 offset-1">
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <h2 class="mt-0 pt-0">{{PAGENAME}}</h2>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">Name</div>
+                        <div>{{{field|realname|class=w-100}}}</div>
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">Email</div>
+                        <div>{{{field|email|placeholder=Email address|class=w-100}}}</div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">LinkedIn</div>
+                        <div>{{{field|linkedin|placeholder=LinkedIn username|class=w-100}}}</div>
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">Website</div>
+                        <div>{{{field|website|placeholder|Own website (URL)|class=w-100}}}</div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">GoogleScholar</div>
+                        <div>{{{field|googlescholar|placeholder=GoogleScholar ID|class=w-100}}}</div>
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <div class="MyProfile-input-heading">ResearchGate</div>
+                        <div>{{{field|researchgate|placeholder=ResearchGate username|class=w-100}}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{{end template}}}
+
+{{{for template|X/MyProfile/Description|label=Description}}}
+{{{field|1|input type=textarea|editor=visualeditor||class=toolbarOnTop|class=w-100}}}
+{{{end template}}}
+
+{{{for template|X/MyProfile/Education}}}
+{{{field|objects|holds template}}}
+{{{end template}}}
+
+{{{for template|X/MyProfile/Education/Object|label=Education|multiple|embed in field=X/MyProfile/Education[objects]|class=pt-1|displayed fields when minimized=degree,program,dateStart,dateEnd}}}
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-3 d-flex flex-column p-0">
+            <div class="MyProfile-input-heading">Degree</div>
+            <div class="h-100">{{{field|degree|input type=combobox|values=Bachelor,Master,Doctor|class=w-100 page-forms-section}}}</div>
+        </div>
+        <div class="col-9 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">Program</div>
+            <div class="h-100">{{{field|program|class=w-100 h-100}}}</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3 d-flex flex-column p-0">
+            <div class="MyProfile-input-heading">Country</div>
+            <div class="h-100">{{{field|country|input type=combobox|class=w-100 h-100}}}</div>
+        </div>
+        <div class="col-9 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">College / University</div>
+            <div class="h-100">{{{field|college|class=w-100 h-100}}}</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3 d-flex flex-column w-100 p-0 pr-3">
+            <div class="MyProfile-input-heading">Graduated?</div>
+            <div class="h-100">{{{field|graduated|input type=combobox|values=Yes,No|class=w-100 h-100}}}</div>
+        </div>
+        <div class="col-2 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">GPA</div>
+            <div class="h-100">{{{field|gpa|class=w-100 h-100}}}</div>
+        </div>
+        <div class="col-2 d-flex flex-column p-0">
+            <div class="MyProfile-input-heading">Distinction</div>
+            <div class="h-100">{{{field|distinction|input type=combobox|values=Cum laude, Magna cum laude,Summa cum laude,With honours|class=w-100 h-100}}}</div>
+        </div>
+        <div class="col-2 offset-1 d-flex p-0 pr-3">
+            <div class="d-flex flex-column flex-fill p-0">
+                <div class="MyProfile-input-heading">Start</div>
+                <div class="h-100">{{{field|dateStart|input type=datepicker|date format=YYYY-MM-DD|class=w-100 h-100}}}</div>
+            </div>
+        </div>
+         <div class="col-2 d-flex p-0 pr-3">
+            <div class="d-flex flex-column flex-fill p-0">
+                <div class="MyProfile-input-heading">End</div>
+                <div class="h-100">{{{field|dateEnd|input type=datepicker|date format=YYYY-MM-DD|class=w-100 h-100}}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{{{end template}}}
+
+{{{for template|X/MyProfile/Work}}}
+{{{field|objects|holds template}}}
+{{{end template}}}
+
+{{{for template|X/MyProfile/Work/Object|label=Work|multiple|embed in field=X/MyProfile/Work[objects]|class=pt-1|displayed fields when minimized=organization,role,dateStart,dateEnd}}}
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">Organization</div>
+            <div class="h-100" style="min-height:2.5rem">{{{field|organization|class=w-100 h-100}}}</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">Role</div>
+            <div class="h-100" style="min-height:2.5rem">{{{field|role|class=w-100 h-100}}}</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3 d-flex flex-column p-0">
+            <div class="MyProfile-input-heading">Country</div>
+            <div class="h-100">{{{field|country|input type=combobox|class=w-100 h-100}}}</div>
+        </div>
+        <div class="col-5 d-flex flex-column p-0 pr-3">
+            <div class="MyProfile-input-heading">Field</div>
+            <div class="h-100 w-100">{{{field|field|input type=combobox|class=w-100 h-100|size=63}}}</div>
+        </div>
+        <div class="col-2 d-flex p-0 pr-3">
+            <div class="d-flex flex-column flex-fill p-0">
+                <div class="MyProfile-input-heading">Start</div>
+                <div class="h-100">{{{field|dateStart|input type=datepicker|date format=YYYY-MM-DD|class=w-100 h-100}}}</div>
+            </div>
+        </div>
+        <div class="col-2 d-flex p-0 pr-3">
+            <div class="d-flex flex-column flex-fill p-0">
+                <div class="MyProfile-input-heading">End</div>
+                <div class="h-100">{{{field|dateEnd|input type=datepicker|date format=YYYY-MM-DD|class=w-100 h-100}}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 d-flex flex-column w-100 p-0 pr-3">
+            <div class="MyProfile-input-heading">Description</div>
+            <div class="h-100">{{{field|description|input type=textarea|rows=3|autogrow|class=w-100 h-100}}}</div>
+        </div>
+    </div>
+</div>
+{{{end template}}}</includeonly>

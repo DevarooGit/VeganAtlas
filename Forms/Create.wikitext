@@ -1,0 +1,209 @@
+<noinclude>
+{{X/Template
+|description=This form is used to define standard content pages.
+
+It adds the following templates incl. values:
+
+* [[Template:X/Header|Header]]
+* [[Template:X/Categories|Category]]
+* [[Template:X/Interwiki|Interwiki]]
+* [[Template:Section/Define|Section/Define]]
+
+|templates=
+{{X/Template/Form|1|form=Create}}
+{{X/Template/Template|2|template=Section/Define}}
+{{X/Template/Template|2|template=X/Header}}
+{{X/Template/Template|2|template=X/Categories}}
+{{X/Template/Template|2|template=X/Interwiki}}
+{{X/Template/Template|2|template=X/Forms/Create/Categories}}
+{{X/Template/Template|2|template=X/Forms/Create/Content}}
+{{X/Template/Template|2|template=X/Forms/Create/Source}}
+{{X/Template/Template|2|template=Icon}}
+|extensions=
+{{X/Template/Extension|extension=Page_Forms}}
+|i18n=
+{{X/Template/i18n|i18n=atlas-form-create-image-heading}}
+{{X/Template/i18n|i18n=atlas-form-create-image-description}}
+{{X/Template/i18n|i18n=atlas-form-create-image-placeholder}}
+{{X/Template/i18n|i18n=atlas-form-create-section-heading}}
+{{X/Template/i18n|i18n=atlas-form-create-section-description}}
+{{X/Template/i18n|i18n=atlas-form-create-section-placeholder}}
+{{X/Template/i18n|i18n=atlas-form-create-section-level}}
+{{X/Template/i18n|i18n=atlas-form-create-section-hascontent}}
+{{X/Template/i18n|i18n=atlas-form-create-section-hascontent-true}}
+{{X/Template/i18n|i18n=atlas-form-create-section-hascontent-false}}
+{{X/Template/i18n|i18n=atlas-form-create-section-source}}
+{{X/Template/i18n|i18n=atlas-form-create-section-source-local}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-heading}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-description}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-animals}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-health}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-environment}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-psychology}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-politics-law}}
+{{X/Template/i18n|i18n=atlas-form-create-categories-veganism}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-heading}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-description}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-country}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-language}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-link}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-pagename}}
+{{X/Template/i18n|i18n=atlas-form-create-interwiki-placeholder}}
+|preview=
+<div class="d-flex" style="width:25em">
+{{#forminput:form=Create
+|default value=Example Page
+|button text=Show preview
+|no autofocus
+|popup
+}}
+</div>
+}}</noinclude><includeonly>__NOTOC__{{{info|create title=<page name>|edit title=<page name>}}}
+
+<div class="mb-5" id="header-image">
+    <h2 class="border-0 mt-0 mb-4 text-center" style="font-weight:300">{{int:atlas-form-create-image-heading}}</h2>
+    <div class="alert alert-primary rounded-0">{{int:atlas-form-create-image-description}}</div><!--
+    -->{{{for template|X/Header}}}
+    <div class="d-flex flex-column my-3">
+        <div>{{{field|image|placeholder={{int:atlas-form-create-image-placeholder}}|class=w-100}}}</div>
+    </div>{{{end template}}}
+</div>
+
+<div class="my-5" id="sections">
+<h2 class="border-0 mt-0 my-4 text-center" style="font-weight:300">{{int:atlas-form-create-section-heading}}</h2>
+<div class="alert alert-primary rounded-0">{{int:atlas-form-create-section-description}}</div>
+{{{for template|Section/Define|multiple|minimum instances=1|class=pt-1|displayed fields when minimized=level,pagename}}}
+<div class="container">
+<div class="row my-3">
+<div class="col-12 pr-3">
+<div class="d-flex flex-column">
+<div>{{{field|pagename|placeholder={{int:atlas-form-create-section-placeholder}}|mandatory|class=w-100 page-forms-section}}}</div>
+</div>
+</div>
+</div>
+<div class="row my-3">
+<div class="col-4">
+<div class="d-flex flex-column">
+<div class="mb-1">'''{{int:atlas-form-create-section-level}}'''</div>
+<div>{{{field|level|input type=dropdown|values=2,3,4,5|default=2|mandatory|class=w-100 page-forms-dropdown}}}</div>
+</div>
+</div>
+<div class="col-4">
+<div class="d-flex flex-column">
+<div class="mb-1">'''{{int:atlas-form-create-section-hascontent}}'''</div>
+<div>{{{field|hascontent|input type=dropdown|values=true,false|default=true|mapping template=X/Forms/Create/Content|mandatory|class=w-100 page-forms-dropdown}}}</div>
+</div>
+</div>
+<div class="col-4 pr-3">
+<div class="d-flex flex-column">
+<div class="mb-1">'''{{int:atlas-form-create-section-source}}'''</div>
+<div>{{{field|source|input type=dropdown|values=local,global|default=local|mapping template=X/Forms/Create/Source|class=w-100 page-forms-dropdown|mandatory}}}</div>
+</div>
+</div>
+</div>
+</div>{{{end template}}}
+</div>
+
+<!--<p class="border-left px-3">'''''Section hosted at:''' If you want to transclude an existing section from Atlas Global, select "Atlas Global" and use the full pagename as section heading as it appears on Atlas Global. For instance, <code>Chicken/Debeaking</code> is correct but <code>Debeaking</code> is not sufficient. Do not include the language part of the pagename (e.g., <code>/de</code>); language codes are set automatically.''
+-->
+</div>
+
+<div class="my-5" id="categories">
+<h2 class="border-0 mt-0 mb-4 text-center" style="font-weight:300">{{int:atlas-form-create-categories-heading}}</h2>
+<div class="alert alert-primary rounded-0">{{int:atlas-form-create-categories-description}}</div>
+{{{for template|X/Categories|multiple|minimum instances=1}}}
+{{{field|1|input type=tokens|values=Animals,Health,Environment,Psychology,Politics & Law,Veganism|mapping template=X/Forms/Create/Categories|class=w-100}}}
+{{{end template}}}
+</div>
+
+<div class="my-5" id="interwiki">
+<h2 class="border-0 mt-0 mb-4 text-center" style="font-weight:300">{{int:atlas-form-create-interwiki-heading}}</h2>
+<div class="alert alert-primary rounded-0">
+{{int:atlas-form-create-interwiki-description}}
+</div>
+</div>
+
+<div class="position-relative my-5" style="border:1px solid #2a4b8d;">
+<div class="position-absolute bg-white" style="top:-1.5rem; left: 0.75rem; display: block; padding: 5px; font-size: 1.5rem;">
+{{int:atlas-form-create-interwiki-heading}}
+</div>
+{{{for template|X/Interwiki}}}
+<div class="d-flex justify-content-center p-4">
+{| class="wikitable"
+! class="pr-3" | {{int:atlas-form-create-interwiki-country}}
+! class="pr-3" | {{int:atlas-form-create-interwiki-language}}
+! class="pr-3" | {{int:atlas-form-create-interwiki-link}}
+! class="pr-3" | {{int:atlas-form-create-interwiki-pagename}}
+|-
+|🇺🇸 '''United States'''
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/en-us Atlas US]
+|{{{field|en-us|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas US}}}
+|-
+|🇬🇧 '''United Kingdom'''
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/en-gb Atlas UK]
+|{{{field|en-gb|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas UK}}}
+|-
+|🇦🇺 '''Australia'''
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/en-au Atlas AU]
+|{{{field|en-au|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas AU}}}
+|-
+|🇳🇿 '''New Zealand'''
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/en-nz Atlas NZ]
+|{{{field|en-nz|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas NZ}}}
+|-
+|🇨🇦 '''Canada'''
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/en-ca Atlas CA]
+|{{{field|en-ca|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas CA}}}
+|-
+|🇩🇪 '''Germany'''
+|{{#language:de|{{int:Lang}}}}
+|[https://www.veganatlas.org/de-de Atlas DE]
+|{{{field|de-de|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas DE}}}
+|-
+|🇳🇱 '''Netherlands'''
+|{{#language:nl|{{int:Lang}}}}
+|[https://www.veganatlas.org/nl-nl Atlas NL]
+|{{{field|nl-nl|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas NL}}}
+|-
+|🇫🇷 '''France'''
+|{{#language:fr|{{int:Lang}}}}
+|[https://www.veganatlas.org/fr-fr Atlas FR]
+|{{{field|fr-fr|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas FR}}}
+|-
+|🇳🇱 '''Spain'''
+|{{#language:es|{{int:Lang}}}}
+|[https://www.veganatlas.org/es-es Atlas ES]
+|{{{field|es-es|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas ES}}}
+|-
+|🇨🇳 '''China'''
+|{{#language:zh|{{int:Lang}}}}
+|[https://www.veganatlas.org/cz-cn Atlas CN]
+|{{{field|zh-cn|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas CN}}}
+|-
+|🇮🇳 '''India'''
+|{{#language:hi|{{int:Lang}}}}
+|[https://www.veganatlas.org/hi-in Atlas IN]
+|{{{field|hi-in|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas IN}}}
+|-
+|🌐 World
+|{{#language:en|{{int:Lang}}}}
+|[https://www.veganatlas.org/global Atlas Global]
+|{{{field|global|placeholder={{int:atlas-form-create-interwiki-placeholder}} Atlas Global}}}
+|}
+{{{end template}}}
+</div>
+</div>
+
+
+<div class="d-flex flex-column border rounded p-3">
+<div class="mb-4">{{{standard input|summary}}}</div>
+<div class="mb-2">{{{standard input|save}}}
+{{{standard input|cancel}}}</div>
+<div>{{{standard input|watch}}}</div>
+</div>
+</includeonly>
