@@ -1,21 +1,26 @@
 <noinclude>
 {{X/Template
 |description=This template adds interwiki links.
+==== Usage ====
+Set the country code parameter to the pagename at the local wiki.
+
+==== Country codes ====
+<code>us</code>, <code>uk</code>, <code>au</code>, <code>nz</code>, <code>ca</code>, <code>de</code>, <code>nl</code>, <code>fr</code>, <code>es</code>, <code>cn</code>, <code>in</code>, <code>global</code>.
 |forms=
 {{X/Template/Form|1|form=Create}}
 {{X/Template/Template|2|template=X/Interwiki}}
 }}</noinclude><includeonly>
-{{#if: {{{en-us|}}}|[[atlas-en-us:{{ucfirst:{{{en-us}}}}}]]|}}
-{{#if: {{{en-gb|}}}|[[atlas-en-gb:{{ucfirst:{{{en-gb}}}}}]]|}}
-{{#if: {{{en-au|}}}|[[atlas-en-au:{{ucfirst:{{{en-au}}}}}]]|}}
-{{#if: {{{en-nz|}}}|[[atlas-en-nz:{{ucfirst:{{{en-nz}}}}}]]|}}
-{{#if: {{{en-ca|}}}|[[atlas-en-ca:{{ucfirst:{{{en-ca}}}}}]]|}}
-{{#if: {{{de-de|}}}|[[atlas-de-de:{{ucfirst:{{{de-de}}}}}]]|}}
-{{#if: {{{nl-nl|}}}|[[atlas-nl-nl:{{ucfirst:{{{nl-nl}}}}}]]|}}
-{{#if: {{{fr-fr|}}}|[[atlas-fr-fr:{{ucfirst:{{{fr-fr}}}}}]]|}}
-{{#if: {{{es-es|}}}|[[atlas-es-es:{{ucfirst:{{{es-es}}}}}]]|}}
-{{#if: {{{zh-cn|}}}|[[atlas-zh-cn:{{ucfirst:{{{zh-cn}}}}}]]|}}
-{{#if: {{{hi-in|}}}|[[atlas-hi-in:{{ucfirst:{{{hi-in}}}}}]]|}}
+{{#if: {{{us|}}}|[[atlas-us:{{ucfirst:{{{us}}}}}]]|}}
+{{#if: {{{uk|}}}|[[atlas-uk:{{ucfirst:{{{uk}}}}}]]|}}
+{{#if: {{{au|}}}|[[atlas-au:{{ucfirst:{{{au}}}}}]]|}}
+{{#if: {{{nz|}}}|[[atlas-nz:{{ucfirst:{{{nz}}}}}]]|}}
+{{#if: {{{ca|}}}|[[atlas-ca:{{ucfirst:{{{ca}}}}}]]|}}
+{{#if: {{{de|}}}|[[atlas-de:{{ucfirst:{{{de}}}}}]]|}}
+{{#if: {{{nl|}}}|[[atlas-nl:{{ucfirst:{{{nl}}}}}]]|}}
+{{#if: {{{fr|}}}|[[atlas-fr:{{ucfirst:{{{fr}}}}}]]|}}
+{{#if: {{{es|}}}|[[atlas-es:{{ucfirst:{{{es}}}}}]]|}}
+{{#if: {{{cn|}}}|[[atlas-cn:{{ucfirst:{{{cn}}}}}]]|}}
+{{#if: {{{in|}}}|[[atlas-in:{{ucfirst:{{{in}}}}}]]|}}
 {{#if: {{{global|}}}|[[atlas-global:{{ucfirst:{{{global}}}}}]]|}}
 [[atlas-addnew:Atlas:Add_country_or_language]]
 </includeonly>
