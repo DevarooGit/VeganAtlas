@@ -65,17 +65,22 @@
                 {
                     "name": "Secondary-menu",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Secondary-menu"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Secondary-menu.wikitext"
                 },
                 {
                     "name": "Licenses",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Licenses"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Licenses.wikitext"
                 },
                 {
                     "name": "Toolbox",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Toolbox"
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Toolbox.wikitext"
+                },
+                {
+                    "name": "Otherlanguages",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/MediaWiki/Otherlanguages.wikitext"
                 },
                 {
                     "name": "Main",
