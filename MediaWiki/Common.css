@@ -1,8 +1,0 @@
-/* CSS placed here will be applied to all skins */
-
-#createbox-left {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1em;
-    width: 35em;
-  }
