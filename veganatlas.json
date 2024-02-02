@@ -375,6 +375,11 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Icon.wikitext"
                 },
                 {
+                    "name": "Link",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/Link.wikitext"
+                },
+                {
                     "name": "X%2FCard",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Card.wikitext"
