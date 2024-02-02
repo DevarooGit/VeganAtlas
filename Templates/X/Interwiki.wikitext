@@ -22,5 +22,19 @@ Set the country code parameter to the pagename at the local wiki.
 {{#if: {{{cn|}}}|[[atlas-cn:{{ucfirst:{{{cn}}}}}]]|}}
 {{#if: {{{in|}}}|[[atlas-in:{{ucfirst:{{{in}}}}}]]|}}
 {{#if: {{{global|}}}|[[atlas-global:{{ucfirst:{{{global}}}}}]]|}}
-[[atlas-addnew:Atlas:Add_country_or_language]]
+[[atlas-addnew:Atlas:Add_country_or_language]]<!--
+-->{{#subobject:Interwiki
+|atlas-us={{#if: {{{us|}}}|{{{us}}}|}}
+|atlas-uk={{#if: {{{uk|}}}|{{{uk}}}|}}
+|atlas-au={{#if: {{{au|}}}|{{{au}}}|}}
+|atlas-nz={{#if: {{{nz|}}}|{{{nz}}}|}}
+|atlas-ca={{#if: {{{ca|}}}|{{{ca}}}|}}
+|atlas-de={{#if: {{{de|}}}|{{{de}}}|}}
+|atlas-nl={{#if: {{{nl|}}}|{{{nl}}}|}}
+|atlas-fr={{#if: {{{fr|}}}|{{{fr}}}|}}
+|atlas-es={{#if: {{{es|}}}|{{{es}}}|}}
+|atlas-cn={{#if: {{{cn|}}}|{{{cn}}}|}}
+|atlas-in={{#if: {{{in|}}}|{{{in}}}|}}
+|atlas-global={{#if: {{{global|}}}|{{{global}}}|}}
+}}
 </includeonly>
