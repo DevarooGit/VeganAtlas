@@ -1,0 +1,48 @@
+<noinclude>
+{{X/Template
+|description=This template adds a link that adapts to translation and transclusion across wikis.
+
+Call the template like this: <code><nowiki>{{Link|Some_page|Link_text}}</nowiki></code>
+
+==== On Atlas Global ====
+
+On Atlas Global, the template utilizes <code><nowiki>Special:MyLanguage/{{{1}}}</nowiki></code>; i.e. the correct translation will be selected.
+
+==== On other Vegan Atla sites ====
+
+When pages are transcluded from Atlas Global to another Vegan Atlas site, internally linked pages won't always have the same page name (e.g., when the wiki has a different language), resulting in red/dead links. This template solves that issue by requesting the correct pagename from the global wiki via SMW query. The correct pagename is a SMW property of the transcluded page and is defined on the global wiki within the [[Template:X/Interwiki|Interwiki template]] (which contains the correct page names anyway!).
+
+|templates=
+{{X/Template/Template|1|template=Link}}
+{{X/Template/Template|2|template=X/Interwiki}}
+|extensions=
+{{X/Template/Extension|extension=Semantic_MediaWiki}}
+{{X/Template/Extension|extension=External_Data}}
+|templatedata=
+<templatedata>
+{
+    "description": "",
+    "params": {
+        "1": {
+            "label": "Pagename",
+            "type": "wiki-page-name",
+            "required": true,
+            "description": "Pagename of the link target"
+        },
+        "2": {
+            "label": "Link text",
+            "type": "string",
+            "description": "Link text (label)."
+        }
+    }
+}
+</templatedata>
+}}</noinclude><includeonly>{{#if: {{{1|}}}
+|{{#switch: {{SCRIPTPATH}}
+|/global=[[Special:MyLanguage/{{{1}}}|{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}]]
+|#default=[[{{#external_value:fulltext
+|url=https://veganatlas.org/development/index.php?title=Special:Ask/format%3Djson/link%3Dnone/headers%3Dhide/mainlabel%3D-2D/-5B-5B:{{X/Encoder|{{{1}}}}}-23Interwiki-5D-5D/-3FAtlas-2D{{#titleparts:{{SCRIPTPATH}}||-1}}/prettyprint%3Dtrue/unescape%3Dtrue/searchlabel%3DJSON
+|format=JSON
+}}{{#if:{{{2|}}}|{{!}}{{{2}}}}}]]
+}}
+|<code>Pagename</code> undefined}}
