@@ -63,6 +63,7 @@
 |templates=
 {{X/Template/Template|1|template=Section/Define}}
 {{X/Template/Template|2|template=Section/Transclude}}
+{{X/Template/Template|3|template=X/Anchorencode}}
 {{X/Template/Template|3|template=X/Pages/AddSubpage}}
 {{X/Template/Template|4|template=X/Pages/SubpageBoilerplate}}
 {{X/Template/Template|5|template=X/Pages/Status}}
@@ -163,7 +164,7 @@
 -- Header -->
 <div class="section-container" id="{{{id}}}-container">
     <div class="d-flex justify-content-between align-items-end my-3" id="{{{id}}}-header">
-        <h{{{level}}} class="flex-fill m-0 pt-0 pb-1 border-bottom">{{{heading}}}</h{{{level}}}>
+        <h{{{level}}} class="flex-fill m-0 pt-0 pb-1 border-bottom"  id="{{X/Anchorencode|{{{heading}}}">{{{heading}}}</h{{{level}}}>
         <div class="navbar navbar-expand-lg text-center order-1 p-0"><!--
         -->{{#Widget: Button
         |class=navbar-toggler section-toggler

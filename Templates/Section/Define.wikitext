@@ -27,6 +27,7 @@
 {{X/Template/Extension|extension=External_Data}}
 |templates=
 {{X/Template/Template|1|template=Section/Define}}
+{{X/Template/Template|2|template=X/Anchorencode}}
 {{X/Template/Template|2|template=X/Pages/AddSubpage|bold}}
 {{X/Template/Template|3|template=X/Pages/SubpageBoilerplate}}
 {{X/Template/Template|4|template=X/Pages/Status}}
@@ -102,10 +103,10 @@
 {{#switch: {{{hascontent}}}
 |false ={{#switch: {{{level}}}
         |1
-        |2 = <h2 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h2>
-        |3 = <h3 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h3>
-        |4 = <h4 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h4>
-        |5 = <h5 class="mb-0">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h5>
+        |2 = <h2 class="mb-0" id="{{X/Anchorencode|{{#if: {{{heading|}}}| {{{heading}}} | {{{pagename}}} }}}}">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h2>
+        |3 = <h3 class="mb-0" id="{{X/Anchorencode|{{#if: {{{heading|}}}| {{{heading}}} | {{{pagename}}} }}}}">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h3>
+        |4 = <h4 class="mb-0" id="{{X/Anchorencode|{{#if: {{{heading|}}}| {{{heading}}} | {{{pagename}}} }}}}">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h4>
+        |5 = <h5 class="mb-0" id="{{X/Anchorencode|{{#if: {{{heading|}}}| {{{heading}}} | {{{pagename}}} }}}}">{{#if: {{{heading|}}}| {{ucfirst:{{{heading}}}}} | {{ucfirst:{{{pagename}}}}} }}</h5>
         }}
 |true = <!--  Check if section is defined. -->
         {{#if: {{{pagename|}}}
