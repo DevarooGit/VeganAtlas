@@ -153,6 +153,11 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Interwiki.wikitext"
                 },
                 {
+                    "name": "X%2FAnchorencode",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Anchorencode.wikitext"
+                },
+                {
                     "name": "X%2FMeta",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Meta.wikitext"
