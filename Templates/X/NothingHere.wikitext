@@ -28,7 +28,7 @@ This template shows the placeholder that's called by the [[Template:X/DisplayCat
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6"><!--
-            -->[[File:Undraw-Launching.png|frameless|class=img-width p-5 p-md-3 p-lg-5|link=]]
+            -->[[File:Undraw-Launching.png|none|class=img-width p-5 p-md-3 p-lg-5|link=]]
         </div>
         <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-5 p-md-3 p-lg-5">
             <div class="text-center border-bottom mb-3 pb-3" style="font-family: 'Klee One', cursive;">

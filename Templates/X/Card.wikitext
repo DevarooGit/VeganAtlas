@@ -64,6 +64,6 @@
 <div class="card-body" id="card-body-{{lc:{{#replace:{{{title}}}| |-}}}}">
 <h5 class="card-title my-2 p-0">{{{title}}}</h5>
 <p class="card-text">{{{text}}}</p>
-<p class="m-0">[[{{{link}}}|<span class="btn btn-primary stretched-link m-0">{{{btn}}}</span>]]</p>
+<p class="m-0">{{Link|{{{link}}}|label=<span class="btn btn-primary stretched-link m-0">{{{btn}}}</span>}}</p>
 </div>
 </div></includeonly>
