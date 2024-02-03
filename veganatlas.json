@@ -118,6 +118,11 @@
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Categories.wikitext"
                 },
                 {
+                    "name": "X%2FEncoder",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Encoder.wikitext"
+                },
+                {
                     "name": "X%2FDecoder",
                     "namespace": "NS_TEMPLATE",
                     "url": "https://raw.githubusercontent.com/DevarooGit/VeganAtlas/main/Templates/X/Decoder.wikitext"
