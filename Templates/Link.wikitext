@@ -37,12 +37,10 @@ When pages are transcluded from Atlas Global to another Vegan Atlas site, intern
     }
 }
 </templatedata>
-}}</noinclude><includeonly>{{#if: {{{1|}}}
-|{{#switch: {{SCRIPTPATH}}
-|/global=[[Special:MyLanguage/{{{1}}}|{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}]]
-|#default=[[{{#external_value:fulltext
-|url=https://veganatlas.org/global/index.php?title=Special:Ask/format%3Djson/link%3Dnone/headers%3Dhide/mainlabel%3D-2D/-5B-5B:{{X/Encoder|{{{1}}}}}-23Interwiki-5D-5D/-3FAtlas-2D{{#titleparts:{{SCRIPTPATH}}||-1}}/prettyprint%3Dtrue/unescape%3Dtrue/searchlabel%3DJSON
+}}</noinclude><includeonly>{{#if: {{{1|}}}<!--
+-->|{{#switch: {{SCRIPTPATH}}<!--
+-->|/global=[[Special:MyLanguage/{{{1}}}{{#if:{{{section|}}}|%23{{X/Anchorencode|{{{section}}}}}|}}|{{#if:{{{label|}}}|{{{label}}}|{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}}}]]<!--
+-->|#default=[[{{#external_value:fulltext|url=https://veganatlas.org/global/index.php?title=Special:Ask/format%3Djson/link%3Dnone/headers%3Dhide/mainlabel%3D-2D/-5B-5B:{{X/Encoder|{{{1}}}}}-23Interwiki-5D-5D/-3FAtlas-2D{{#titleparts:{{SCRIPTPATH}}||-1}}/prettyprint%3Dtrue/unescape%3Dtrue/searchlabel%3DJSON
 |format=JSON
-}}{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}]]
-}}
-|<code>Pagename</code> undefined}}
+}}{{#if:{{{section|}}}|%23{{X/Anchorencode|{{{section}}}}}|}}|{{#if:{{{label|}}}|{{{label}}}|{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}}}]]
+}}|<code>Pagename</code> undefined}}</includeonly>
