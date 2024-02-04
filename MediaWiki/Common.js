@@ -61,9 +61,15 @@ $( function () {
 	} );
 } );
 
+/* Navbar styles */
 $(document).ready(function() {
     $('.navbar-tools').css({
       display: 'flex',
       'flex-direction': 'row'
     });
+});
+
+/* FontAwesome global interwiki icon */
+$(document).ready(function() {
+  $('.interwiki-atlas-global a').addClass('fas fa-share-alt');
 });
